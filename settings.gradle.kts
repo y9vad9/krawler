@@ -18,6 +18,17 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin-project-template"
+rootProject.name = "bcm"
 
 includeBuild("build-conventions")
+
+include(
+    ":domain",
+    ":data",
+    ":localization",
+)
+
+include(
+    ":foundation:time",
+    ":foundation:validation",
+)

@@ -6,4 +6,12 @@ plugins {
 
 kotlin {
     jvmToolchain(11)
+
+    sourceSets {
+        all {
+            compilerOptions {
+                optIn.add("kotlin.uuid.ExperimentalUuidApi")
+            }
+        }
+    }
 }

@@ -1,8 +1,8 @@
 [versions]
-kotlin = "2.0.0"
-kotlinx-coroutines = "1.7.3"
-kotlinx-serialization = "1.8.1"
-ktor = "2.3.5"
+kotlin = "2.1.0"
+kotlinx-coroutines = "1.9.0"
+kotlinx-serialization = "1.7.3"
+ktor = "3.0.1"
 jupiter = "5.4.0"
 exposed = "0.41.1"
 android-gradle-plugin = "7.3.1"
@@ -16,6 +16,10 @@ kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core",
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 
 # Ktor libraries
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
 ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
@@ -33,7 +37,7 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jupiter" }
 
 # Other Multiplatform Libraries
-cache4k = { module = "io.github.reactivecircus.cache4k:cache4k", version.require="0.9.0" }
+cache4k = { module = "io.github.reactivecircus.cache4k:cache4k", version.require="0.13.0" }
 
 # Other JVM Libraries
 h2-database = { module = "com.h2database:h2", version.require = "2.2.224" }
@@ -59,6 +63,9 @@ accompanist-systemUiController = { module = "com.google.accompanist:accompanist-
 
 # Plugin classpaths
 kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# Telegram
+tgBotApi = { module = "dev.inmo:tgbotapi", version.require = "21.0.1" }
 
 [plugins]
 # Build Conventions
