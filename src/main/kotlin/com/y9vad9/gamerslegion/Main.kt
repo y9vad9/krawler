@@ -45,7 +45,7 @@ fun main(): Unit = runBlocking {
                 url("https://api.brawlstars.com/v1")
                 accept(ContentType.Application.Json)
 
-                bearerAuth("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijk3NDQ5YTBjLTNmOTMtNDcyZC1iNjI4LTk1YjczNWI5OGI1ZiIsImlhdCI6MTczMzQzNDU0OCwic3ViIjoiZGV2ZWxvcGVyLzUyYTFlZThkLWY5YWItNzBjNC1kYjQ5LTM0Y2EzZmQxN2IyYiIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMTc2LjQuMTg3LjE4MiJdLCJ0eXBlIjoiY2xpZW50In1dfQ.iSIr0I8iMRShzDn_kHbX9ML005m5xjfiJH5Wh08zvXTCyr5jpK9lZUgp2f7k6KfETWjyJHyLqgjgfEFhLGmpPQ")
+                bearerAuth("")
             }
 
             install(ContentNegotiation) {
