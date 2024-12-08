@@ -1,28 +1,41 @@
-# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Kotlin_Icon_2021.svg/2048px-Kotlin_Icon_2021.svg.png" width=24 height=24 /> Kotlin Project Template
-Project Template for convenient project setup using [convention plugins](https://docs.gradle.org/current/samples/sample_convention_plugins.html#compiling_convention_plugins)
-and [version catalogs](https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog).
+# Brawl Stars Club Manager Bot
+BCM (**B**rawl Stars **C**lub **M**anager) is a Telegram bot designed to help manage Brawl Stars Clubs efficiently. It connects your club's activities with Telegram, providing tools to keep track of members, activity, and performance.
 
-## Motivation
-Every time I create a new project, I do a lot of routine work, so this repository should decrease amount of this work.
+## Features
 
-## Initializing
-- `settings.gradle.kts`: Set your root project name
-- `gradle/libs.versions.toml`: Add your dependencies
+### Account Linking & Integration
+- Automatically link Brawl Stars accounts to Telegram users and group chats.
+- Allow users to link multiple Brawl Stars accounts, if permitted.
 
-> **Note** <br>
-> [TYPESAFE_PROJECT_ACCESSORS](https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors)
-> are enabled by default. If you don't need this feature, remove it from `settings.gradle.kts`.
+### Membership Monitoring
+- Notify when members are inactive and only log in for online status without playing games.
+- Automatically remove Telegram group members who have left the club in Brawl Stars.
 
-## Builtins
-### Build conventions
-This template also provides some useful [build conventions](build-conventions/src/main/kotlin).
+### Activity & Performance Tracking
+- Track member activity and trophy progression with ability to set minimum of trophies, otherwise – kick.
+- Generate weekly and monthly rankings based on trophies earned.
 
-#### How to use
-Example of `build.gradle.kts` usage:
-```kotlin
-plugins {
-    id(libs.plugins.conventions.jvm.get().pluginId)
-    // or
-    id("jvm-convention")
-}
-```
+### Multi-Club Support
+- Manage multiple clubs within a single bot, making it useful for club systems or alliances.
+
+### Notifications
+- Receive updates about club activity, including member join requests, trophy changes, and inactivity alerts.
+
+> **Warning** <br>
+> In active development phase, not stable for use.
+
+## Documentation
+The documentation is not available for now, I will provide one once I stabilize the bot functionality.
+
+## Feedback
+
+For bugs, questions and discussions please use
+the [GitHub Issues](https://github.com/y9vad9/bcm/issues).
+
+## License
+
+This library is licensed under [MIT License](LICENSE). Feel free to use, modify, and distribute it for any purpose.
+
+_______
+*This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it.
+For more information see [Supercell’s Fan Content Policy](https://supercell.com/en/fan-content-policy/).*
