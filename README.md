@@ -37,5 +37,5 @@ the [GitHub Issues](https://github.com/y9vad9/bcm/issues).
 This library is licensed under [MIT License](LICENSE). Feel free to use, modify, and distribute it for any purpose.
 
 _______
-*This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it.
+*This product is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it.
 For more information see [Supercell’s Fan Content Policy](https://supercell.com/en/fan-content-policy/).*
