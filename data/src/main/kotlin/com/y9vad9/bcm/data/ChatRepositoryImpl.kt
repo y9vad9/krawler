@@ -60,6 +60,7 @@ class ChatRepositoryImpl(
         )
         true
     } catch (e: Exception) {
+        e.printStackTrace()
         false
     }
 

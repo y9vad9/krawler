@@ -8,6 +8,7 @@ import com.y9vad9.bcm.domain.entity.value.CustomMessage
 data class ClubSettings(
     val admins: List<TelegramUserId>,
     val joinViaBotRequest: Boolean,
+    val joinWithoutRequirementsCheck: Boolean,
     val multipleAccountsEnabled: Boolean,
     val minWeeklyTrophies: Trophies,
     val minMonthlyTrophies: Trophies,

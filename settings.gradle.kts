@@ -26,6 +26,7 @@ include(
     ":domain",
     ":data",
     ":localization",
+    ":bot"
 )
 
 include(
