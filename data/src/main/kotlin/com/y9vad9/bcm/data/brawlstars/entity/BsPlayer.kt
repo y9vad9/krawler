@@ -7,6 +7,7 @@ import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerName
 import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerRole
 import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
 import com.y9vad9.bcm.domain.entity.brawlstars.value.Trophies
+import com.y9vad9.bcm.domain.entity.value.Count
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
 import kotlinx.serialization.SerialName
@@ -38,5 +39,9 @@ internal fun BsPlayer.toBrawlStarsPlayer(club: BrawlStarsClub?): BrawlStarsPlaye
         name = PlayerName.createUnsafe(name),
         club = club,
         trophies = Trophies.createUnsafe(trophies),
+        highestTrophies = Trophies.createUnsafe(highestTrophies),
+        threeVsThreeVictories = Count.createUnsafe(threeVsThreeVictories),
+        soloVictories = Count.createUnsafe(soloVictories),
+        duoVictories = Count.createUnsafe(duoVictories),
     )
 }

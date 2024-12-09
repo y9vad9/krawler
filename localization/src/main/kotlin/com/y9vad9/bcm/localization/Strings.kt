@@ -8,8 +8,6 @@ import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsPlayer
 import com.y9vad9.bcm.domain.entity.brawlstars.value.ClubTag
 
 interface Strings {
-    val appName: String
-
     fun guestStartMessage(
         includedClubs: List<BrawlStarsClub>,
     ): String
@@ -25,10 +23,9 @@ interface Strings {
     val gitHubSourcesMessage: String
 
     val letsLinkBsMessage: String
-    val wherePlayerTagTitle: String
     val playerAlreadyLinkedBySomeoneMessage: String
     val playerNotFoundMessage: String
-    val successfullyLinkedBsMessage: String
+    fun successfullyLinkedBsMessage(player: BrawlStarsPlayer): String
 
     val invalidTagFormatOrSizeMessage: String
 
@@ -37,7 +34,6 @@ interface Strings {
     val invalidChoiceMessage: String
 
     fun notInTheClubMessage(states: List<ClubJoinAbility>): String
-    val notInClubAndNoClubsAvailableToJoinMessage: String
 
     val applyForClubChoice: String
 
@@ -48,8 +44,6 @@ interface Strings {
 
     val youAreInMemberMenuMessage: String
     fun youAreRegisteredButNotInChatMessage(player: BrawlStarsPlayer): String
-
-    val bsPlayerAlreadyLinkedMessage: String
 
     val commonWantJoinChatStateSuccessMessage: String
 

@@ -5,6 +5,7 @@ import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.common.CommonPromptPlayerTagState.Purpose
 import com.y9vad9.bcm.bot.fsm.createLoggingMessage
 import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
+import com.y9vad9.bcm.domain.entity.ClubJoinAbility
 import com.y9vad9.bcm.domain.entity.anyAtLeastForRequest
 import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
 import com.y9vad9.bcm.domain.repository.SettingsRepository
@@ -48,7 +49,7 @@ class CommonWantJoinChatState private constructor(
                 } else {
                     bot.send(
                         chatId = context,
-                        text = strings.bsPlayerAlreadyLinkedMessage,
+                        text = strings.playerAlreadyLinkedBySomeoneMessage,
                         replyMarkup = ReplyKeyboardRemove()
                     )
                     // todo savedChoices
@@ -69,18 +70,12 @@ class CommonWantJoinChatState private constructor(
                 )
             }
             is AddMemberToChatUseCase.Result.NotInTheClub -> {
-                if (!result.clubs.anyAtLeastForRequest()) {
-                    bot.send(
-                        chatId = context,
-                        text = strings.notInClubAndNoClubsAvailableToJoinMessage
-                    )
-                    return@with GuestMainMenuState(context)
-                }
                 bot.send(
                     chatId = context,
                     text = strings.notInTheClubMessage(result.clubs),
                     replyMarkup = replyKeyboard {
-                        add(listOf(SimpleKeyboardButton(strings.applyForClubChoice)))
+                        if (result.clubs.any { ability -> ability is ClubJoinAbility.UponRequest })
+                            add(listOf(SimpleKeyboardButton(strings.applyForClubChoice)))
                         add(listOf(SimpleKeyboardButton(strings.goBackChoice)))
                     }
                 )
