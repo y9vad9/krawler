@@ -2,7 +2,9 @@ package com.y9vad9.bcm.domain.usecase
 
 import com.timemates.backend.time.TimeProvider
 import com.y9vad9.bcm.domain.entity.User
+import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsPlayer
 import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
+import com.y9vad9.bcm.domain.entity.getPlayerOrNull
 import com.y9vad9.bcm.domain.entity.telegram.value.TelegramUserId
 import com.y9vad9.bcm.domain.repository.BrawlStarsRepository
 import com.y9vad9.bcm.domain.repository.UserRepository
@@ -17,7 +19,7 @@ class LinkBrawlStarsPlayerUseCase(
             .getOrElse { exception -> return Result.Failure(exception) }
 
         if (user.bsPlayers?.any { player -> player.tag == tag } == true) {
-            return Result.Success(user)
+            return Result.Success(user.getPlayerOrNull(tag)!!)
         }
 
         val possiblyLinkedUser = users.getByTag(tag)
@@ -34,12 +36,13 @@ class LinkBrawlStarsPlayerUseCase(
 
         return Result.Success(
             users.link(tag, userId, time.provide())
-                .getOrElse { exception -> return Result.Failure(exception) }!! // safe: should be created at this point
+                .getOrElse { exception -> return Result.Failure(exception) }!!
+                .getPlayerOrNull(tag)!! // safe: should be created at this point
         )
     }
 
     sealed class Result {
-        data class Success(val user: User) : Result()
+        data class Success(val user: BrawlStarsPlayer) : Result()
         data object PlayerDoesNotExists : Result()
         data object AlreadyLinked : Result()
         data class Failure(val throwable: Throwable) : Result()

@@ -1,9 +1,11 @@
 package com.y9vad9.bcm.domain.entity
 
+import com.y9vad9.bcm.domain.entity.brawlstars.value.Trophies
+
 sealed interface ClubJoinAbility {
     val club: Club
 
-    data class NotEnoughTrophies(override val club: Club) : ClubJoinAbility
+    data class NotEnoughTrophies(override val club: Club, val playerTrophies: Trophies) : ClubJoinAbility
 
     /**
      * The system of clubs/club has no available seats at all.
