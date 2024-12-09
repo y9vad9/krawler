@@ -1,6 +1,9 @@
 # Brawl Stars Club Manager Bot
 BCM (**B**rawl Stars **C**lub **M**anager) is a Telegram bot designed to help manage Brawl Stars Clubs efficiently. It connects your club's activities with Telegram, providing tools to keep track of members, activity, and performance.
 
+> **Warning** <br>
+> In active development phase, currently unavailable to be used.
+
 ## Features
 
 ### Account Linking & Integration
@@ -21,8 +24,12 @@ BCM (**B**rawl Stars **C**lub **M**anager) is a Telegram bot designed to help ma
 ### Notifications
 - Receive updates about club activity, including member join requests, trophy changes, and inactivity alerts.
 
-> **Warning** <br>
-> In active development phase, not stable for use.
+## Localization
+Bot supports the following languages:
+- ☕️ English
+- 🇺🇦 Ukrainian
+- 🏳️ Russian
+
 
 ## Documentation
 The documentation is not available for now, I will provide one once I stabilize the bot functionality.
