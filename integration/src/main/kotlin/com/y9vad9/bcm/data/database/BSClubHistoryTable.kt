@@ -2,6 +2,7 @@ package com.y9vad9.bcm.data.database
 
 import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
 
@@ -37,7 +38,7 @@ class BSClubHistoryTable(
         clubTag: String,
         unixTime: Long,
     ): String? = newSuspendedTransaction(db = database) {
-        select { (CLUB_TAG eq clubTag) and (UNIX_TIME lessEq unixTime) }
+        selectAll().where { (CLUB_TAG eq clubTag) and (UNIX_TIME lessEq unixTime) }
             .orderBy(UNIX_TIME to SortOrder.DESC)
             .firstOrNull()
             ?.get(BS_CLUB_JSON)
@@ -47,7 +48,8 @@ class BSClubHistoryTable(
         clubTag: String,
         unixTime: Long,
     ): String? = newSuspendedTransaction(db = database) {
-        select { (CLUB_TAG eq clubTag) and (UNIX_TIME greaterEq unixTime) }
+        selectAll()
+            .where { (CLUB_TAG eq clubTag) and (UNIX_TIME greaterEq unixTime) }
             .orderBy(UNIX_TIME to SortOrder.ASC)
             .firstOrNull()
             ?.get(BS_CLUB_JSON)

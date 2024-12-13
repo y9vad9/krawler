@@ -1,15 +1,8 @@
 package com.y9vad9.bcm.data.database
 
-import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.ResultRow
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.insertIgnore
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.jetbrains.exposed.sql.update
 import kotlin.uuid.Uuid
 import kotlin.uuid.toJavaUuid
 import kotlin.uuid.toKotlinUuid
@@ -58,12 +51,12 @@ class UsersTable(
     }
 
     suspend fun get(tgId: Long): Entity? = newSuspendedTransaction(db = database) {
-        select { TELEGRAM_ID eq tgId }
+        selectAll().where { TELEGRAM_ID eq tgId }
             .firstOrNull()?.toEntity()
     }
 
     suspend fun get(uuid: Uuid): Entity? = newSuspendedTransaction(db = database) {
-        select { ID eq uuid.toJavaUuid() }
+        selectAll().where { ID eq uuid.toJavaUuid() }
             .firstOrNull()?.toEntity()
     }
 

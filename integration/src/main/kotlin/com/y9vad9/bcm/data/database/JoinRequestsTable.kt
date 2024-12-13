@@ -8,6 +8,7 @@ import com.y9vad9.bcm.core.user.entity.JoinRequest
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
 import kotlin.uuid.ExperimentalUuidApi
@@ -49,18 +50,22 @@ class JoinRequestsTable(private val database: Database) {
     }
 
     suspend fun get(id: Uuid): JoinRequest? = newSuspendedTransaction(db = database) {
-        select { ID eq id.toJavaUuid() }.firstOrNull()?.toJoinRequest()
+        selectAll().where { ID eq id.toJavaUuid() }.firstOrNull()?.toJoinRequest()
     }
 
     suspend fun count(status: Status): Long = newSuspendedTransaction(db = database) {
-        select { STATUS eq status }.count()
+        selectAll().where { STATUS eq status }.count()
     }
 
     suspend fun getList(
         status: Status,
         size: Int,
     ): List<JoinRequest> = newSuspendedTransaction(db = database) {
-        select { STATUS eq status }.limit(size, 0).map(ResultRow::toJoinRequest)
+        selectAll()
+            .where { STATUS eq status }
+            .limit(size)
+            .offset(0)
+            .map(ResultRow::toJoinRequest)
     }
 
     suspend fun updateStatus(id: Uuid, status: Status) = newSuspendedTransaction(db = database) {
@@ -69,16 +74,24 @@ class JoinRequestsTable(private val database: Database) {
         }
     }
 
-    suspend fun delete(id: Uuid) = newSuspendedTransaction(db = database) {
-        deleteWhere { ID eq id.toJavaUuid() }
+    suspend fun delete(uuid: Uuid) = newSuspendedTransaction(db = database) {
+        deleteWhere {
+            it.run {
+                ID eq uuid.toJavaUuid()
+            }
+        }
     }
 
     suspend fun deleteByTelegramId(tgId: Long) = newSuspendedTransaction(db = database) {
-        deleteWhere { TELEGRAM_ID eq id }
+        deleteWhere {
+            it.run {
+                TELEGRAM_ID eq tgId
+            }
+        }
     }
 
     suspend fun hasAnyFromTgId(id: Long) = newSuspendedTransaction(db = database) {
-        !select { TELEGRAM_ID eq id }.empty()
+        !selectAll().where { TELEGRAM_ID eq id }.empty()
     }
 
     enum class Status {

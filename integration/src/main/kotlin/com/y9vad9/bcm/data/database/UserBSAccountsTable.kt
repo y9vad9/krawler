@@ -1,13 +1,8 @@
 package com.y9vad9.bcm.data.database
 
 import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.entity.brawlstars.value.PlayerTag
-import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.deleteWhere
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
 import kotlin.uuid.Uuid
@@ -44,23 +39,29 @@ class UserBSAccountsTable(
     suspend fun getListOfPlayerTags(
         userId: Uuid,
     ): List<String> = newSuspendedTransaction(db = database) {
-        select { USER_ID eq userId.toJavaUuid() }.toList().map { it[PLAYER_TAG] }
+        selectAll().where { USER_ID eq userId.toJavaUuid() }.toList().map { it[PLAYER_TAG] }
     }
 
     suspend fun getPlayerSystemUuid(
         tag: String,
     ): Uuid? = newSuspendedTransaction(db = database) {
-        select { PLAYER_TAG eq tag }.firstOrNull()?.get(USER_ID)?.toKotlinUuid()
+        selectAll().where { PLAYER_TAG eq tag }.firstOrNull()?.get(USER_ID)?.toKotlinUuid()
     }
 
     suspend fun removeLinkageIfExists(playerTag: String): Unit = newSuspendedTransaction(db = database) {
-        deleteWhere { PLAYER_TAG eq playerTag }
+        deleteWhere {
+            it.run {
+                PLAYER_TAG eq playerTag
+            }
+        }
     }
 
     suspend fun remove(
         userId: Uuid,
         playerTag: String,
     ): Unit = newSuspendedTransaction(db = database) {
-        deleteWhere { (USER_ID eq userId.toJavaUuid()) and (PLAYER_TAG eq playerTag) }
+        deleteWhere {
+            it.run { (USER_ID eq userId.toJavaUuid()) and (PLAYER_TAG eq playerTag) }
+        }
     }
 }
