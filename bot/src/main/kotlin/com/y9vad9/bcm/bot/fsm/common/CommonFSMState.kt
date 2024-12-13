@@ -5,4 +5,4 @@ import dev.inmo.micro_utils.fsm.common.State
 import kotlinx.serialization.Serializable
 
 @Serializable
-sealed interface CommonFSMState<I : O, O : State, D : FSMState.Dependencies> : FSMState<I, O, D>
+sealed interface CommonFSMState<I : State, D : FSMState.Dependencies> : FSMState<I, D>

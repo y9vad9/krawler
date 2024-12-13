@@ -5,7 +5,7 @@ import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.common.CommonInitialState.Dependencies
 import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
 import com.y9vad9.bcm.bot.fsm.member.MemberMainMenuState
-import com.y9vad9.bcm.domain.usecase.CheckUserStatusUseCase
+import com.y9vad9.bcm.core.user.usecase.CheckUserStatusUseCase
 import dev.inmo.micro_utils.fsm.common.State
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
@@ -13,12 +13,12 @@ import dev.inmo.tgbotapi.types.IdChatIdentifier
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CommonInitialState(override val context: IdChatIdentifier) : CommonFSMState<CommonInitialState, State, Dependencies> {
+data class CommonInitialState(override val context: IdChatIdentifier) : CommonFSMState<CommonInitialState, Dependencies> {
 
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = this@CommonInitialState
+    ): FSMState<*, *>? = this@CommonInitialState
 
     /**
      * Handles the `/start` command in private messages.
@@ -38,10 +38,10 @@ data class CommonInitialState(override val context: IdChatIdentifier) : CommonFS
      *
      * This handler ensures that every user is directed to the correct flow to match their role in the system.
      */
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: CommonInitialState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         when (checkUserStatus.execute(context.asTelegramUserId())) {
             is CheckUserStatusUseCase.Result.Admin ->
                 TODO()

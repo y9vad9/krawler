@@ -10,11 +10,11 @@ import dev.inmo.tgbotapi.types.buttons.ReplyKeyboardRemove
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MemberMainMenuState(override val context: IdChatIdentifier) : MemberFSMState<MemberMainMenuState, State, MemberMainMenuState.Dependencies> {
+data class MemberMainMenuState(override val context: IdChatIdentifier) : MemberFSMState<MemberMainMenuState, MemberMainMenuState.Dependencies> {
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         bot.send(
             chatId = context,
             text = strings.youAreInMemberMenuMessage,
@@ -24,10 +24,10 @@ data class MemberMainMenuState(override val context: IdChatIdentifier) : MemberF
         this@MemberMainMenuState
     }
 
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: MemberMainMenuState,
-    ): State? {
+    ): FSMState<*, *>? {
         return this@MemberMainMenuState
     }
 

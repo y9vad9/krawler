@@ -5,13 +5,13 @@ plugins {
 
 dependencies {
     // -- Telegram Bots API --
-    implementation(libs.tgBotApi)
+    api(libs.tgBotApi)
 
     // -- KotlinX Libs --
     implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
 
     // -- Project --
-    implementation(projects.domain)
+    implementation(projects.core)
     implementation(projects.localization)
 }

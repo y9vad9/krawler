@@ -1,7 +1,7 @@
 package com.timemates.backend.time
 
 import com.y9vad9.bcm.foundation.validation.CreationFailure
-import com.y9vad9.bcm.foundation.validation.SafeConstructor
+import com.y9vad9.bcm.foundation.validation.ValueConstructor
 import com.y9vad9.bcm.foundation.validation.reflection.wrapperTypeName
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
@@ -58,7 +58,7 @@ public value class UnixTime private constructor(private val long: Long) {
 
     public operator fun compareTo(other: UnixTime): Int = long.compareTo(other.long)
 
-    public companion object : SafeConstructor<UnixTime, Long> {
+    public companion object : ValueConstructor<UnixTime, Long> {
         override val displayName: String by wrapperTypeName()
 
         public val ZERO: UnixTime = UnixTime(0)

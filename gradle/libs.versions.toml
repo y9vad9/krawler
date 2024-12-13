@@ -9,11 +9,13 @@ android-gradle-plugin = "7.3.1"
 compose-compiler = "1.5.14"
 android-compose-version = "1.5.4"
 compose-multiplatform = "1.6.11"
+clikt = "5.0.1"
 
 [libraries]
 # kotlinx libraries
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.require = "0.6.1" } 
 
 # Ktor libraries
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
@@ -66,6 +68,9 @@ kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.
 
 # Telegram
 tgBotApi = { module = "dev.inmo:tgbotapi", version.require = "21.0.1" }
+
+# CLI
+clikt-core = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 
 [plugins]
 # Build Conventions

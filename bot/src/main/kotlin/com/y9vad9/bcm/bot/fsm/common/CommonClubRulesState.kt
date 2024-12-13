@@ -1,13 +1,11 @@
 package com.y9vad9.bcm.bot.fsm.common
 
 import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.common.CommonChatRulesState
-import com.y9vad9.bcm.domain.entity.brawlstars.value.ClubTag
-import com.y9vad9.bcm.domain.entity.value.Link
-import com.y9vad9.bcm.domain.repository.SettingsRepository
+import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.bcm.core.common.entity.value.Link
+import com.y9vad9.bcm.core.system.repository.SettingsRepository
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
-import dev.inmo.micro_utils.fsm.common.State
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
@@ -24,16 +22,16 @@ class CommonClubRulesState private constructor(
     override val context: IdChatIdentifier,
     val clubTag: String,
     val inviteLink: String,
-) : CommonFSMState<CommonClubRulesState, State, CommonClubRulesState.Dependencies> {
+) : CommonFSMState<CommonClubRulesState, CommonClubRulesState.Dependencies> {
     constructor(context: IdChatIdentifier, clubTag: ClubTag, link: Link) : this(context, clubTag.toString(), link.value)
 
     @OptIn(ValidationDelicateApi::class)
     val clubTagWrapped by lazy { ClubTag.createUnsafe(clubTag) }
 
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         @OptIn(ValidationDelicateApi::class)
         val clubRules = settingsRepository.getSettings()
             .allowedClubs[clubTagWrapped]!!
@@ -51,15 +49,16 @@ class CommonClubRulesState private constructor(
     }
 
     @OptIn(ValidationDelicateApi::class)
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: CommonClubRulesState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         val reply = waitText().first().text
         when (reply) {
             strings.goBackChoice -> {
                 CommonInitialState(context)
             }
+
             strings.acceptRulesChoice -> {
                 bot.send(
                     chatId = context,
@@ -68,6 +67,7 @@ class CommonClubRulesState private constructor(
                 )
                 CommonChatRulesState(context, clubTagWrapped, Link.createUnsafe(inviteLink))
             }
+
             else -> {
                 bot.send(
                     chatId = context,

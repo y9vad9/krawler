@@ -1,13 +1,13 @@
 package com.y9vad9.bcm.localization
 
-import com.y9vad9.bcm.domain.entity.ClubJoinAbility
-import com.y9vad9.bcm.domain.entity.Settings
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsClub
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsPlayer
-import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
+import com.y9vad9.bcm.core.brawlstars.entity.club.Club
+import com.y9vad9.bcm.core.brawlstars.entity.player.Player
+import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.bcm.core.system.entity.Settings
+import com.y9vad9.bcm.core.user.entity.ClubJoinAbility
 
 data object UkrainianStrings : Strings {
-    override fun guestStartMessage(includedClubs: List<BrawlStarsClub>): String {
+    override fun guestStartMessage(includedClubs: List<Club>): String {
         return if (includedClubs.size == 1) {
             val club = includedClubs.first()
             val tagWithoutHashTag = club.tag.toString().replace("#", "")
@@ -37,18 +37,21 @@ data object UkrainianStrings : Strings {
                 when (val ability = states.first()) {
                     is ClubJoinAbility.NotAvailable -> "Наш клуб зараз не приймає нових учасників. Але ми повідомимо вас, як тільки у нас з'явиться вільне місце для вас!"
                     is ClubJoinAbility.NotEnoughTrophies -> {
-                        val amount = ability.club.bs.requiredTrophies.value - ability.playerTrophies.value
+                        val amount = ability.club.requiredTrophies.value - ability.playerTrophies.value
                         "Здається, у вас недостатньо трофеїв для приєднання до нашого клубу. Вам потрібно ще $amount трофеїв, щоб приєднатися." +
                             " Коли ви їх заробите, будь ласка, спробуйте знову!" +
                             "\n\n<a href=\"https://www.youtube.com/watch?v=1D7FF5kFyWw\">\uD83C\uDFB5</a>Не здавайтесь! Я чекаю на вас."
                     }
+
                     is ClubJoinAbility.OnlyInvite ->
                         "Наш клуб, на жаль, лише за запрошенням, що означає, що ви не можете приєднатися до нього зараз. " +
                             "Якщо щось зміниться, я повідомлю вас якнайшвидше."
+
                     is ClubJoinAbility.Open -> {
-                        val availableSeats = 30 - ability.club.bs.members.size
+                        val availableSeats = 30 - ability.club.members.size
                         "Наш клуб відкритий і має $availableSeats вільних місць, які чекають на ваше приєднання!"
                     }
+
                     is ClubJoinAbility.UponRequest -> {
                         "Якщо ви все правильно ввели і хочете приєднатися до нашого клубу, ви можете подати заявку безпосередньо через цього бота" +
                             ".\n\n Що ви думаєте?"
@@ -70,9 +73,9 @@ data object UkrainianStrings : Strings {
         if (trophiesUnmet.isNotEmpty()) {
             append("\t• <b>Недостатньо трофеїв</b>")
             trophiesUnmet.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                val amount = ability.club.bs.requiredTrophies.value - ability.playerTrophies.value
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                val amount = ability.club.requiredTrophies.value - ability.playerTrophies.value
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 append(" – потрібно ще $amount трофеїв, щоб приєднатися\n")
             }
             append("\tВи можете приєднатися, коли буде достатньо трофеїв.\n")
@@ -81,8 +84,8 @@ data object UkrainianStrings : Strings {
         if (openClubs.isNotEmpty()) {
             append("\t• <b>Відкриті клуби</b>")
             openClubs.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 append(" – ви можете приєднатися\n")
             }
         }
@@ -90,8 +93,8 @@ data object UkrainianStrings : Strings {
         if (notAvailable.isNotEmpty()) {
             append("\t• <b>Закриті клуби</b>")
             notAvailable.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВи не можете приєднатися до цих клубів зараз.\n")
@@ -100,8 +103,8 @@ data object UkrainianStrings : Strings {
         if (inviteOnly.isNotEmpty()) {
             append("\t• <b>Тільки за запрошенням</b>")
             inviteOnly.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВи не можете приєднатися до цих клубів без особистого запрошення.\n")
@@ -110,8 +113,8 @@ data object UkrainianStrings : Strings {
         if (uponRequest.isNotEmpty()) {
             append("\t• <b>Відкрито для заявок</b>")
             uponRequest.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВи можете приєднатися до клубів, відкритих для заявок, натиснувши кнопку нижче.\n")
@@ -137,11 +140,13 @@ data object UkrainianStrings : Strings {
         "Цей акаунт вже пов'язаний з іншим акаунтом Telegram. Ви впевнені, що це ваш акаунт?"
     override val playerNotFoundMessage: String =
         "Вказаний тег гравця неправильний: такого гравця не існує. Будь ласка, спробуйте ще раз."
-    override fun successfullyLinkedBsMessage(player: BrawlStarsPlayer): String {
+
+    override fun successfullyLinkedBsMessage(player: Player): String {
         return buildString {
             append("\uD83D\uDC4B Радий зустрічі, ${player.name}! Ваш акаунт Brawl Stars успішно прив'язано.")
         }
     }
+
     override val invalidTagFormatOrSizeMessage: String =
         "Тег повинен бути довжиною ${PlayerTag.REQUIRED_SIZE}, без '#'. Ви правильно його відформатували? \n\nБудь ласка, спробуйте знову."
     override val goBackChoice: String = "⬅\uFE0F Назад"
@@ -164,9 +169,10 @@ data object UkrainianStrings : Strings {
         return "<b>Основні правила чату</b>: \n$value"
     }
 
-    override val youAreInMemberMenuMessage: String = "Ви в меню учасника! Будь ласка, виберіть, що ви хочете зробити сьогодні:"
+    override val youAreInMemberMenuMessage: String =
+        "Ви в меню учасника! Будь ласка, виберіть, що ви хочете зробити сьогодні:"
 
-    override fun youAreRegisteredButNotInChatMessage(player: BrawlStarsPlayer): String {
+    override fun youAreRegisteredButNotInChatMessage(player: Player): String {
         return "\uD83E\uDD14 ${player.name}, здається, ви вже в системі, але не в чаті." +
             " Але не хвилюйтеся! Давайте перейдемо до правил, і після того, як ми все закінчимо, я надам вам посилання."
     }
@@ -179,9 +185,9 @@ data object UkrainianStrings : Strings {
     }
 
     override fun leftClub(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
-        clubsLeft: List<BrawlStarsClub>?,
+        player: Player,
+        club: Club,
+        clubsLeft: List<Club>?,
     ): String {
         val clubTagWithoutHashTag = club.tag.toString().replace("#", "")
         return buildString {
@@ -195,8 +201,8 @@ data object UkrainianStrings : Strings {
     }
 
     override fun acceptedToTheClubChat(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
+        player: Player,
+        club: Club,
     ): String {
         val playerTagWithoutHashTag = player.tag.toString().replace("#", "")
         return buildString {

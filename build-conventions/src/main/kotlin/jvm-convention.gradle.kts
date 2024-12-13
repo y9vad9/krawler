@@ -5,7 +5,11 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(19)
+
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_19)
+    }
 
     sourceSets {
         all {

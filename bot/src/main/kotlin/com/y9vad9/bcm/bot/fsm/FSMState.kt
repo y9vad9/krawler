@@ -9,11 +9,11 @@ import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
 import dev.inmo.tgbotapi.types.IdChatIdentifier
 
-interface FSMState<I : O, O : State, D : FSMState.Dependencies> : State {
+interface FSMState<I, D : FSMState.Dependencies> : State {
     abstract override val context: IdChatIdentifier
 
-    suspend fun BehaviourContext.before(previousState: FSMState<*, *, *>, dependencies: D): O?
-    suspend fun BehaviourContextWithFSM<in O>.process(dependencies: D, state: I): O?
+    suspend fun BehaviourContext.before(previousState: FSMState<*, *>, dependencies: D): FSMState<*, *>?
+    suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(dependencies: D, state: I): FSMState<*, *>?
 
     interface Dependencies {
         val bot: TelegramBot
@@ -22,7 +22,7 @@ interface FSMState<I : O, O : State, D : FSMState.Dependencies> : State {
     }
 }
 
-internal fun FSMState<*, *, *>.createLoggingMessage(
+internal fun FSMState<*, *>.createLoggingMessage(
     logger: KSLog,
     throwable: Throwable,
 ) {

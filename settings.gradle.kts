@@ -23,8 +23,8 @@ rootProject.name = "bcm"
 includeBuild("build-conventions")
 
 include(
-    ":domain",
-    ":data",
+    ":core",
+    ":integration",
     ":localization",
     ":bot"
 )

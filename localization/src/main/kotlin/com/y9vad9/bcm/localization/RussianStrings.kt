@@ -1,13 +1,13 @@
 package com.y9vad9.bcm.localization
 
-import com.y9vad9.bcm.domain.entity.ClubJoinAbility
-import com.y9vad9.bcm.domain.entity.Settings
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsClub
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsPlayer
-import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
+import com.y9vad9.bcm.core.brawlstars.entity.club.Club
+import com.y9vad9.bcm.core.brawlstars.entity.player.Player
+import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.bcm.core.system.entity.Settings
+import com.y9vad9.bcm.core.user.entity.ClubJoinAbility
 
 data object RussianStrings : Strings {
-    override fun guestStartMessage(includedClubs: List<BrawlStarsClub>): String {
+    override fun guestStartMessage(includedClubs: List<Club>): String {
         return if (includedClubs.size == 1) {
             val club = includedClubs.first()
             val tagWithoutHashTag = club.tag.toString().replace("#", "")
@@ -37,7 +37,7 @@ data object RussianStrings : Strings {
                 when (val ability = states.first()) {
                     is ClubJoinAbility.NotAvailable -> "Наш клуб в настоящее время не принимает новых участников. Но мы уведомим вас, как только появится свободное место!"
                     is ClubJoinAbility.NotEnoughTrophies -> {
-                        val amount = ability.club.bs.requiredTrophies.value - ability.playerTrophies.value
+                        val amount = ability.club.requiredTrophies.value - ability.playerTrophies.value
                         "Кажется, у вас недостаточно трофеев для вступления в наш клуб. Вам нужно ещё $amount трофеев. " +
                             "Как только вы их получите, попробуйте снова!" +
                             "\n\n<a href=\"https://www.youtube.com/watch?v=1D7FF5kFyWw\">\uD83C\uDFB5</a>Не сдавайтесь! Я жду вас."
@@ -48,7 +48,7 @@ data object RussianStrings : Strings {
                             "Если что-то изменится, я уведомлю вас как можно скорее."
 
                     is ClubJoinAbility.Open -> {
-                        val availableSeats = 30 - ability.club.bs.members.size
+                        val availableSeats = 30 - ability.club.members.size
                         "Наш клуб открыт и имеет $availableSeats свободных мест для вас!"
                     }
 
@@ -73,9 +73,9 @@ data object RussianStrings : Strings {
         if (trophiesUnmet.isNotEmpty()) {
             append("\t• <b>Недостаточно трофеев</b>")
             trophiesUnmet.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                val amount = ability.club.bs.requiredTrophies.value - ability.playerTrophies.value
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                val amount = ability.club.requiredTrophies.value - ability.playerTrophies.value
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 append(" – требуется ещё $amount трофеев\n")
             }
             append("\tВы можете вступить в эти клубы, когда наберёте достаточно трофеев.\n")
@@ -84,8 +84,8 @@ data object RussianStrings : Strings {
         if (openClubs.isNotEmpty()) {
             append("\t• <b>Открытые клубы</b>")
             openClubs.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 append(" – вы можете вступить\n")
             }
         }
@@ -93,8 +93,8 @@ data object RussianStrings : Strings {
         if (notAvailable.isNotEmpty()) {
             append("\t• <b>Полные клубы</b>")
             notAvailable.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВы не можете вступить в эти клубы сейчас.\n")
@@ -103,8 +103,8 @@ data object RussianStrings : Strings {
         if (inviteOnly.isNotEmpty()) {
             append("\t• <b>Только по приглашению</b>")
             inviteOnly.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВы не можете вступить в эти клубы без личного приглашения.\n")
@@ -113,8 +113,8 @@ data object RussianStrings : Strings {
         if (uponRequest.isNotEmpty()) {
             append("\t• <b>Открытые для заявок</b>")
             uponRequest.forEach { ability ->
-                val tagWithoutHashTag = ability.club.bs.tag.toString().replace("#", "")
-                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.bs.name.value}</a>")
+                val tagWithoutHashTag = ability.club.tag.toString().replace("#", "")
+                append("\t\t<a href=\"https://brawlify.com/stats/club/$tagWithoutHashTag\">${ability.club.name.value}</a>")
                 appendLine()
             }
             append("\tВы можете вступить в эти клубы, подав заявку через кнопку ниже.\n")
@@ -141,7 +141,7 @@ data object RussianStrings : Strings {
     override val playerNotFoundMessage: String =
         "Указанный игровой тег недействителен: такого игрока не существует. Пожалуйста, попробуйте снова."
 
-    override fun successfullyLinkedBsMessage(player: BrawlStarsPlayer): String {
+    override fun successfullyLinkedBsMessage(player: Player): String {
         return buildString {
             append("\uD83D\uDC4B Приятно познакомиться, ${player.name}! Ваш аккаунт Brawl Stars успешно привязан.")
         }
@@ -169,9 +169,10 @@ data object RussianStrings : Strings {
         return "<b>Основные правила чата</b>: \n$value"
     }
 
-    override val youAreInMemberMenuMessage: String = "Вы в меню участника! Пожалуйста, выберите, что хотите сделать сегодня:"
+    override val youAreInMemberMenuMessage: String =
+        "Вы в меню участника! Пожалуйста, выберите, что хотите сделать сегодня:"
 
-    override fun youAreRegisteredButNotInChatMessage(player: BrawlStarsPlayer): String {
+    override fun youAreRegisteredButNotInChatMessage(player: Player): String {
         return "\uD83E\uDD14 ${player.name}, похоже, вы уже в системе, но не в чате." +
             " Но не переживайте! Давайте перейдем к правилам, и как только все будет готово, я предоставлю вам ссылку."
     }
@@ -184,9 +185,9 @@ data object RussianStrings : Strings {
     }
 
     override fun leftClub(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
-        clubsLeft: List<BrawlStarsClub>?,
+        player: Player,
+        club: Club,
+        clubsLeft: List<Club>?,
     ): String {
         val clubTagWithoutHashTag = club.tag.toString().replace("#", "")
         return buildString {
@@ -200,8 +201,8 @@ data object RussianStrings : Strings {
     }
 
     override fun acceptedToTheClubChat(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
+        player: Player,
+        club: Club,
     ): String {
         val playerTagWithoutHashTag = player.tag.toString().replace("#", "")
         return buildString {

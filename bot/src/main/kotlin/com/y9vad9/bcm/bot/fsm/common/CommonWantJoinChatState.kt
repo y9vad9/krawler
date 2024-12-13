@@ -4,12 +4,10 @@ import com.y9vad9.bcm.bot.ext.asTelegramUserId
 import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.common.CommonPromptPlayerTagState.Purpose
 import com.y9vad9.bcm.bot.fsm.createLoggingMessage
-import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
-import com.y9vad9.bcm.domain.entity.ClubJoinAbility
-import com.y9vad9.bcm.domain.entity.anyAtLeastForRequest
-import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
-import com.y9vad9.bcm.domain.repository.SettingsRepository
-import com.y9vad9.bcm.domain.usecase.AddMemberToChatUseCase
+import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.bcm.core.system.repository.SettingsRepository
+import com.y9vad9.bcm.core.telegram.usecase.AddMemberToChatUseCase
+import com.y9vad9.bcm.core.user.entity.ClubJoinAbility
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
 import dev.inmo.micro_utils.fsm.common.State
@@ -28,13 +26,13 @@ import kotlinx.serialization.Serializable
 class CommonWantJoinChatState private constructor(
     override val context: IdChatIdentifier,
     val promptedTag: String,
-) : CommonFSMState<CommonWantJoinChatState, State, CommonWantJoinChatState.Dependencies> {
+) : CommonFSMState<CommonWantJoinChatState, CommonWantJoinChatState.Dependencies> {
     constructor(context: IdChatIdentifier, promptedTag: PlayerTag) : this(context, promptedTag.toString())
 
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         @OptIn(ValidationDelicateApi::class)
         val tag = PlayerTag.createUnsafe(promptedTag)
 
@@ -56,6 +54,7 @@ class CommonWantJoinChatState private constructor(
                     CommonPromptPlayerTagState(context, emptyList(), Purpose.JOIN_CHAT)
                 }
             }
+
             is AddMemberToChatUseCase.Result.Failure -> {
                 createLoggingMessage(logger, result.throwable)
                 bot.send(
@@ -69,6 +68,7 @@ class CommonWantJoinChatState private constructor(
                     purpose = Purpose.JOIN_CHAT,
                 )
             }
+
             is AddMemberToChatUseCase.Result.NotInTheClub -> {
                 bot.send(
                     chatId = context,
@@ -81,6 +81,7 @@ class CommonWantJoinChatState private constructor(
                 )
                 this@CommonWantJoinChatState
             }
+
             AddMemberToChatUseCase.Result.PlayerNotFound -> {
                 bot.send(
                     chatId = context,
@@ -94,6 +95,7 @@ class CommonWantJoinChatState private constructor(
                     purpose = Purpose.JOIN_CHAT,
                 )
             }
+
             is AddMemberToChatUseCase.Result.Success -> {
                 bot.send(
                     chatId = context,
@@ -105,10 +107,10 @@ class CommonWantJoinChatState private constructor(
         }
     }
 
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: CommonWantJoinChatState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         val reply = waitText().first().text
         return@with when (reply) {
             // todo savedChoices

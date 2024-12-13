@@ -7,27 +7,25 @@ plugins {
 }
 
 dependencies {
+    // -- Database --
     implementation(libs.exposed.core)
     implementation(libs.exposed.jdbc)
     implementation(libs.h2.database)
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.client.contentNegotiation)
-    implementation(libs.ktor.client.json)
-    implementation(libs.tgBotApi)
 
+    // -- CLI --
+    implementation(libs.clikt.core)
+
+    // -- Project --
+    implementation(projects.localization)
+    implementation(projects.integration)
+    implementation(projects.core)
+    implementation(projects.bot)
+
+    // -- KotlinX Libraries --
     implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
 }
 
-kotlin {
-    jvmToolchain(17)
-
-    compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
-    }
-}
-
 application {
-    mainClass.set("com.y9vad9.gamerslegion.MainKt")
+    mainClass.set("com.y9vad9.bcm.app.MainKt")
 }

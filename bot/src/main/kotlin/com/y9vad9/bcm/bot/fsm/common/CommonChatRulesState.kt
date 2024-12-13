@@ -2,9 +2,9 @@ package com.y9vad9.bcm.bot.fsm.common
 
 import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.member.MemberMainMenuState
-import com.y9vad9.bcm.domain.entity.brawlstars.value.ClubTag
-import com.y9vad9.bcm.domain.entity.value.Link
-import com.y9vad9.bcm.domain.repository.SettingsRepository
+import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.bcm.core.common.entity.value.Link
+import com.y9vad9.bcm.core.system.repository.SettingsRepository
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
 import dev.inmo.micro_utils.fsm.common.State
@@ -24,7 +24,7 @@ data class CommonChatRulesState private constructor(
     override val context: IdChatIdentifier,
     val clubTag: String,
     val inviteLink: String,
-) : CommonFSMState<CommonChatRulesState, State, CommonChatRulesState.Dependencies> {
+) : CommonFSMState<CommonChatRulesState, CommonChatRulesState.Dependencies> {
     constructor(
         context: IdChatIdentifier,
         clubTag: ClubTag,
@@ -35,9 +35,9 @@ data class CommonChatRulesState private constructor(
     val clubTagWrapped by lazy { ClubTag.createUnsafe(clubTag) }
 
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         @OptIn(ValidationDelicateApi::class)
         val chatRules = settingsRepository.getSettings()
             .allowedClubs[clubTagWrapped]!!
@@ -55,15 +55,16 @@ data class CommonChatRulesState private constructor(
         this@CommonChatRulesState
     }
 
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: CommonChatRulesState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         val reply = waitText().first().text
         when (reply) {
             strings.goBackChoice -> {
                 CommonInitialState(context)
             }
+
             strings.acceptRulesChoice -> {
                 bot.send(
                     chatId = context,
@@ -72,6 +73,7 @@ data class CommonChatRulesState private constructor(
                 )
                 MemberMainMenuState(context)
             }
+
             else -> {
                 bot.send(
                     chatId = context,

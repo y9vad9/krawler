@@ -2,10 +2,9 @@ package com.y9vad9.bcm.bot.fsm.guest
 
 import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.common.CommonPromptPlayerTagState
-import com.y9vad9.bcm.domain.repository.SettingsRepository
-import com.y9vad9.bcm.domain.usecase.CheckClubsAvailabilityUseCase
-import com.y9vad9.bcm.domain.usecase.GetAllowedClubsUseCase
-import dev.inmo.micro_utils.fsm.common.State
+import com.y9vad9.bcm.core.brawlstars.usecase.CheckClubsAvailabilityUseCase
+import com.y9vad9.bcm.core.system.repository.SettingsRepository
+import com.y9vad9.bcm.core.user.usecase.GetAllowedClubsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
@@ -20,12 +19,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GuestMainMenuState(
     override val context: IdChatIdentifier,
-) : GuestFSMState<GuestMainMenuState, State, GuestMainMenuState.Dependencies> {
+) : GuestFSMState<GuestMainMenuState, GuestMainMenuState.Dependencies> {
 
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         when (val result = getAllowedClubs.execute()) {
             is GetAllowedClubsUseCase.Result.Failure -> {
                 result.error.printStackTrace()
@@ -57,10 +56,10 @@ data class GuestMainMenuState(
         this@GuestMainMenuState
     }
 
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: GuestMainMenuState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         return when (waitText().first().text) {
             strings.herePlanToJoinChoice -> {
                 // todo saved choices

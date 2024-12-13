@@ -3,8 +3,8 @@ package com.y9vad9.bcm.bot.fsm.common
 import com.y9vad9.bcm.bot.ext.asTelegramUserId
 import com.y9vad9.bcm.bot.fsm.FSMState
 import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
-import com.y9vad9.bcm.domain.entity.brawlstars.value.PlayerTag
-import com.y9vad9.bcm.domain.usecase.LinkBrawlStarsPlayerUseCase
+import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.bcm.core.telegram.usecase.LinkBrawlStarsPlayerUseCase
 import dev.inmo.micro_utils.fsm.common.State
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
@@ -22,11 +22,11 @@ data class CommonPromptPlayerTagState(
     override val context: IdChatIdentifier,
     val savedChoices: List<String>,
     val purpose: Purpose
-) : CommonFSMState<CommonPromptPlayerTagState, State, CommonPromptPlayerTagState.Dependencies> {
+) : CommonFSMState<CommonPromptPlayerTagState, CommonPromptPlayerTagState.Dependencies> {
     override suspend fun BehaviourContext.before(
-        previousState: FSMState<*, *, *>,
+        previousState: FSMState<*, *>,
         dependencies: Dependencies,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         bot.send(
             chatId = context,
             text = strings.letsLinkBsMessage,
@@ -46,10 +46,10 @@ data class CommonPromptPlayerTagState(
         this@CommonPromptPlayerTagState
     }
 
-    override suspend fun BehaviourContextWithFSM<in State>.process(
+    override suspend fun BehaviourContextWithFSM<in FSMState<*, *>>.process(
         dependencies: Dependencies,
         state: CommonPromptPlayerTagState,
-    ): State? = with(dependencies) {
+    ): FSMState<*, *>? = with(dependencies) {
         val input = waitText().first().text
 
         if (input == strings.goBackChoice)
@@ -75,13 +75,13 @@ data class CommonPromptPlayerTagState(
                 return@with this@CommonPromptPlayerTagState
             }
             is LinkBrawlStarsPlayerUseCase.Result.Success -> {
-                bot.send(context, strings.successfullyLinkedBsMessage)
+                bot.send(context, strings.successfullyLinkedBsMessage(result.player))
                 getStateToGoForward()
             }
         }
     }
 
-    private fun getStateToGoForward(): FSMState<*, *, *> {
+    private fun getStateToGoForward(): FSMState<*, *> {
         return when (purpose) {
             Purpose.EXPLORE_CLUBS -> TODO()
             Purpose.JOIN_CHAT -> TODO()
@@ -90,7 +90,7 @@ data class CommonPromptPlayerTagState(
         }
     }
 
-    private fun getStateToGoBack(): FSMState<*, *, *> {
+    private fun getStateToGoBack(): FSMState<*, *> {
         return when (purpose) {
             Purpose.EXPLORE_CLUBS -> GuestMainMenuState(context)
             Purpose.JOIN_CHAT -> TODO()

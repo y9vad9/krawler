@@ -1,15 +1,13 @@
 package com.y9vad9.bcm.localization
 
-import com.y9vad9.bcm.domain.entity.ClubJoinAbility
-import com.y9vad9.bcm.domain.entity.ClubSettings
-import com.y9vad9.bcm.domain.entity.Settings
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsClub
-import com.y9vad9.bcm.domain.entity.brawlstars.BrawlStarsPlayer
-import com.y9vad9.bcm.domain.entity.brawlstars.value.ClubTag
+import com.y9vad9.bcm.core.brawlstars.entity.club.Club
+import com.y9vad9.bcm.core.brawlstars.entity.player.Player
+import com.y9vad9.bcm.core.system.entity.Settings
+import com.y9vad9.bcm.core.user.entity.ClubJoinAbility
 
 interface Strings {
     fun guestStartMessage(
-        includedClubs: List<BrawlStarsClub>,
+        includedClubs: List<Club>,
     ): String
 
     val viewGitHubRepositoryChoice: String
@@ -25,7 +23,7 @@ interface Strings {
     val letsLinkBsMessage: String
     val playerAlreadyLinkedBySomeoneMessage: String
     val playerNotFoundMessage: String
-    fun successfullyLinkedBsMessage(player: BrawlStarsPlayer): String
+    fun successfullyLinkedBsMessage(player: Player): String
 
     val invalidTagFormatOrSizeMessage: String
 
@@ -43,7 +41,7 @@ interface Strings {
     fun chatRules(value: String): String
 
     val youAreInMemberMenuMessage: String
-    fun youAreRegisteredButNotInChatMessage(player: BrawlStarsPlayer): String
+    fun youAreRegisteredButNotInChatMessage(player: Player): String
 
     val commonWantJoinChatStateSuccessMessage: String
 
@@ -58,17 +56,17 @@ interface Strings {
      * so it requires notification in the chat message.
      */
     fun leftClub(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
-        clubsLeft: List<BrawlStarsClub>?,
+        player: Player,
+        club: Club,
+        clubsLeft: List<Club>?,
     ): String
 
     /**
      * Message that signals that user came from bot's invite link to the chat.
      */
     fun acceptedToTheClubChat(
-        player: BrawlStarsPlayer,
-        club: BrawlStarsClub,
+        player: Player,
+        club: Club,
     ): String
 
     fun failureToMessage(throwable: Throwable): String
