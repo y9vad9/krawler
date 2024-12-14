@@ -8,13 +8,14 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import kotlin.uuid.Uuid
 import kotlin.uuid.toJavaUuid
 import kotlin.uuid.toKotlinUuid
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
 class UserBSAccountsTable(
     private val database: Database,
 ) {
     companion object : Table(name = "user_bs_accounts") {
-        val USER_ID = uuid("user_id").references(UsersTable.ID)
-        val PLAYER_TAG = varchar("player_tag", PlayerTag.REQUIRED_SIZE)
+        val USER_ID = uuid("user_id")
+        val PLAYER_TAG = varchar("player_tag", PlayerTag.REQUIRED_SIZE + 1)
         val CREATION_TIME = long("creation_time")
     }
 
@@ -61,7 +62,7 @@ class UserBSAccountsTable(
         playerTag: String,
     ): Unit = newSuspendedTransaction(db = database) {
         deleteWhere {
-            it.run { (USER_ID eq userId.toJavaUuid()) and (PLAYER_TAG eq playerTag) }
+            (USER_ID eq userId.toJavaUuid()) and (PLAYER_TAG eq playerTag)
         }
     }
 }

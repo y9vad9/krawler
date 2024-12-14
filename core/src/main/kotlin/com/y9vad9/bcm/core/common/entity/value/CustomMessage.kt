@@ -2,7 +2,9 @@ package com.y9vad9.bcm.core.common.entity.value
 
 import com.y9vad9.bcm.foundation.validation.CreationFailure
 import com.y9vad9.bcm.foundation.validation.ValueConstructor
+import kotlinx.serialization.Serializable
 
+@Serializable
 @JvmInline
 value class CustomMessage private constructor(val value: String) {
     companion object : ValueConstructor<CustomMessage, String> {

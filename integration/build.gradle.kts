@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     id(libs.plugins.conventions.jvm.get().pluginId)
     alias(libs.plugins.kotlinx.serialization)
@@ -30,4 +28,11 @@ dependencies {
 
     // -- Telegram Bot API --
     implementation(libs.tgBotApi)
+
+
+    // -- Test Only --
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.exposed.jdbc)
+    testImplementation(libs.h2.database)
+    testImplementation(libs.kotlinx.coroutines.test)
 }

@@ -7,6 +7,7 @@ import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
 import com.y9vad9.bcm.core.user.entity.JoinRequest
 import com.y9vad9.bcm.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.bcm.foundation.validation.createUnsafe
+import org.jetbrains.annotations.TestOnly
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
@@ -21,10 +22,10 @@ class JoinRequestsTable(private val database: Database) {
     companion object : Table(name = "join_requests") {
         val ID = uuid("id").uniqueIndex()
         val TELEGRAM_ID = long("telegram_id")
-        val PLAYER_TAG = varchar("player_tag", PlayerTag.REQUIRED_SIZE)
-        val CLUB_TAG = varchar("club_tag", ClubTag.REQUIRED_SIZE)
+        val PLAYER_TAG = varchar("player_tag", PlayerTag.REQUIRED_SIZE + 1)
+        val CLUB_TAG = varchar("club_tag", ClubTag.REQUIRED_SIZE + 1)
         val MESSAGE = varchar("message", CustomMessage.SIZE_RANGE.last)
-        val STATUS = enumeration<Status>("status")
+        val STATUS = enumeration<Status>("status").default(Status.UNDECIDED)
     }
 
     init {
@@ -92,6 +93,11 @@ class JoinRequestsTable(private val database: Database) {
 
     suspend fun hasAnyFromTgId(id: Long) = newSuspendedTransaction(db = database) {
         !selectAll().where { TELEGRAM_ID eq id }.empty()
+    }
+
+    @TestOnly
+    suspend fun clear(): Unit = newSuspendedTransaction(db = database) {
+        deleteAll()
     }
 
     enum class Status {

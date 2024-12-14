@@ -11,7 +11,7 @@ class BSClubHistoryTable(
 ) {
     companion object : Table() {
         val SAVE_ID = uuid("save_id").autoGenerate()
-        val CLUB_TAG = varchar("club_tag", ClubTag.REQUIRED_SIZE)
+        val CLUB_TAG = varchar("club_tag", ClubTag.REQUIRED_SIZE + 1)
         val BS_CLUB_JSON = text("bs_club_json")
         val UNIX_TIME = long("unix_time")
     }

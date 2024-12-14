@@ -4,7 +4,9 @@ import com.y9vad9.bcm.core.brawlstars.entity.event.value.Trophies
 import com.y9vad9.bcm.core.common.entity.value.CustomMessage
 import com.y9vad9.bcm.core.telegram.entity.value.TelegramGroupId
 import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class ClubSettings(
     val admins: List<TelegramUserId>,
     val joinViaBotRequest: Boolean,

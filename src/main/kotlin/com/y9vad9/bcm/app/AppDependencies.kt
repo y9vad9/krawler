@@ -56,7 +56,7 @@ class AppDependencies(
     override val settingsRepository: SettingsRepository = SettingsRepositoryImpl(configFile, json)
     override val logger: KSLog = KSLog("GlobalLogger")
     override val checkUserStatus: CheckUserStatusUseCase = CheckUserStatusUseCase(
-        usersRepository
+        usersRepository, settingsRepository,
     )
     override val linkBrawlStarsPlayer: LinkBrawlStarsPlayerUseCase = LinkBrawlStarsPlayerUseCase(
         usersRepository, brawlStarsRepository, timeProvider

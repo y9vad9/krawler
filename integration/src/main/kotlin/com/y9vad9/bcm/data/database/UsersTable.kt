@@ -1,5 +1,6 @@
 package com.y9vad9.bcm.data.database
 
+import org.jetbrains.annotations.TestOnly
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -66,6 +67,11 @@ class UsersTable(
         val displayName: String?,
         val creationTime: Long,
     )
+
+    @TestOnly
+    suspend fun clear(): Unit = newSuspendedTransaction(db = database) {
+        deleteAll()
+    }
 
 
     private fun ResultRow.toEntity(): Entity {
