@@ -1,7 +1,0 @@
-package com.y9vad9.bcm.foundation.validation.reflection
-
-import com.y9vad9.bcm.foundation.validation.ValueConstructor
-
-@Suppress("UnusedReceiverParameter")
-public inline fun <reified T> ValueConstructor<T, *>.wrapperTypeName(): Lazy<String> =
-    lazy { T::class.simpleName!! }

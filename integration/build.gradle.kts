@@ -11,6 +11,7 @@ dependencies {
     // -- Ktor Client (HTTP) --
     api(libs.ktor.client.core)
     api(libs.ktor.client.cio)
+    api(libs.ktor.client.logging)
     implementation(libs.ktor.client.contentNegotiation)
     implementation(libs.ktor.client.json)
 
@@ -25,10 +26,13 @@ dependencies {
     implementation(projects.foundation.validation)
     implementation(projects.foundation.time)
     implementation(projects.localization)
+    implementation(projects.bot)
 
     // -- Telegram Bot API --
     implementation(libs.tgBotApi)
 
+    // -- Logging --
+    api(libs.slf4j.simple)
 
     // -- Test Only --
     testImplementation(libs.kotlin.test)

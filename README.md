@@ -1,8 +1,8 @@
-# Brawl Stars Club Manager Bot
-BCM (**B**rawl Stars **C**lub **M**anager) is a Telegram bot designed to help manage Brawl Stars Clubs efficiently. It connects your club's activities with Telegram, providing tools to keep track of members, activity, and performance.
+# Starix
+<img src="https://github.com/user-attachments/assets/4ca759bd-a9e0-4da2-871c-93d80687f98d" alt="" height="150px" align="right" />
 
-> **Warning** <br>
-> In active development phase, currently unavailable to be used.
+Starix is a Telegram bot designed to help managing Brawl Stars Clubs efficiently. It connects your club's activities with a Telegram Chat Group, providing tools to keep track and provide insights of members, activity, and performance. It supports both single and multiple clubs within one system, offering seamless integration to improve club management and member engagement.
+
 
 ## Features
 

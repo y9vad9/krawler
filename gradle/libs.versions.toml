@@ -10,19 +10,21 @@ compose-compiler = "1.5.14"
 android-compose-version = "1.5.4"
 compose-multiplatform = "1.6.11"
 clikt = "5.0.1"
+mockk = "1.13.13"
+mockative = "3.0.1"
 
 [libraries]
 # kotlinx libraries
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.require = "0.6.1" } 
-
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.require = "0.6.1" }
 # Ktor libraries
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
 ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
@@ -36,6 +38,8 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 # Testing Libraries
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockative = { module = "io.mockative:mockative", version.ref = "mockative" }
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jupiter" }
 
@@ -73,6 +77,9 @@ tgBotApi = { module = "dev.inmo:tgbotapi", version.require = "21.0.1" }
 # CLI
 clikt-core = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 
+# Loging
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.require = "2.0.16" }
+
 [plugins]
 # Build Conventions
 conventions-multiplatform = { id = "multiplatform-convention", version.require = "SNAPSHOT" }
@@ -94,3 +101,4 @@ android-application = { id = "com.android.library", version.ref = "android-gradl
 
 # Other
 compose = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+mockative = { id = "io.mockative", version.ref = "mockative" }

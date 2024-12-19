@@ -1,6 +1,7 @@
 plugins {
     id(libs.plugins.conventions.jvm.get().pluginId)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.mockative)
 }
 
 dependencies {
@@ -12,4 +13,9 @@ dependencies {
     // -- Project --
     api(projects.foundation.validation)
     api(projects.foundation.time)
+
+    // -- Tests --
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.mockative)
 }
