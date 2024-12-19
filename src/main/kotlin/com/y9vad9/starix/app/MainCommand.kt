@@ -6,8 +6,8 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
-import com.y9vad9.bcm.bot.TelegramBot
-import com.y9vad9.bcm.core.system.entity.Settings
+import com.y9vad9.starix.bot.TelegramBot
+import com.y9vad9.starix.core.system.entity.Settings
 import dev.inmo.tgbotapi.extensions.api.bot.getMe
 import dev.inmo.tgbotapi.extensions.api.telegramBot
 import dev.inmo.tgbotapi.types.message.textsources.pre

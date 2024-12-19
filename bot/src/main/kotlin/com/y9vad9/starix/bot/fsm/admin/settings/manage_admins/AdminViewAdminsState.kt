@@ -1,9 +1,9 @@
 package com.y9vad9.starix.bot.fsm.admin.settings.manage_admins
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.system.repository.SettingsRepository
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

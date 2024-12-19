@@ -1,8 +1,8 @@
 package com.y9vad9.starix.bot.handler
 
-import com.y9vad9.bcm.bot.BotDependencies
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.common.CommonInitialState
+import com.y9vad9.starix.bot.BotDependencies
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.common.CommonInitialState
 import dev.inmo.tgbotapi.extensions.behaviour_builder.DefaultBehaviourContextWithFSM
 import dev.inmo.tgbotapi.extensions.behaviour_builder.triggers_handling.onCommand
 import kotlinx.coroutines.isActive

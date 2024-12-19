@@ -1,15 +1,15 @@
 package com.y9vad9.starix.bot.fsm.common
 
-import com.y9vad9.bcm.bot.ext.asTelegramUserId
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.common.CommonPromptPlayerTagState.Purpose
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
-import com.y9vad9.bcm.bot.fsm.member.MemberMainMenuState
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.system.entity.ClubJoinAbility
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.usecase.AddMemberToChatUseCase
+import com.y9vad9.starix.bot.ext.asTelegramUserId
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.common.CommonPromptPlayerTagState.Purpose
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.bot.fsm.member.MemberMainMenuState
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.system.entity.ClubJoinAbility
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.usecase.AddMemberToChatUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

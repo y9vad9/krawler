@@ -1,11 +1,11 @@
 package com.y9vad9.bcm.core.system.usecase.join_request
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.common.entity.value.CustomMessage
-import com.y9vad9.bcm.core.system.entity.JoinRequest
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.repository.JoinRequestRepository
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.common.entity.value.CustomMessage
+import com.y9vad9.starix.core.system.entity.JoinRequest
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.repository.JoinRequestRepository
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 

@@ -1,13 +1,13 @@
 package com.y9vad9.starix.bot.fsm.admin.settings.club_settings.player_linkage
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.admin.AdminMainMenuState
-import com.y9vad9.bcm.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
-import com.y9vad9.bcm.core.brawlstars.entity.club.ClubMember
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.usecase.GetPlayersInClubWithLinkageUseCase
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
+import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.usecase.GetPlayersInClubWithLinkageUseCase
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext

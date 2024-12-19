@@ -3,19 +3,19 @@
 
 package com.y9vad9.starix.bot
 
-import com.y9vad9.bcm.bot.ext.asTelegramUserId
-import com.y9vad9.bcm.bot.ext.launchRestartable
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.admin.*
-import com.y9vad9.bcm.bot.fsm.common.*
-import com.y9vad9.bcm.bot.fsm.guest.GuestExploreClubsState
-import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
-import com.y9vad9.bcm.bot.fsm.member.MemberMainMenuState
-import com.y9vad9.bcm.bot.handler.handleBotPm
-import com.y9vad9.bcm.core.system.usecase.CheckIsUserAllowedToJoinUseCase
-import com.y9vad9.bcm.core.system.usecase.GetLinkedPlayerInChatUseCase
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramGroupId
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.bot.ext.asTelegramUserId
+import com.y9vad9.starix.bot.ext.launchRestartable
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.*
+import com.y9vad9.starix.bot.fsm.common.*
+import com.y9vad9.starix.bot.fsm.guest.GuestExploreClubsState
+import com.y9vad9.starix.bot.fsm.guest.GuestMainMenuState
+import com.y9vad9.starix.bot.fsm.member.MemberMainMenuState
+import com.y9vad9.starix.bot.handler.handleBotPm
+import com.y9vad9.starix.core.system.usecase.CheckIsUserAllowedToJoinUseCase
+import com.y9vad9.starix.core.system.usecase.GetLinkedPlayerInChatUseCase
+import com.y9vad9.starix.core.telegram.entity.value.TelegramGroupId
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.starix.foundation.validation.createUnsafe
 import dev.inmo.tgbotapi.extensions.api.chat.invite_links.approve

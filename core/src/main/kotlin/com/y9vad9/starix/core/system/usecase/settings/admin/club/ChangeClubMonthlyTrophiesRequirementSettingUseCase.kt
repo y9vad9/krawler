@@ -2,13 +2,13 @@
 
 package com.y9vad9.starix.core.system.usecase.settings.admin.club
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.Trophies
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.isNegative
-import com.y9vad9.bcm.core.system.entity.isAdminIn
-import com.y9vad9.bcm.core.system.entity.isClubAllowed
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.event.value.Trophies
+import com.y9vad9.starix.core.brawlstars.entity.event.value.isNegative
+import com.y9vad9.starix.core.system.entity.isAdminIn
+import com.y9vad9.starix.core.system.entity.isClubAllowed
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 
 class ChangeClubMonthlyTrophiesRequirementSettingUseCase(
     private val settingsRepository: SettingsRepository,

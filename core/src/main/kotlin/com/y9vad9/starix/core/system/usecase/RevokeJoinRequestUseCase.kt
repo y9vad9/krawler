@@ -1,7 +1,7 @@
 package com.y9vad9.bcm.core.system.usecase.join_request
 
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.repository.JoinRequestRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.repository.JoinRequestRepository
 import kotlin.uuid.ExperimentalUuidApi
 
 class RevokeJoinRequestUseCase(

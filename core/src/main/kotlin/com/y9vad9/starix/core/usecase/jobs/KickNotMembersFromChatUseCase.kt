@@ -1,10 +1,10 @@
 //package com.y9vad9.bcm.core.usecase.jobs
 //
-//import com.y9vad9.bcm.core.entity.getBsMember
-//import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-//import com.y9vad9.bcm.core.telegram.repository.ChatRepository
-//import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsClubHistoryRepository
-//import com.y9vad9.bcm.core.system.repository.UserRepository
+//import com.y9vad9.starix.core.entity.getBsMember
+//import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+//import com.y9vad9.starix.core.telegram.repository.ChatRepository
+//import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsClubHistoryRepository
+//import com.y9vad9.starix.core.system.repository.UserRepository
 //
 //class KickNotMembersFromChatUseCase(
 //    private val chats: ChatRepository,

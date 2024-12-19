@@ -2,10 +2,10 @@
 
 package com.y9vad9.starix.data
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.system.entity.ClubSettings
-import com.y9vad9.bcm.core.system.entity.Settings
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.system.entity.ClubSettings
+import com.y9vad9.starix.core.system.entity.Settings
+import com.y9vad9.starix.core.system.repository.SettingsRepository
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import io.github.reactivecircus.cache4k.Cache
 import kotlinx.coroutines.Dispatchers

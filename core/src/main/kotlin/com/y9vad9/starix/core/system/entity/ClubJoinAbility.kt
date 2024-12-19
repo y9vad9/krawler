@@ -1,7 +1,7 @@
 package com.y9vad9.starix.core.system.entity
 
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.Trophies
+import com.y9vad9.starix.core.brawlstars.entity.event.value.Trophies
 
 sealed interface ClubJoinAbility {
     val club: _root_ide_package_.com.y9vad9.starix.core.brawlstars.entity.club.Club

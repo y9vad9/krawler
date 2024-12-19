@@ -2,9 +2,9 @@ package com.y9vad9.starix.core.telegram.repository
 
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.common.entity.value.Link
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramGroupId
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.common.entity.value.Link
+import com.y9vad9.starix.core.telegram.entity.value.TelegramGroupId
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 
 interface ChatRepository {
     suspend fun isMemberOfGroup(groupId: TelegramGroupId, userId: TelegramUserId): Boolean

@@ -1,13 +1,13 @@
 package com.y9vad9.starix.bot.fsm.common
 
-import com.y9vad9.bcm.bot.ext.asTelegramUserId
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.admin.AdminMainMenuState
-import com.y9vad9.bcm.bot.fsm.common.CommonInitialState.Dependencies
-import com.y9vad9.bcm.bot.fsm.guest.GuestMainMenuState
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
-import com.y9vad9.bcm.bot.fsm.member.MemberMainMenuState
-import com.y9vad9.bcm.core.system.usecase.CheckUserStatusUseCase
+import com.y9vad9.starix.bot.ext.asTelegramUserId
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
+import com.y9vad9.starix.bot.fsm.common.CommonInitialState.Dependencies
+import com.y9vad9.starix.bot.fsm.guest.GuestMainMenuState
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.bot.fsm.member.MemberMainMenuState
+import com.y9vad9.starix.core.system.usecase.CheckUserStatusUseCase
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
 import dev.inmo.tgbotapi.types.IdChatIdentifier

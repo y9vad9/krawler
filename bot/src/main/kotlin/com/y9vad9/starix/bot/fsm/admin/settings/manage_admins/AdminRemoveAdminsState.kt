@@ -1,13 +1,13 @@
 package com.y9vad9.starix.bot.fsm.admin.settings.manage_admins
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.admin.AdminMainMenuState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.system.usecase.settings.admin.club.admin.GetAdminsListUseCase
-import com.y9vad9.bcm.core.system.usecase.settings.admin.club.admin.RemoveAdminUseCase
+import com.y9vad9.starix.core.system.usecase.settings.admin.club.admin.GetAdminsListUseCase
+import com.y9vad9.starix.core.system.usecase.settings.admin.club.admin.RemoveAdminUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

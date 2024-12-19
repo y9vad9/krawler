@@ -2,12 +2,12 @@ package com.y9vad9.starix.localization
 
 import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.club.ClubMember
+import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.system.entity.ClubSettings
-import com.y9vad9.bcm.core.system.entity.Settings
-import com.y9vad9.bcm.core.system.entity.ClubJoinAbility
-import com.y9vad9.bcm.core.system.entity.value.LanguageCode
+import com.y9vad9.starix.core.system.entity.ClubSettings
+import com.y9vad9.starix.core.system.entity.Settings
+import com.y9vad9.starix.core.system.entity.ClubJoinAbility
+import com.y9vad9.starix.core.system.entity.value.LanguageCode
 import dev.inmo.tgbotapi.types.message.textsources.TextSource
 import java.util.Locale
 import kotlin.uuid.Uuid

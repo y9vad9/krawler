@@ -1,12 +1,12 @@
 package com.y9vad9.starix.core.brawlstars.entity.brawler
 
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.BrawlerId
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.BrawlerName
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.BrawlerRank
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.PowerLevel
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.BrawlerId
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.BrawlerName
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.BrawlerRank
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.PowerLevel
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.Trophies
-import com.y9vad9.bcm.core.brawlstars.entity.player.PlayerIcon
+import com.y9vad9.starix.core.brawlstars.entity.event.value.Trophies
+import com.y9vad9.starix.core.brawlstars.entity.player.PlayerIcon
 import kotlinx.serialization.Serializable
 
 

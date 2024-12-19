@@ -2,10 +2,10 @@ package com.y9vad9.starix.core.brawlstars.repository
 
 import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.club.ClubMember
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
 
 interface BrawlStarsRepository {
     /**

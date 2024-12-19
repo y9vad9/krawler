@@ -1,6 +1,6 @@
 package com.y9vad9.starix.data.test.database
 
-import com.y9vad9.bcm.data.database.BSClubHistoryTable
+import com.y9vad9.starix.data.database.BSClubHistoryTable
 import kotlinx.coroutines.test.runTest
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils

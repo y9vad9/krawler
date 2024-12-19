@@ -1,10 +1,10 @@
 package com.y9vad9.starix.core.system.usecase
 
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramGroupId
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramGroupId
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class GetLinkedPlayerInChatUseCase(
     private val userRepository: UserRepository,

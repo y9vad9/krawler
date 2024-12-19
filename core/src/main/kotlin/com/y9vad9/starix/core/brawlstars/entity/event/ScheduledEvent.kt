@@ -1,6 +1,6 @@
 package com.y9vad9.starix.core.brawlstars.entity.event
 
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.EventSlotId
+import com.y9vad9.starix.core.brawlstars.entity.event.value.EventSlotId
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 

@@ -1,9 +1,9 @@
 package com.y9vad9.starix.data
 
-import com.y9vad9.bcm.core.common.entity.value.Link
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramGroupId
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.telegram.repository.ChatRepository
+import com.y9vad9.starix.core.common.entity.value.Link
+import com.y9vad9.starix.core.telegram.entity.value.TelegramGroupId
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.telegram.repository.ChatRepository
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.starix.foundation.validation.createUnsafe
 import com.y9vad9.starix.localization.Strings

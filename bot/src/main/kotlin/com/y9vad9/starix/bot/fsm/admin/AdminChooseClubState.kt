@@ -1,10 +1,10 @@
 package com.y9vad9.starix.bot.fsm.admin
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.system.usecase.GetAllowedClubsUseCase
+import com.y9vad9.starix.core.system.usecase.GetAllowedClubsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

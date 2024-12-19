@@ -1,8 +1,8 @@
 package com.y9vad9.starix.core.system.usecase
 
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.system.entity.User
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.system.entity.User
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class GetUsersByTagUseCase(
     private val userRepository: UserRepository,

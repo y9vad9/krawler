@@ -1,6 +1,6 @@
 package com.y9vad9.starix.data.brawlstars.pagination
 
-import com.y9vad9.bcm.core.common.entity.value.Count
+import com.y9vad9.starix.core.common.entity.value.Count
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.Throws

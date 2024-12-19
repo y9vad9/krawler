@@ -1,8 +1,8 @@
 package com.y9vad9.starix.bot.fsm.components.language_picker
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.core.system.entity.value.LanguageCode
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.core.system.entity.value.LanguageCode
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

@@ -2,16 +2,16 @@ package com.y9vad9.starix.data
 
 import com.y9vad9.starix.foundation.time.TimeProvider
 import com.y9vad9.starix.foundation.time.UnixTime
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.core.telegram.entity.LinkedTelegramAccount
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.entity.User
-import com.y9vad9.bcm.core.system.entity.value.MemberDisplayName
-import com.y9vad9.bcm.core.system.repository.UserRepository
-import com.y9vad9.bcm.data.database.UserBSAccountsTable
-import com.y9vad9.bcm.data.database.UsersTable
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.core.telegram.entity.LinkedTelegramAccount
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.entity.User
+import com.y9vad9.starix.core.system.entity.value.MemberDisplayName
+import com.y9vad9.starix.core.system.repository.UserRepository
+import com.y9vad9.starix.data.database.UserBSAccountsTable
+import com.y9vad9.starix.data.database.UsersTable
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.starix.foundation.validation.createUnsafe
 import kotlin.uuid.Uuid

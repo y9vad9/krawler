@@ -1,8 +1,8 @@
 package com.y9vad9.starix.data
 
-import com.y9vad9.bcm.bot.provider.StringsProvider
-import com.y9vad9.bcm.bot.provider.TimeZoneProvider
-import com.y9vad9.bcm.data.database.UsersTable
+import com.y9vad9.starix.bot.provider.StringsProvider
+import com.y9vad9.starix.bot.provider.TimeZoneProvider
+import com.y9vad9.starix.data.database.UsersTable
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.tgbotapi.types.ChatIdentifier
 import dev.inmo.tgbotapi.types.IdChatIdentifier

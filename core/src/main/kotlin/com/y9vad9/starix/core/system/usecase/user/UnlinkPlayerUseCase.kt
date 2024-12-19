@@ -1,11 +1,11 @@
 package com.y9vad9.starix.core.system.usecase.user
 
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.system.entity.getPlayerOrNull
-import com.y9vad9.bcm.core.system.entity.isAdminIn
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.system.repository.UserRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.system.entity.getPlayerOrNull
+import com.y9vad9.starix.core.system.entity.isAdminIn
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.system.repository.UserRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 
 class UnlinkPlayerUseCase(
     private val userRepository: UserRepository,

@@ -1,12 +1,12 @@
 package com.y9vad9.starix.core.brawlstars.usecase.excused
 
 import com.y9vad9.starix.foundation.time.TimeProvider
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.core.system.entity.isAdminIn
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.core.system.entity.isAdminIn
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 
 class UnexcusePlayerUseCase(
     private val settingsRepository: SettingsRepository,

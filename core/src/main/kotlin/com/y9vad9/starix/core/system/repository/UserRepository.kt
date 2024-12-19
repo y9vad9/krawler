@@ -1,10 +1,10 @@
 package com.y9vad9.starix.core.system.repository
 
 import com.y9vad9.starix.foundation.time.UnixTime
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.system.entity.User
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.system.entity.User
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 
 /**
  * The repository that is responsible for retrieving information from both Brawl Stars,

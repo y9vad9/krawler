@@ -2,11 +2,11 @@ package com.y9vad9.starix.core.telegram.usecase
 
 import com.y9vad9.starix.foundation.time.TimeProvider
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.entity.getPlayerOrNull
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.entity.getPlayerOrNull
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class LinkBrawlStarsPlayerUseCase(
     private val users: UserRepository,

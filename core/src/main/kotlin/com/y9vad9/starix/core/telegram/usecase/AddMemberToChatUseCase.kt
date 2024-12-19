@@ -3,15 +3,15 @@ package com.y9vad9.starix.core.telegram.usecase
 import com.y9vad9.starix.foundation.time.TimeProvider
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.core.brawlstars.usecase.CheckClubsAvailabilityUseCase
-import com.y9vad9.bcm.core.common.entity.value.Link
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.telegram.repository.ChatRepository
-import com.y9vad9.bcm.core.system.entity.ClubJoinAbility
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.core.brawlstars.usecase.CheckClubsAvailabilityUseCase
+import com.y9vad9.starix.core.common.entity.value.Link
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.telegram.repository.ChatRepository
+import com.y9vad9.starix.core.system.entity.ClubJoinAbility
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class AddMemberToChatUseCase(
     private val users: UserRepository,

@@ -1,11 +1,11 @@
 package com.y9vad9.starix.bot.fsm.components.timezone_picker
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.common.CommonFSMState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.provider.TimeZoneProvider
-import com.y9vad9.bcm.bot.provider.getTimeZonesWithCountries
-import com.y9vad9.bcm.bot.provider.toOffsetString
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.common.CommonFSMState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.provider.TimeZoneProvider
+import com.y9vad9.starix.bot.provider.getTimeZonesWithCountries
+import com.y9vad9.starix.bot.provider.toOffsetString
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

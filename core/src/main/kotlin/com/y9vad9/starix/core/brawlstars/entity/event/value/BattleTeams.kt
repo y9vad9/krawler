@@ -1,6 +1,6 @@
 package com.y9vad9.starix.core.brawlstars.entity.event.value
 
-import com.y9vad9.bcm.core.brawlstars.entity.event.Battle
+import com.y9vad9.starix.core.brawlstars.entity.event.Battle
 import com.y9vad9.starix.foundation.validation.CreationFailure
 import com.y9vad9.starix.foundation.validation.ValueConstructor
 import kotlinx.serialization.Serializable

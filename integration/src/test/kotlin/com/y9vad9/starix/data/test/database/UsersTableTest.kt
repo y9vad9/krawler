@@ -1,6 +1,6 @@
 package com.y9vad9.starix.data.test.database
 
-import com.y9vad9.bcm.data.database.UsersTable
+import com.y9vad9.starix.data.database.UsersTable
 import kotlinx.coroutines.test.runTest
 import org.jetbrains.exposed.sql.Database
 import kotlin.random.Random

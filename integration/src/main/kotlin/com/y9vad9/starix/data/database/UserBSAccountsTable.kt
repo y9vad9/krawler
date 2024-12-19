@@ -1,6 +1,6 @@
 package com.y9vad9.starix.data.database
 
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction

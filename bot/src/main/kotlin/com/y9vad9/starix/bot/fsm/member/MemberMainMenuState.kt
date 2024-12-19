@@ -1,8 +1,8 @@
 package com.y9vad9.starix.bot.fsm.member
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.common.CommonInitialState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.common.CommonInitialState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM

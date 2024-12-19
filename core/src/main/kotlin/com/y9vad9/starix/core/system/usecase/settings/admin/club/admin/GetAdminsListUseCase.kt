@@ -1,9 +1,9 @@
 package com.y9vad9.starix.core.system.usecase.settings.admin.club.admin
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class GetAdminsListUseCase(
     private val settingsRepository: SettingsRepository,

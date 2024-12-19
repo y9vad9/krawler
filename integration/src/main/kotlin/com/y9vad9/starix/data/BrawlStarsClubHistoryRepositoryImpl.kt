@@ -2,9 +2,9 @@ package com.y9vad9.starix.data
 
 import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsClubHistoryRepository
-import com.y9vad9.bcm.data.database.BSClubHistoryTable
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsClubHistoryRepository
+import com.y9vad9.starix.data.database.BSClubHistoryTable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 

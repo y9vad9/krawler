@@ -1,10 +1,10 @@
 package com.y9vad9.starix.core.system.repository
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.common.entity.value.Count
-import com.y9vad9.bcm.core.common.entity.value.CustomMessage
-import com.y9vad9.bcm.core.system.entity.JoinRequest
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.common.entity.value.Count
+import com.y9vad9.starix.core.common.entity.value.CustomMessage
+import com.y9vad9.starix.core.system.entity.JoinRequest
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 

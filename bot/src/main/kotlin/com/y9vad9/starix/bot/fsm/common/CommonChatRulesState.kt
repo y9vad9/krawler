@@ -1,10 +1,10 @@
 package com.y9vad9.starix.bot.fsm.common
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.common.entity.value.Link
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.common.entity.value.Link
+import com.y9vad9.starix.core.system.repository.SettingsRepository
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext

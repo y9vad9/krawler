@@ -1,12 +1,12 @@
 package com.y9vad9.starix.data
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.common.entity.value.Count
-import com.y9vad9.bcm.core.common.entity.value.CustomMessage
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.entity.JoinRequest
-import com.y9vad9.bcm.core.system.repository.JoinRequestRepository
-import com.y9vad9.bcm.data.database.JoinRequestsTable
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.common.entity.value.Count
+import com.y9vad9.starix.core.common.entity.value.CustomMessage
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.entity.JoinRequest
+import com.y9vad9.starix.core.system.repository.JoinRequestRepository
+import com.y9vad9.starix.data.database.JoinRequestsTable
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.starix.foundation.validation.createUnsafe
 import kotlin.uuid.Uuid

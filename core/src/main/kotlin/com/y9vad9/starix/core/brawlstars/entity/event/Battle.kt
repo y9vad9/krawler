@@ -2,12 +2,12 @@
 
 package com.y9vad9.starix.core.brawlstars.entity.event
 
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.BrawlerId
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.BrawlerName
-import com.y9vad9.bcm.core.brawlstars.entity.brawler.value.PowerLevel
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.*
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerName
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.BrawlerId
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.BrawlerName
+import com.y9vad9.starix.core.brawlstars.entity.brawler.value.PowerLevel
+import com.y9vad9.starix.core.brawlstars.entity.event.value.*
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerName
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable

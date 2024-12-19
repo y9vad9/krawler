@@ -1,6 +1,6 @@
 package com.y9vad9.starix.bot.fsm
 
-import com.y9vad9.bcm.bot.provider.StringsProvider
+import com.y9vad9.starix.bot.provider.StringsProvider
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.kslog.common.KSLog
 import dev.inmo.kslog.common.LogLevel

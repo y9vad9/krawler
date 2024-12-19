@@ -4,12 +4,12 @@ package com.y9vad9.starix.data
 
 import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.data.brawlstars.BrawlStarsClient
-import com.y9vad9.bcm.data.database.ExcusedPlayersTable
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.data.brawlstars.BrawlStarsClient
+import com.y9vad9.starix.data.database.ExcusedPlayersTable
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import io.github.reactivecircus.cache4k.Cache
 import kotlin.time.Duration.Companion.minutes

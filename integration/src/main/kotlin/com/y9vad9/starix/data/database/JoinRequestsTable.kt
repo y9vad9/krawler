@@ -1,10 +1,10 @@
 package com.y9vad9.starix.data.database
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.common.entity.value.CustomMessage
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.entity.JoinRequest
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.common.entity.value.CustomMessage
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.entity.JoinRequest
 import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
 import com.y9vad9.starix.foundation.validation.createUnsafe
 import org.jetbrains.annotations.TestOnly

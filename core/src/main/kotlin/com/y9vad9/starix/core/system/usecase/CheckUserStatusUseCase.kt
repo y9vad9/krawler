@@ -1,9 +1,9 @@
 package com.y9vad9.starix.core.system.usecase
 
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.telegram.entity.value.TelegramUserId
-import com.y9vad9.bcm.core.system.entity.User
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
+import com.y9vad9.starix.core.system.entity.User
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class CheckUserStatusUseCase(
     private val users: UserRepository,

@@ -1,16 +1,16 @@
 package com.y9vad9.starix.bot.fsm.admin.settings.club_settings.grace_period
 
 import com.y9vad9.starix.foundation.time.UnixTime
-import com.y9vad9.bcm.bot.ext.asTelegramUserId
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
-import com.y9vad9.bcm.bot.fsm.common.CommonInitialState
-import com.y9vad9.bcm.bot.fsm.getCurrentStrings
-import com.y9vad9.bcm.bot.fsm.logAndProvideMessage
-import com.y9vad9.bcm.core.brawlstars.entity.club.ClubMember
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.usecase.excused.GetListOfExcusedPlayersUseCase
-import com.y9vad9.bcm.core.brawlstars.usecase.excused.UnexcusePlayerUseCase
+import com.y9vad9.starix.bot.ext.asTelegramUserId
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
+import com.y9vad9.starix.bot.fsm.common.CommonInitialState
+import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.usecase.excused.GetListOfExcusedPlayersUseCase
+import com.y9vad9.starix.core.brawlstars.usecase.excused.UnexcusePlayerUseCase
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext

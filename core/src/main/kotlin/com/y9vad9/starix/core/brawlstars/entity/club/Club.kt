@@ -1,10 +1,10 @@
 package com.y9vad9.starix.core.brawlstars.entity.club
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubName
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubType
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.RankingPosition
-import com.y9vad9.bcm.core.brawlstars.entity.event.value.Trophies
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubName
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubType
+import com.y9vad9.starix.core.brawlstars.entity.event.value.RankingPosition
+import com.y9vad9.starix.core.brawlstars.entity.event.value.Trophies
 import kotlinx.serialization.Serializable
 
 @Serializable

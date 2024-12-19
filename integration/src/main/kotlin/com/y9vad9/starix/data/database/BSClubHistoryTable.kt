@@ -1,6 +1,6 @@
 package com.y9vad9.starix.data.database
 
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction

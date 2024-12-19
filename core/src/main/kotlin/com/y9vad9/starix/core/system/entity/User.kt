@@ -3,9 +3,9 @@
 package com.y9vad9.starix.core.system.entity
 
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.system.entity.value.MemberDisplayName
-import com.y9vad9.bcm.core.telegram.entity.LinkedTelegramAccount
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.system.entity.value.MemberDisplayName
+import com.y9vad9.starix.core.telegram.entity.LinkedTelegramAccount
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 

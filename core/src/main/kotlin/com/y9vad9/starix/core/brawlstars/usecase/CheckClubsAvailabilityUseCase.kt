@@ -1,12 +1,12 @@
 package com.y9vad9.starix.core.brawlstars.usecase
 
 import com.y9vad9.starix.core.brawlstars.entity.club.hasFreeSeats
-import com.y9vad9.bcm.core.brawlstars.entity.club.value.ClubType
-import com.y9vad9.bcm.core.brawlstars.entity.player.value.PlayerTag
-import com.y9vad9.bcm.core.brawlstars.repository.BrawlStarsRepository
-import com.y9vad9.bcm.core.system.repository.SettingsRepository
-import com.y9vad9.bcm.core.system.entity.ClubJoinAbility
-import com.y9vad9.bcm.core.system.repository.UserRepository
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubType
+import com.y9vad9.starix.core.brawlstars.entity.player.value.PlayerTag
+import com.y9vad9.starix.core.brawlstars.repository.BrawlStarsRepository
+import com.y9vad9.starix.core.system.repository.SettingsRepository
+import com.y9vad9.starix.core.system.entity.ClubJoinAbility
+import com.y9vad9.starix.core.system.repository.UserRepository
 
 class CheckClubsAvailabilityUseCase(
     private val users: UserRepository,

@@ -1,7 +1,7 @@
 package com.y9vad9.starix.data
 
-import com.y9vad9.bcm.bot.fsm.FSMState
-import com.y9vad9.bcm.data.database.StatesTable
+import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.data.database.StatesTable
 import dev.inmo.micro_utils.fsm.common.managers.DefaultStatesManagerRepo
 import dev.inmo.tgbotapi.types.IdChatIdentifier
 import io.github.reactivecircus.cache4k.Cache
