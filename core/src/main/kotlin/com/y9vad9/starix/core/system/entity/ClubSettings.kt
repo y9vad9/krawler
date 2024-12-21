@@ -10,7 +10,7 @@ import com.y9vad9.starix.foundation.validation.createUnsafe
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ClubSettings @OptIn(ValidationDelicateApi::class) constructor(
+data class ClubSettings(
     val admins: List<TelegramUserId> = emptyList(),
     val joinViaBotRequest: Boolean = false,
     val joinWithoutRequirementsCheck: Boolean = false,
@@ -18,9 +18,15 @@ data class ClubSettings @OptIn(ValidationDelicateApi::class) constructor(
     val minMonthlyTrophies: Trophies = Trophies.ZERO,
     val adminCanIgnoreSettings: Boolean = false,
     val linkedTelegramChat: TelegramGroupId? = null,
-    val clubRules: CustomMessage = CustomMessage.createUnsafe(NOT_SPECIFIED_MESSAGE),
-    val chatRules: CustomMessage = CustomMessage.createUnsafe(NOT_SPECIFIED_MESSAGE),
+    val clubRules: LocalizableEntity<CustomMessage> = NOT_SPECIFIED_LOCALIZABLE,
+    val chatRules: LocalizableEntity<CustomMessage> = NOT_SPECIFIED_LOCALIZABLE,
+    val contactsInfo: LocalizableEntity<CustomMessage> = NOT_SPECIFIED_LOCALIZABLE,
+    /**
+     * Aside using language as a default fallback, it is also used for sending any
+     * bot's specific messages, for example, monthly feedback.
+     */
     val defaultLanguage: LanguageCode = LanguageCode.ENGLISH,
 )
 
-private const val NOT_SPECIFIED_MESSAGE = "Not Specified."
+@OptIn(ValidationDelicateApi::class)
+private val NOT_SPECIFIED_LOCALIZABLE = LocalizableEntity(LanguageCode.ENGLISH to CustomMessage.createUnsafe("Not specified."))

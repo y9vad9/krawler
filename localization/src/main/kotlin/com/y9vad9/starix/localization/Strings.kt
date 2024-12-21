@@ -1,15 +1,15 @@
 package com.y9vad9.starix.localization
 
-import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
+import com.y9vad9.starix.core.system.entity.ClubJoinAbility
 import com.y9vad9.starix.core.system.entity.ClubSettings
 import com.y9vad9.starix.core.system.entity.Settings
-import com.y9vad9.starix.core.system.entity.ClubJoinAbility
 import com.y9vad9.starix.core.system.entity.value.LanguageCode
+import com.y9vad9.starix.foundation.time.UnixTime
 import dev.inmo.tgbotapi.types.message.textsources.TextSource
-import java.util.Locale
+import java.util.*
 import kotlin.uuid.Uuid
 
 interface Strings {
@@ -18,7 +18,7 @@ interface Strings {
     val displayName: String
 
     interface Guest {
-        fun guestStartMessage(includedClubs: List<_root_ide_package_.com.y9vad9.starix.core.brawlstars.entity.club.Club>): List<TextSource>
+        fun guestStartMessage(includedClubs: List<Club>): List<TextSource>
 
         val viewGitHubRepositoryChoice: String
         val hereToLinkChoice: String
@@ -40,6 +40,8 @@ interface Strings {
 
     val guest: Guest
 
+    val successfullyChangedSettingMessage: String
+
     val letsLinkBsMessage: List<TextSource>
     val playerNotLinkedMessage: String
     val playerNotInTheClubMessage: String
@@ -48,7 +50,7 @@ interface Strings {
     val playerTagNotFoundMessage: String
     val allPlayersChoice: String
     val toGroupChoice: String
-    fun successfullyLinkedBsMessage(player: com.y9vad9.starix.core.brawlstars.entity.player.Player): List<TextSource>
+    fun successfullyLinkedBsMessage(player: Player): List<TextSource>
 
     val invalidTagFormatOrSizeMessage: String
 
@@ -60,16 +62,28 @@ interface Strings {
 
     val applyForClubChoice: String
 
+    val youAreInGeneralSettingMessage: String
+
     interface Member {
         val youAreInMemberMenuMessage: String
-        fun youAreRegisteredButNotInChatMessage(player: com.y9vad9.starix.core.brawlstars.entity.player.Player): List<TextSource>
+        fun youAreRegisteredButNotInChatMessage(player: Player): List<TextSource>
 
         val enableNotificationsMessage: List<TextSource>
+
+        val settings: Settings
+
+        interface Settings {
+            val changeLocaleChoice: String
+            val changeTimeZoneChoice: String
+        }
     }
 
     val member: Member
 
-    fun wantToJoinClubSuccessMessage(player: com.y9vad9.starix.core.brawlstars.entity.player.Player, club: _root_ide_package_.com.y9vad9.starix.core.brawlstars.entity.club.Club.View): List<TextSource>
+    fun wantToJoinClubSuccessMessage(
+        player: Player,
+        club: Club.View,
+    ): List<TextSource>
 
     val commonWantJoinChatStateSuccessMessage: String
 
@@ -78,10 +92,14 @@ interface Strings {
     val chat: Chat
 
     interface Chat {
-        fun leftClub(player: com.y9vad9.starix.core.brawlstars.entity.player.Player, club: _root_ide_package_.com.y9vad9.starix.core.brawlstars.entity.club.Club, clubsLeft: List<_root_ide_package_.com.y9vad9.starix.core.brawlstars.entity.club.Club>?): List<TextSource>
+        fun leftClub(
+            player: Player,
+            club: Club,
+            clubsLeft: List<Club>?,
+        ): List<TextSource>
 
-        fun acceptedToTheClubChat(player: com.y9vad9.starix.core.brawlstars.entity.player.Player): List<TextSource>
-        fun leftClubChatMessage(player: com.y9vad9.starix.core.brawlstars.entity.player.Player): List<TextSource>
+        fun acceptedToTheClubChat(player: Player): List<TextSource>
+        fun leftClubChatMessage(player: Player): List<TextSource>
     }
 
     val chooseClubMessage: String
@@ -93,7 +111,7 @@ interface Strings {
 
     val noMessageError: String
 
-    val viewSettingsOption: String
+    val generalSettingsOption: String
 
     val viewSettingsBeginMessage: List<TextSource>
 
@@ -133,9 +151,9 @@ interface Strings {
         interface Settings {
             val adminsListChoice: String
             fun adminWasAddedMessage(member: ClubMember): List<TextSource>
-            fun adminWasRemovedMessage(player: com.y9vad9.starix.core.brawlstars.entity.player.Player): List<TextSource>
+            fun adminWasRemovedMessage(player: Player): List<TextSource>
 
-            fun adminListWithChooseMessage(admins: List<com.y9vad9.starix.core.brawlstars.entity.player.Player>): List<TextSource>
+            fun adminListWithChooseMessage(admins: List<Player>): List<TextSource>
             val chooseNewAdminMessage: String
             val addAdminOption: String
             val removeAdminOption: String

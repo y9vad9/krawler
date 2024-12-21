@@ -3,9 +3,9 @@ package com.y9vad9.starix.bot.fsm.admin.settings.club_settings
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.admin.AdminChooseClubState
 import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
-import com.y9vad9.starix.bot.fsm.admin.settings.AdminViewSettingsState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.chat_rules.AdminViewChatRulesSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.club_rules.AdminViewClubRulesSettingState
+import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.grace_period.AdminGracePeriodPlayersListState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.join_request.AdminManageJoinRequestSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.player_linkage.AdminPlayersLinkageSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.trophies_requirement.AdminViewTrophiesRequirementSettingState
@@ -96,10 +96,8 @@ data class AdminViewClubSettingsState(
             strings.admin.settings.chatRulesChoice ->
                 AdminViewChatRulesSettingState(context, clubTag)
 
-            strings.admin.settings.gracePeriodChoice,
-            strings.admin.settings.trophieRequirementsChoice,
-                ->
-                AdminViewTrophiesRequirementSettingState(context, clubTag)
+            strings.admin.settings.gracePeriodChoice -> AdminGracePeriodPlayersListState(context, clubTag)
+            strings.admin.settings.trophieRequirementsChoice -> AdminViewTrophiesRequirementSettingState(context, clubTag)
 
             strings.admin.settings.playersLinkageChoice ->
                 AdminPlayersLinkageSettingState(context, clubTag)
@@ -108,7 +106,7 @@ data class AdminViewClubSettingsState(
             strings.admin.settings.adminsListChoice ->
                 AdminViewAdminsState(context, clubTag)
 
-            strings.goBackChoice -> AdminViewSettingsState(context)
+            strings.goBackChoice -> AdminMainMenuState(context)
             else -> {
                 bot.send(
                     chatId = context,

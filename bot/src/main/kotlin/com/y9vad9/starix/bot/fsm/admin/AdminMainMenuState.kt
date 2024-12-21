@@ -1,6 +1,8 @@
 package com.y9vad9.starix.bot.fsm.admin
 
 import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
+import com.y9vad9.starix.bot.fsm.common.CommonSettingsMenuState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
@@ -37,6 +39,10 @@ data class AdminMainMenuState(
                     simpleButton(strings.admin.showNonLinkedPlayersChoice)
                     simpleButton(strings.admin.sendMessageChoice)
                 }
+                row {
+                    simpleButton(strings.admin.clubSettingsOption)
+                    simpleButton(strings.generalSettingsOption)
+                }
             }
         )
         this@AdminMainMenuState
@@ -58,6 +64,16 @@ data class AdminMainMenuState(
                 callback = AdminChooseClubStateSendMessageCallback,
             )
 
+            strings.admin.clubSettingsOption -> AdminChooseClubState(
+                context = context,
+                callback = AdminChooseClubToClubSettingsCallback,
+            )
+
+            strings.generalSettingsOption -> CommonSettingsMenuState(
+                context = context,
+                callback = CommonSettingsToAdminMenuCallback,
+            )
+
             else -> {
                 bot.send(
                     chatId = context,
@@ -75,7 +91,10 @@ data class AdminMainMenuState(
             return AdminMainMenuState(context)
         }
 
-        override fun navigateForward(context: IdChatIdentifier, club: com.y9vad9.starix.core.brawlstars.entity.club.Club): FSMState<*> {
+        override fun navigateForward(
+            context: IdChatIdentifier,
+            club: Club,
+        ): FSMState<*> {
             return AdminNotLinkedPlayersState(context, club.tag)
         }
     }
@@ -87,7 +106,10 @@ data class AdminMainMenuState(
             return AdminMainMenuState(context)
         }
 
-        override fun navigateForward(context: IdChatIdentifier, club: com.y9vad9.starix.core.brawlstars.entity.club.Club): FSMState<*> {
+        override fun navigateForward(
+            context: IdChatIdentifier,
+            club: Club,
+        ): FSMState<*> {
             return AdminChoosePlayersState(
                 context = context,
                 chosenClub = club,
@@ -118,6 +140,26 @@ data class AdminMainMenuState(
                     sendToGroup = toGroup,
                 )
             }
+        }
+    }
+
+    @SerialName("CommonSettingsToAdminMenuCallback")
+    @Serializable
+    data object CommonSettingsToAdminMenuCallback : CommonSettingsMenuState.Callback {
+        override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+            return AdminMainMenuState(context)
+        }
+    }
+
+    @SerialName("AdminChooseClubToClubSettingsCallback")
+    @Serializable
+    data object AdminChooseClubToClubSettingsCallback : AdminChooseClubState.Callback {
+        override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+            return AdminMainMenuState(context)
+        }
+
+        override fun navigateForward(context: IdChatIdentifier, club: Club): FSMState<*> {
+            return AdminViewClubSettingsState(context, club.tag)
         }
     }
 }

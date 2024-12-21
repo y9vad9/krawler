@@ -1,6 +1,7 @@
 package com.y9vad9.starix.bot.fsm
 
 import com.y9vad9.starix.bot.provider.StringsProvider
+import com.y9vad9.starix.bot.provider.TimeZoneProvider
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.kslog.common.KSLog
 import dev.inmo.kslog.common.LogLevel
@@ -24,6 +25,7 @@ interface FSMState<D : FSMState.Dependencies> : State {
         val bot: TelegramBot
         val logger: KSLog
         val stringsProvider: StringsProvider
+        val timeZoneProvider: TimeZoneProvider
         val globalScope: CoroutineScope
     }
 }

@@ -12,6 +12,7 @@ import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
 import dev.inmo.tgbotapi.extensions.behaviour_builder.expectations.waitText
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.inlineKeyboard
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.replyKeyboard
+import dev.inmo.tgbotapi.extensions.utils.types.buttons.urlButton
 import dev.inmo.tgbotapi.types.IdChatIdentifier
 import dev.inmo.tgbotapi.types.buttons.SimpleKeyboardButton
 import dev.inmo.tgbotapi.types.buttons.inline.urlInlineButton
@@ -67,7 +68,9 @@ data class CommonChatRulesState(
                     chatId = context,
                     entities = strings.guest.joinClubChatMessage,
                     replyMarkup = inlineKeyboard {
-                        add(listOf(urlInlineButton(strings.joinChatButton, inviteLink.value)))
+                        row {
+                            urlButton(strings.joinChatButton, inviteLink.value)
+                        }
                     },
                 )
                 CommonInitialState(context)

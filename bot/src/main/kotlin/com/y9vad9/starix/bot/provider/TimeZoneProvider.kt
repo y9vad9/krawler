@@ -9,7 +9,7 @@ interface TimeZoneProvider {
     companion object;
 
     suspend fun getTimeZone(id: IdChatIdentifier): ZoneId
-    suspend fun setTimeZone(chatId: IdChatIdentifier, zoneId: ZoneId): Strings
+    suspend fun setTimeZone(chatId: IdChatIdentifier, zoneId: ZoneId)
 }
 
 

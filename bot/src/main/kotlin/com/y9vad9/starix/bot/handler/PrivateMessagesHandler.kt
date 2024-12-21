@@ -3,8 +3,16 @@ package com.y9vad9.starix.bot.handler
 import com.y9vad9.starix.bot.BotDependencies
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.common.CommonInitialState
+import com.y9vad9.starix.core.system.entity.value.LanguageCode
+import com.y9vad9.starix.foundation.validation.annotations.ValidationDelicateApi
+import com.y9vad9.starix.foundation.validation.createUnsafe
 import dev.inmo.tgbotapi.extensions.behaviour_builder.DefaultBehaviourContextWithFSM
 import dev.inmo.tgbotapi.extensions.behaviour_builder.triggers_handling.onCommand
+import dev.inmo.tgbotapi.extensions.utils.*
+import dev.inmo.tgbotapi.extensions.utils.extensions.raw.from
+import dev.inmo.tgbotapi.extensions.utils.extensions.raw.sender_chat
+import dev.inmo.tgbotapi.utils.PreviewFeature
+import dev.inmo.tgbotapi.utils.RiskFeature
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.yield
 import kotlin.reflect.KClass
@@ -14,21 +22,22 @@ suspend fun DefaultBehaviourContextWithFSM<FSMState<*>>.handleBotPm(
     states: List<KClass<FSMState<FSMState.Dependencies>>>,
 ) {
     onCommand("start") {
+        @OptIn(ValidationDelicateApi::class)
+        it.chat.commonUserOrNull()?.languageCode?.let { language ->
+            dependencies.stringsProvider.setStrings(
+                chatId = it.chat.id,
+                code = LanguageCode.createUnsafe(language),
+            )
+        }
         startChain(CommonInitialState(it.chat.id))
     }
 
     states.forEach { kClass ->
         addStrict(kClass) { state ->
-            println("initial: $state")
-            @Suppress("UNCHECKED_CAST")
-            state
 
-            println("process")
             var currentState = with(state) {
                 process(dependencies)
             }
-
-            println("processed $currentState")
 
             if (currentState == state)
                 return@addStrict currentState
@@ -39,17 +48,14 @@ suspend fun DefaultBehaviourContextWithFSM<FSMState<*>>.handleBotPm(
                 @Suppress("UNCHECKED_CAST")
                 currentState as FSMState<FSMState.Dependencies>
                 val beforeResult = with(currentState) {
-                    println("beforeResult scope $currentState")
                     before(previousState, dependencies)
-                }.also { println("processed $it") }
+                }
 
                 if (beforeResult != currentState) {
-                    println("continue")
                     previousState = currentState
                     currentState = beforeResult
                     continue
                 } else {
-                    println("break $beforeResult")
                     return@addStrict beforeResult
                 }
             }

@@ -9,7 +9,9 @@ import com.y9vad9.starix.bot.fsm.components.calendar.DatePickerComponentState
 import com.y9vad9.starix.bot.fsm.components.calendar.YearPickerComponentState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.bot.fsm.logAndProvideMessage
+import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
+import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.usecase.excused.ExcusePlayerUseCase
 import com.y9vad9.starix.core.brawlstars.usecase.excused.GetListOfExcusedPlayersUseCase
 import com.y9vad9.starix.foundation.time.UnixTime
@@ -33,7 +35,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AdminAddGracePeriodPlayerState(
     override val context: IdChatIdentifier,
-    val club: com.y9vad9.starix.core.brawlstars.entity.club.Club,
+    val club: Club,
     val chosenPlayers: List<ClubMember>,
     val untilTime: Long? = null,
 ) : FSMState<AdminAddGracePeriodPlayerState.Dependencies> {
@@ -44,6 +46,13 @@ data class AdminAddGracePeriodPlayerState(
         dependencies: Dependencies,
     ): FSMState<*> = with(dependencies) {
         val strings = getCurrentStrings(context)
+
+        if (chosenPlayers.isEmpty()) {
+            return@with AdminChoosePlayersState(
+                context = context,
+                chosenClub = club,
+            )
+        }
 
         if (untilTime != null) {
             @OptIn(ValidationDelicateApi::class)
@@ -156,17 +165,18 @@ data class AdminAddGracePeriodPlayerState(
 
     @SerialName("AdminAddGracePeriodPlayerState.DatePickerComponentStateCallback")
     @Serializable
-    data class DatePickerComponentStateCallback(
-        val selectedClub: com.y9vad9.starix.core.brawlstars.entity.club.Club,
+    private data class DatePickerComponentStateCallback(
+        val selectedClub: Club,
         val selectedPlayers: List<ClubMember>,
     ) : DatePickerComponentState.Callback {
         override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
             return AdminChoosePlayersState(
                 context = context,
                 chosenList = selectedPlayers,
+                chosenClub = selectedClub,
                 shouldRenotify = true,
                 showToGroup = false,
-                callback =,
+                callback = AdminChoosePlayersStateCallback(selectedClub),
             )
         }
 
@@ -175,6 +185,57 @@ data class AdminAddGracePeriodPlayerState(
             dateTime: UnixTime,
         ): FSMState<*> {
             return AdminGracePeriodPlayersListState(context, selectedClub.tag)
+        }
+
+        @SerialName("AdminAddGracePeriodPlayerState.DatePickerComponentStateCallback.AdminChoosePlayersStateCallback")
+        @Serializable
+        private data class AdminChoosePlayersStateCallback(
+            val club: Club,
+        ) : AdminChoosePlayersState.Callback {
+            override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+                return AdminAddGracePeriodPlayerState(context, club, emptyList(), null)
+            }
+
+            override fun navigateForward(
+                context: IdChatIdentifier,
+                selected: List<ClubMember>,
+                clubTag: ClubTag,
+                toGroup: Boolean,
+            ): FSMState<*> {
+                return YearPickerComponentState(
+                    context = context,
+                    canPickPast = false,
+                    shouldPickTime = true,
+                    callback = DatePickerComponentStateCallback(club, selected)
+                )
+            }
+
+            @SerialName("AdminAddGracePeriodPlayerState.DatePickerComponentStateCallback.AdminChoosePlayersStateCallback.DatePickerComponentStateCallback")
+            @Serializable
+            private data class DatePickerComponentStateCallback(
+                val club: Club,
+                val selected: List<ClubMember>,
+            ) : DatePickerComponentState.Callback {
+                override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+                    return AdminChoosePlayersState(
+                        context = context,
+                        chosenClub = club,
+                        chosenList = emptyList(),
+                        shouldRenotify = false,
+                        showToGroup = false,
+                        callback = AdminChoosePlayersStateCallback(club),
+                    )
+                }
+
+                override fun navigateForward(context: IdChatIdentifier, dateTime: UnixTime): FSMState<*> {
+                    return AdminAddGracePeriodPlayerState(
+                        context = context,
+                        club = club,
+                        chosenPlayers = selected,
+                        untilTime = dateTime.inMilliseconds,
+                    )
+                }
+            }
         }
     }
 

@@ -3,6 +3,7 @@ package com.y9vad9.starix.bot.fsm.admin.settings.club_settings.grace_period
 import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.bot.ext.asTelegramUserId
 import com.y9vad9.starix.bot.fsm.FSMState
+import com.y9vad9.starix.bot.fsm.admin.AdminChoosePlayersState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
 import com.y9vad9.starix.bot.fsm.common.CommonInitialState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
@@ -56,7 +57,7 @@ data class AdminGracePeriodPlayersListState(
 
         when (waitText().first().text) {
             strings.goBackChoice -> AdminViewClubSettingsState(context, clubTag)
-            strings.addChoice -> AdminAddGracePeriodPlayerState()
+            strings.addChoice -> TODO()
             strings.removeChoice -> TODO()
             else -> {
                 bot.send(chatId = context, text = strings.invalidChoiceMessage)
@@ -93,4 +94,6 @@ data class AdminGracePeriodPlayersListState(
     interface Dependencies : FSMState.Dependencies {
         val getListOfExcusedPlayers: GetListOfExcusedPlayersUseCase
     }
+
+    data object
 }

@@ -3,9 +3,12 @@ package com.y9vad9.starix.bot.fsm.guest
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.common.CommonInitialState
 import com.y9vad9.starix.bot.fsm.common.CommonPromptPlayerTagState
+import com.y9vad9.starix.bot.fsm.common.CommonSettingsMenuState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.bot.fsm.logAndProvideMessage
 import com.y9vad9.starix.core.brawlstars.usecase.CheckClubsAvailabilityUseCase
+import com.y9vad9.starix.core.system.entity.en
+import com.y9vad9.starix.core.system.entity.ru
 import com.y9vad9.starix.core.system.repository.SettingsRepository
 import com.y9vad9.starix.core.system.usecase.GetAllowedClubsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
@@ -53,6 +56,7 @@ data class GuestMainMenuState(
                             simpleButton(strings.guest.viewContactPersonsChoice)
                             simpleButton(strings.guest.viewGitHubRepositoryChoice)
                         }
+                        row(simpleReplyButton(strings.generalSettingsOption))
                     },
                     linkPreviewOptions = LinkPreviewOptions.Disabled,
                 )
@@ -89,11 +93,17 @@ data class GuestMainMenuState(
             strings.guest.viewContactPersonsChoice -> {
                 bot.send(
                     chatId = context,
-                    entities = strings.guest.guestShowContactsMessage(settingsRepository.getSettings()),
+                    // todo
+                    text = settingsRepository.getSettings().contactsInfo?.en?.value ?: "Not specified.",
                     linkPreviewOptions = LinkPreviewOptions.Disabled,
                 )
                 this@GuestMainMenuState
             }
+
+            strings.generalSettingsOption -> CommonSettingsMenuState(
+                context = context,
+                callback = SettingsToGuestMenuCallback,
+            )
 
             "/start" -> CommonInitialState(context)
 
@@ -117,5 +127,13 @@ data class GuestMainMenuState(
         val getAllowedClubs: GetAllowedClubsUseCase
         val checkClubsAvailability: CheckClubsAvailabilityUseCase
         val settingsRepository: SettingsRepository
+    }
+
+    @SerialName("SettingsToGuestMenuCallback")
+    @Serializable
+    private data object SettingsToGuestMenuCallback : CommonSettingsMenuState.Callback {
+        override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+            return GuestMainMenuState(context)
+        }
     }
 }

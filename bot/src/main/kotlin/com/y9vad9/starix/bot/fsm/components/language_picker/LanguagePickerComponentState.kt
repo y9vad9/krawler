@@ -10,6 +10,7 @@ import dev.inmo.tgbotapi.extensions.behaviour_builder.expectations.waitText
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.replyKeyboard
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.simpleButton
 import dev.inmo.tgbotapi.types.IdChatIdentifier
+import dev.inmo.tgbotapi.types.buttons.reply.simpleReplyButton
 import dev.inmo.tgbotapi.utils.row
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.SerialName
@@ -20,6 +21,7 @@ import kotlinx.serialization.Serializable
 data class LanguagePickerComponentState(
     override val context: IdChatIdentifier,
     val callback: Callback,
+    val canGoBack: Boolean = true,
 ) : FSMState<FSMState.Dependencies> {
 
     override suspend fun BehaviourContext.before(
@@ -38,6 +40,9 @@ data class LanguagePickerComponentState(
                             simpleButton(strings.displayName)
                         }
                     }
+                }
+                if (canGoBack) {
+                    row(simpleReplyButton(strings.goBackChoice))
                 }
             }
         )
