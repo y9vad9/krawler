@@ -2,9 +2,12 @@ package com.y9vad9.starix.bot.fsm.admin
 
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
+import com.y9vad9.starix.bot.fsm.logAndProvideMessage
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.brawlstars.usecase.GetClubUseCase
+import com.y9vad9.starix.localization.Strings
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
@@ -22,7 +25,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AdminChoosePlayersState(
     override val context: IdChatIdentifier,
-    val chosenClub: com.y9vad9.starix.core.brawlstars.entity.club.Club,
+    val chosenClub: ClubTag,
     val chosenList: List<ClubMember> = listOf(),
     val shouldRenotify: Boolean = false,
     val showToGroup: Boolean,
@@ -34,6 +37,8 @@ data class AdminChoosePlayersState(
         dependencies: Dependencies,
     ): FSMState<*> = with(dependencies) {
         val strings = getCurrentStrings(context)
+
+        val chosenClub = getClub(strings) { return@with it }
 
         if (chosenList.isEmpty() || shouldRenotify) {
             // TODO: provide list of chosen players in message
@@ -65,6 +70,8 @@ data class AdminChoosePlayersState(
         dependencies: Dependencies,
     ): FSMState<*> = with(dependencies) {
         val strings = getCurrentStrings(context)
+
+        val chosenClub = getClub(strings) { return@with it }
 
         val reply = waitText().first().text
         if (reply == strings.goBackChoice)
@@ -101,7 +108,26 @@ data class AdminChoosePlayersState(
         this@AdminChoosePlayersState
     }
 
-    interface Dependencies : FSMState.Dependencies
+    private suspend inline fun Dependencies.getClub(strings: Strings, or: (FSMState<*>) -> Nothing): Club {
+        return when (val result = getClubUseCase.execute(chosenClub)) {
+            GetClubUseCase.Result.ClubNotFound -> {
+                bot.send(
+                    chatId = context,
+                    text = strings.clubNotFoundMessage,
+                )
+                or(AdminMainMenuState(context))
+            }
+            is GetClubUseCase.Result.Failure -> {
+                logAndProvideMessage(this@AdminChoosePlayersState, result.throwable)
+                or(AdminMainMenuState(context))
+            }
+            is GetClubUseCase.Result.Success -> result.club
+        }
+    }
+
+    interface Dependencies : FSMState.Dependencies {
+        val getClubUseCase: GetClubUseCase
+    }
 
     interface Callback {
         fun navigateBack(context: IdChatIdentifier): FSMState<*>

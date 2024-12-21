@@ -92,6 +92,6 @@ data class AdminChooseClubState(
 
     interface Callback {
         fun navigateBack(context: IdChatIdentifier): FSMState<*>
-        fun navigateForward(context: IdChatIdentifier, club: com.y9vad9.starix.core.brawlstars.entity.club.Club): FSMState<*>
+        fun navigateForward(context: IdChatIdentifier, club: Club): FSMState<*>
     }
 }

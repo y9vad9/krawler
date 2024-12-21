@@ -28,6 +28,12 @@ data class LanguagePickerComponentState(
         previousState: FSMState<*>,
         dependencies: FSMState.Dependencies,
     ): FSMState<*> = with(dependencies) {
+        val availableStrings = stringsProvider.getAvailableStrings()
+
+        if (availableStrings.size == 1) {
+            return@with callback.navigateForward(context, availableStrings.first().languageCode)
+        }
+
         val strings = stringsProvider.getStrings(context)
 
         bot.send(

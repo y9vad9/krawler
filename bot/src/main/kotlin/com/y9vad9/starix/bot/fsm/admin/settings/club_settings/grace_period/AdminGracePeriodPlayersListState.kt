@@ -1,6 +1,5 @@
 package com.y9vad9.starix.bot.fsm.admin.settings.club_settings.grace_period
 
-import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.bot.ext.asTelegramUserId
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.admin.AdminChoosePlayersState
@@ -11,6 +10,7 @@ import com.y9vad9.starix.bot.fsm.logAndProvideMessage
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.brawlstars.usecase.excused.GetListOfExcusedPlayersUseCase
+import com.y9vad9.starix.foundation.time.UnixTime
 import com.y9vad9.starix.localization.Strings
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
@@ -57,8 +57,15 @@ data class AdminGracePeriodPlayersListState(
 
         when (waitText().first().text) {
             strings.goBackChoice -> AdminViewClubSettingsState(context, clubTag)
-            strings.addChoice -> TODO()
-            strings.removeChoice -> TODO()
+            strings.addChoice -> AdminAddGracePeriodPlayerState(
+                context = context,
+                clubTag = clubTag,
+                chosenPlayers = emptyList(),
+                untilTime = null,
+            )
+            strings.removeChoice -> AdminRemoveGracePeriodPlayersState(
+                context = context, clubTag = clubTag,
+            )
             else -> {
                 bot.send(chatId = context, text = strings.invalidChoiceMessage)
                 this@AdminGracePeriodPlayersListState
@@ -94,6 +101,4 @@ data class AdminGracePeriodPlayersListState(
     interface Dependencies : FSMState.Dependencies {
         val getListOfExcusedPlayers: GetListOfExcusedPlayersUseCase
     }
-
-    data object
 }

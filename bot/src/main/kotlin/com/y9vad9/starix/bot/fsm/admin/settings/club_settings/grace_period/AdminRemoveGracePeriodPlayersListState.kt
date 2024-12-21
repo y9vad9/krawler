@@ -25,12 +25,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@SerialName("AdminRemoveGracePeriodPlayersListState")
+@SerialName("AdminRemoveGracePeriodPlayersState")
 @Serializable
-data class AdminRemoveGracePeriodPlayersListState(
+data class AdminRemoveGracePeriodPlayersState(
     override val context: IdChatIdentifier,
     val clubTag: ClubTag,
-) : FSMState<AdminRemoveGracePeriodPlayersListState.Dependencies> {
+) : FSMState<AdminRemoveGracePeriodPlayersState.Dependencies> {
     override suspend fun BehaviourContext.before(
         previousState: FSMState<*>,
         dependencies: Dependencies,
@@ -52,7 +52,7 @@ data class AdminRemoveGracePeriodPlayersListState(
                     row(simpleReplyButton(strings.goBackChoice))
                 },
             )
-            this@AdminRemoveGracePeriodPlayersListState
+            this@AdminRemoveGracePeriodPlayersState
         }
     }
 
@@ -71,13 +71,13 @@ data class AdminRemoveGracePeriodPlayersListState(
                                 chatId = context,
                                 text = strings.invalidChoiceMessage,
                             )
-                            return@getPlayersInClubWithGracePeriod this@AdminRemoveGracePeriodPlayersListState
+                            return@getPlayersInClubWithGracePeriod this@AdminRemoveGracePeriodPlayersState
                         }
 
                     when (val result = unexcusePlayer.execute(context.asTelegramUserId(), player.tag, clubTag)) {
                         is UnexcusePlayerUseCase.Result.Failure -> {
                             logAndProvideMessage(
-                                state = this@AdminRemoveGracePeriodPlayersListState,
+                                state = this@AdminRemoveGracePeriodPlayersState,
                                 throwable = result.error,
                             )
                             AdminViewClubSettingsState(context, clubTag)
@@ -115,7 +115,7 @@ data class AdminRemoveGracePeriodPlayersListState(
             }
 
             is GetListOfExcusedPlayersUseCase.Result.Failure -> {
-                logAndProvideMessage(this@AdminRemoveGracePeriodPlayersListState, result.error)
+                logAndProvideMessage(this@AdminRemoveGracePeriodPlayersState, result.error)
                 AdminViewClubSettingsState(context, clubTag)
             }
 

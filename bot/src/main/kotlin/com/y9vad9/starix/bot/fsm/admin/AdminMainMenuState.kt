@@ -112,7 +112,7 @@ data class AdminMainMenuState(
         ): FSMState<*> {
             return AdminChoosePlayersState(
                 context = context,
-                chosenClub = club,
+                chosenClub = club.tag,
                 chosenList = emptyList(),
                 shouldRenotify = false,
                 showToGroup = true,

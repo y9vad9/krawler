@@ -13,6 +13,8 @@ import dev.inmo.tgbotapi.extensions.behaviour_builder.expectations.waitText
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.replyKeyboard
 import dev.inmo.tgbotapi.types.IdChatIdentifier
 import dev.inmo.tgbotapi.types.buttons.SimpleKeyboardButton
+import dev.inmo.tgbotapi.types.buttons.reply.simpleReplyButton
+import dev.inmo.tgbotapi.utils.row
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -43,8 +45,8 @@ data class AdminViewClubRulesSettingState(
                     chatId = context,
                     entities = strings.admin.settings.clubRulesMessage(result.clubSettings),
                     replyMarkup = replyKeyboard {
-                        add(listOf(SimpleKeyboardButton(strings.changeOption)))
-                        add(listOf(SimpleKeyboardButton(strings.goBackChoice)))
+                        row(simpleReplyButton(strings.changeOption))
+                        row(simpleReplyButton(strings.goBackChoice))
                     },
                 )
                 this@AdminViewClubRulesSettingState
