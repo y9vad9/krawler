@@ -67,6 +67,9 @@ data class AdminViewChatRulesSettingState(
         return when (waitText().first().text) {
             strings.changeOption -> AdminChangeChatRulesSettingState(context, clubTag, languageCode)
             strings.goBackChoice -> AdminViewClubSettingsState(context, clubTag)
+            strings.admin.settings.forAnotherLocaleChoice ->
+                LanguagePickerComponentState(context, callback = LanguagePickerToChatRulesCallback(clubTag))
+
             else -> {
                 bot.send(
                     chatId = context,
