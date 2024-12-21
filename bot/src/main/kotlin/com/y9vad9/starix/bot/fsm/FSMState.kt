@@ -34,6 +34,7 @@ internal suspend fun FSMState.Dependencies.logAndProvideMessage(
     state: FSMState<*>,
     throwable: Throwable,
 ) {
+    val strings = getCurrentStrings(state.context)
     val uuid = Uuid.random()
     logger.performLog(
         level = LogLevel.ERROR,
