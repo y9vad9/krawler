@@ -8,6 +8,7 @@ import com.y9vad9.starix.bot.fsm.common.CommonInitialState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.common.entity.value.CustomMessage
+import com.y9vad9.starix.core.system.entity.value.LanguageCode
 import com.y9vad9.starix.core.system.usecase.settings.admin.club.ChangeChatRulesSettingUseCase
 import com.y9vad9.starix.core.system.usecase.settings.admin.club.GetClubSettingsUseCase
 import com.y9vad9.starix.localization.Strings
@@ -28,6 +29,7 @@ import kotlinx.serialization.Serializable
 data class AdminChangeChatRulesSettingState(
     override val context: IdChatIdentifier,
     val clubTag: ClubTag,
+    val languageCode: LanguageCode? = null,
 ) : FSMState<AdminChangeChatRulesSettingState.Dependencies> {
     override suspend fun BehaviourContext.before(
         previousState: FSMState<*>,
@@ -83,7 +85,7 @@ data class AdminChangeChatRulesSettingState(
         message: CustomMessage,
         strings: Strings,
     ): FSMState<*> {
-        return when (changeChatRulesSetting.execute(context.asTelegramUserId(), clubTag, message)) {
+        return when (changeChatRulesSetting.execute(context.asTelegramUserId(), clubTag, message, languageCode)) {
             ChangeChatRulesSettingUseCase.Result.ClubNotFound -> {
                 bot.send(
                     chatId = context,

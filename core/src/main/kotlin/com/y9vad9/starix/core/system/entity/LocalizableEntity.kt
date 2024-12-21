@@ -13,6 +13,10 @@ value class LocalizableEntity<T>(private val map: Map<LanguageCode, T>) {
     fun asMap(): Map<LanguageCode, T> = map.toMap()
 }
 
+fun <T> LocalizableEntity<T>.getOrReturnAnyFirst(languageCode: LanguageCode): T? {
+    return get(languageCode) ?: asMap().values.firstOrNull()
+}
+
 val <T> LocalizableEntity<T>.ru: T? get() = get(LanguageCode.RUSSIAN)
 val <T> LocalizableEntity<T>.en: T? get() = get(LanguageCode.ENGLISH)
 val <T> LocalizableEntity<T>.uk: T? get() = get(LanguageCode.UKRAINIAN)

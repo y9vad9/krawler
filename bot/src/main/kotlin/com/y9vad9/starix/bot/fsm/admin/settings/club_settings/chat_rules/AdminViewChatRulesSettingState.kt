@@ -3,8 +3,10 @@ package com.y9vad9.starix.bot.fsm.admin.settings.club_settings.chat_rules
 import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.AdminViewClubSettingsState
+import com.y9vad9.starix.bot.fsm.components.language_picker.LanguagePickerComponentState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
+import com.y9vad9.starix.core.system.entity.value.LanguageCode
 import com.y9vad9.starix.core.system.usecase.settings.admin.club.GetClubSettingsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
@@ -12,7 +14,8 @@ import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContextWithFSM
 import dev.inmo.tgbotapi.extensions.behaviour_builder.expectations.waitText
 import dev.inmo.tgbotapi.extensions.utils.types.buttons.replyKeyboard
 import dev.inmo.tgbotapi.types.IdChatIdentifier
-import dev.inmo.tgbotapi.types.buttons.SimpleKeyboardButton
+import dev.inmo.tgbotapi.types.buttons.reply.simpleReplyButton
+import dev.inmo.tgbotapi.utils.row
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -22,6 +25,7 @@ import kotlinx.serialization.Serializable
 data class AdminViewChatRulesSettingState(
     override val context: IdChatIdentifier,
     val clubTag: ClubTag,
+    val languageCode: LanguageCode? = null,
 ) : FSMState<AdminViewChatRulesSettingState.Dependencies> {
     override suspend fun BehaviourContext.before(
         previousState: FSMState<*>,
@@ -39,12 +43,15 @@ data class AdminViewChatRulesSettingState(
             }
 
             is GetClubSettingsUseCase.Result.Success -> {
+                val locale = languageCode ?: result.clubSettings.defaultLanguage
+
                 bot.send(
                     chatId = context,
-                    entities = strings.admin.settings.chatRulesMessage(result.clubSettings),
+                    entities = strings.admin.settings.chatRulesMessage(result.clubSettings.chatRules[locale], locale),
                     replyMarkup = replyKeyboard {
-                        add(listOf(SimpleKeyboardButton(strings.changeOption)))
-                        add(listOf(SimpleKeyboardButton(strings.goBackChoice)))
+                        row(simpleReplyButton(strings.changeOption))
+                        row(simpleReplyButton(strings.admin.settings.forAnotherLocaleChoice))
+                        row(simpleReplyButton(strings.goBackChoice))
                     },
                 )
                 this@AdminViewChatRulesSettingState
@@ -58,7 +65,7 @@ data class AdminViewChatRulesSettingState(
         val strings = getCurrentStrings(context)
 
         return when (waitText().first().text) {
-            strings.changeOption -> AdminChangeChatRulesSettingState(context, clubTag)
+            strings.changeOption -> AdminChangeChatRulesSettingState(context, clubTag, languageCode)
             strings.goBackChoice -> AdminViewClubSettingsState(context, clubTag)
             else -> {
                 bot.send(
@@ -72,5 +79,19 @@ data class AdminViewChatRulesSettingState(
 
     interface Dependencies : FSMState.Dependencies {
         val getClubSettings: GetClubSettingsUseCase
+    }
+
+    @SerialName("LanguagePickerToChatRulesCallback")
+    @Serializable
+    private data class LanguagePickerToChatRulesCallback(
+        val clubTag: ClubTag,
+    ) : LanguagePickerComponentState.Callback {
+        override fun navigateBack(context: IdChatIdentifier): FSMState<*> {
+            return AdminViewChatRulesSettingState(context, clubTag)
+        }
+
+        override fun navigateForward(context: IdChatIdentifier, code: LanguageCode): FSMState<*> {
+            return AdminViewChatRulesSettingState(context, clubTag, code)
+        }
     }
 }

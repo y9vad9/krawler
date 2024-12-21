@@ -9,7 +9,7 @@ import com.y9vad9.starix.bot.fsm.getCurrentStrings
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.common.entity.value.CustomMessage
 import com.y9vad9.starix.core.system.entity.value.LanguageCode
-import com.y9vad9.starix.core.system.usecase.settings.admin.club.ChangeClubRulesSettingUseCase
+import com.y9vad9.starix.core.system.usecase.settings.admin.club.ChangeClubContactsInfoSettingUseCase
 import com.y9vad9.starix.core.system.usecase.settings.admin.club.GetClubSettingsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
 import dev.inmo.tgbotapi.extensions.behaviour_builder.BehaviourContext
@@ -26,11 +26,11 @@ import kotlinx.serialization.Serializable
 
 @SerialName("AdminChangeClubRulesSettingState")
 @Serializable
-data class AdminChangeClubRulesSettingState(
+data class AdminChangeContactInfoSettingState(
     override val context: IdChatIdentifier,
     val clubTag: ClubTag,
     val languageCode: LanguageCode? = null,
-) : FSMState<AdminChangeClubRulesSettingState.Dependencies> {
+) : FSMState<AdminChangeContactInfoSettingState.Dependencies> {
     override suspend fun BehaviourContext.before(
         previousState: FSMState<*>,
         dependencies: Dependencies,
@@ -54,7 +54,7 @@ data class AdminChangeClubRulesSettingState(
                         row(simpleReplyButton(strings.goBackChoice))
                     },
                 )
-                this@AdminChangeClubRulesSettingState
+                this@AdminChangeContactInfoSettingState
             }
         }
     }
@@ -73,21 +73,21 @@ data class AdminChangeClubRulesSettingState(
                             chatId = context,
                             text = strings.constructor.customMessageFailure,
                         )
-                        return@with this@AdminChangeClubRulesSettingState
+                        return@with this@AdminChangeContactInfoSettingState
                     }
 
-                setClubRules(message)
+                setContactsInfo(message)
             }
         }
     }
 
-    private suspend fun Dependencies.setClubRules(
+    private suspend fun Dependencies.setContactsInfo(
         message: CustomMessage,
     ): FSMState<*> {
         val strings = getCurrentStrings(context)
 
-        return when (changeChatRulesSetting.execute(context.asTelegramUserId(), clubTag, message, languageCode)) {
-            ChangeClubRulesSettingUseCase.Result.ClubNotFound -> {
+        return when (changeClubContactsInfoSetting.execute(context.asTelegramUserId(), clubTag, message, languageCode)) {
+            ChangeClubContactsInfoSettingUseCase.Result.ClubNotFound -> {
                 bot.send(
                     chatId = context,
                     text = strings.clubNotFoundMessage,
@@ -95,7 +95,7 @@ data class AdminChangeClubRulesSettingState(
                 AdminMainMenuState(context)
             }
 
-            ChangeClubRulesSettingUseCase.Result.NoPermission -> {
+            ChangeClubContactsInfoSettingUseCase.Result.NoPermission -> {
                 bot.send(
                     chatId = context,
                     text = strings.noPermissionMessage,
@@ -103,15 +103,15 @@ data class AdminChangeClubRulesSettingState(
                 CommonInitialState(context)
             }
 
-            ChangeClubRulesSettingUseCase.Result.ShouldNotBeEmpty -> {
+            ChangeClubContactsInfoSettingUseCase.Result.ShouldNotBeEmpty -> {
                 bot.send(
                     chatId = context,
-                    text = strings.admin.settings.rulesCannotBeEmptyMessage,
+                    text = strings.admin.settings.contactsInfoCannotBeEmpty,
                 )
                 AdminMainMenuState(context)
             }
 
-            ChangeClubRulesSettingUseCase.Result.Success -> {
+            ChangeClubContactsInfoSettingUseCase.Result.Success -> {
                 bot.send(
                     chatId = context,
                     text = strings.admin.settings.successfullyChangedOption,
@@ -123,6 +123,6 @@ data class AdminChangeClubRulesSettingState(
 
     interface Dependencies : FSMState.Dependencies {
         val getClubSettings: GetClubSettingsUseCase
-        val changeChatRulesSetting: ChangeClubRulesSettingUseCase
+        val changeClubContactsInfoSetting: ChangeClubContactsInfoSettingUseCase
     }
 }

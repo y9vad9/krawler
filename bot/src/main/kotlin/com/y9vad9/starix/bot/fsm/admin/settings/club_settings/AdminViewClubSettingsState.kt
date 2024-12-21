@@ -4,14 +4,13 @@ import com.y9vad9.starix.bot.fsm.FSMState
 import com.y9vad9.starix.bot.fsm.admin.AdminChooseClubState
 import com.y9vad9.starix.bot.fsm.admin.AdminMainMenuState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.chat_rules.AdminViewChatRulesSettingState
-import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.club_rules.AdminViewClubRulesSettingState
+import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.club_rules.AdminViewContactInfoSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.grace_period.AdminGracePeriodPlayersListState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.join_request.AdminManageJoinRequestSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.player_linkage.AdminPlayersLinkageSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.club_settings.trophies_requirement.AdminViewTrophiesRequirementSettingState
 import com.y9vad9.starix.bot.fsm.admin.settings.manage_admins.AdminViewAdminsState
 import com.y9vad9.starix.bot.fsm.getCurrentStrings
-import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.value.ClubTag
 import com.y9vad9.starix.core.system.usecase.settings.admin.club.GetClubSettingsUseCase
 import dev.inmo.tgbotapi.extensions.api.send.send
@@ -91,7 +90,7 @@ data class AdminViewClubSettingsState(
                 AdminManageJoinRequestSettingState(context, clubTag)
 
             strings.admin.settings.clubRulesChoice ->
-                AdminViewClubRulesSettingState(context, clubTag)
+                AdminViewContactInfoSettingState(context, clubTag)
 
             strings.admin.settings.chatRulesChoice ->
                 AdminViewChatRulesSettingState(context, clubTag)

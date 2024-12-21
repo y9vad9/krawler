@@ -9,11 +9,9 @@ import com.y9vad9.starix.core.system.entity.isAdminIn
 import com.y9vad9.starix.core.system.entity.isClubAllowed
 import com.y9vad9.starix.core.system.entity.value.LanguageCode
 import com.y9vad9.starix.core.system.repository.SettingsRepository
-import com.y9vad9.starix.core.system.usecase.settings.admin.club.ChangeChatRulesSettingUseCase.Result
 import com.y9vad9.starix.core.telegram.entity.value.TelegramUserId
-import kotlinx.serialization.Serializable
 
-class ChangeClubRulesSettingUseCase(
+class ChangeClubContactsInfoSettingUseCase(
     private val settingsRepository: SettingsRepository,
 ) {
     suspend fun execute(
@@ -24,7 +22,6 @@ class ChangeClubRulesSettingUseCase(
     ): Result {
         if (message.value.isBlank())
             return Result.ShouldNotBeEmpty
-
         val settings = settingsRepository.getSettings()
         if (!settings.isAdminIn(clubTag, id))
             return Result.NoPermission
@@ -35,14 +32,15 @@ class ChangeClubRulesSettingUseCase(
         val clubSettings = settings.allowedClubs[clubTag]!!
 
         val language = languageCode ?: clubSettings.defaultLanguage
-        val rules = clubSettings.clubRules.asMap().toMutableMap().apply {
+
+        val contactsInfo = clubSettings.contactsInfo.asMap().toMutableMap().apply {
             put(language, message)
         }.let { LocalizableEntity(it) }
 
         settingsRepository.setSettings(
             settings.copy(
                 allowedClubs = settings.allowedClubs.toMutableMap().apply {
-                    put(clubTag, clubSettings.copy(clubRules = rules))
+                    put(clubTag, settings.allowedClubs[clubTag]!!.copy(contactsInfo = contactsInfo))
                 }
             )
         )
@@ -53,7 +51,7 @@ class ChangeClubRulesSettingUseCase(
     sealed interface Result {
         data object ClubNotFound : Result
         data object NoPermission : Result
-        data object Success : Result
         data object ShouldNotBeEmpty : Result
+        data object Success : Result
     }
 }

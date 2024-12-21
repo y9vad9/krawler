@@ -22,11 +22,11 @@ import kotlinx.serialization.Serializable
 
 @SerialName("AdminViewClubRulesSettingState")
 @Serializable
-data class AdminViewClubRulesSettingState(
+data class AdminViewContactInfoSettingState(
     override val context: IdChatIdentifier,
     val clubTag: ClubTag,
     val languageCode: LanguageCode? = null,
-) : FSMState<AdminViewClubRulesSettingState.Dependencies> {
+) : FSMState<AdminViewContactInfoSettingState.Dependencies> {
     override suspend fun BehaviourContext.before(
         previousState: FSMState<*>,
         dependencies: Dependencies,
@@ -46,14 +46,14 @@ data class AdminViewClubRulesSettingState(
                 val locale = languageCode ?: result.clubSettings.defaultLanguage
                 bot.send(
                     chatId = context,
-                    entities = strings.admin.settings.clubRulesMessage(result.clubSettings.clubRules[locale], locale),
+                    entities = strings.admin.settings.contactsInfoMessage(result.clubSettings.contactsInfo[locale], locale),
                     replyMarkup = replyKeyboard {
                         row(simpleReplyButton(strings.changeOption))
                         row(simpleReplyButton(strings.admin.settings.forAnotherLocaleChoice))
                         row(simpleReplyButton(strings.goBackChoice))
                     },
                 )
-                this@AdminViewClubRulesSettingState
+                this@AdminViewContactInfoSettingState
             }
         }
     }
@@ -67,20 +67,20 @@ data class AdminViewClubRulesSettingState(
             strings.changeOption -> AdminChangeContactInfoSettingState(context, clubTag, languageCode)
             strings.goBackChoice -> AdminViewClubSettingsState(context, clubTag)
             strings.admin.settings.forAnotherLocaleChoice ->
-                LanguagePickerComponentState(context, callback = LanguagePickerToClubRulesCallback(clubTag))
+                LanguagePickerComponentState(context, callback = LanguagePickerToContactsInfoCallback(clubTag))
             else -> {
                 bot.send(
                     chatId = context,
                     text = strings.invalidChoiceMessage,
                 )
-                this@AdminViewClubRulesSettingState
+                this@AdminViewContactInfoSettingState
             }
         }
     }
 
-    @SerialName("LanguagePickerToClubRulesCallback")
+    @SerialName("LanguagePickerToContactsInfoCallback")
     @Serializable
-    private data class LanguagePickerToClubRulesCallback(
+    private data class LanguagePickerToContactsInfoCallback(
         val clubTag: ClubTag,
     ) : LanguagePickerComponentState.Callback {
         override fun navigateBack(context: IdChatIdentifier): FSMState<*> {

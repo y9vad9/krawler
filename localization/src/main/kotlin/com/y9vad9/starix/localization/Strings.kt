@@ -3,6 +3,7 @@ package com.y9vad9.starix.localization
 import com.y9vad9.starix.core.brawlstars.entity.club.Club
 import com.y9vad9.starix.core.brawlstars.entity.club.ClubMember
 import com.y9vad9.starix.core.brawlstars.entity.player.Player
+import com.y9vad9.starix.core.common.entity.value.CustomMessage
 import com.y9vad9.starix.core.system.entity.ClubJoinAbility
 import com.y9vad9.starix.core.system.entity.ClubSettings
 import com.y9vad9.starix.core.system.entity.Settings
@@ -175,11 +176,16 @@ interface Strings {
             val unlinkChoice: String
 
             val clubRulesChoice: String
-            fun clubRulesMessage(clubSettings: ClubSettings): List<TextSource>
+            fun clubRulesMessage(rules: CustomMessage?, languageCode: LanguageCode): List<TextSource>
             val changeClubRulesMessage: List<TextSource>
             val chatRulesChoice: String
-            fun chatRulesMessage(clubSettings: ClubSettings): List<TextSource>
+            fun chatRulesMessage(customMessage: CustomMessage?, code: LanguageCode): List<TextSource>
             val changeChatRulesMessage: List<TextSource>
+
+            fun contactsInfoMessage(customMessage: CustomMessage?, code: LanguageCode): List<TextSource>
+            val changeContactsInfoMessage: List<TextSource>
+
+            val contactsInfoCannotBeEmpty: String
 
             val rulesCannotBeEmptyMessage: String
 
@@ -192,6 +198,8 @@ interface Strings {
             fun playerManageLinkageMessage(isLinked: Boolean, member: ClubMember): List<TextSource>
             val linkPlayerMessage: List<TextSource>
             val shouldUnlinkFirstMessage: String
+
+            val forAnotherLocaleChoice: String
 
             val successfullyChangedOption: String
         }

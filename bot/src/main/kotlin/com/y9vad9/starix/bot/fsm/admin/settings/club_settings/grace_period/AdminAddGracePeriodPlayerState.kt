@@ -96,7 +96,7 @@ data class AdminAddGracePeriodPlayerState(
         }
     }
 
-    @SerialName("AdminAddGracePeriodPlayerState.DatePickerComponentStateCallback.AdminChoosePlayersStateCallback")
+    @SerialName("AdminAddGracePeriodPlayerState.AdminChoosePlayersStateCallback")
     @Serializable
     private data class AdminChoosePlayersStateCallback(
         val club: ClubTag,
@@ -119,7 +119,7 @@ data class AdminAddGracePeriodPlayerState(
             )
         }
 
-        @SerialName("AdminAddGracePeriodPlayerState.DatePickerComponentStateCallback")
+        @SerialName("AdminAddGracePeriodPlayerState.AdminChoosePlayersStateCallback.DatePickerComponentStateCallback")
         @Serializable
         data class DatePickerComponentStateCallback(
             val selectedClub: ClubTag,
