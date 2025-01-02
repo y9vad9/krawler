@@ -30,9 +30,11 @@ Bot supports the following languages:
 - 🇺🇦 Ukrainian
 - 🏳️ Russian
 
-
 ## Documentation
 The documentation is not available for now, I will provide one once I stabilize the bot functionality.
+
+## License
+This project is distributed under the MIT License. However, use of this project, including any modifications or redistributions, must comply with [Supercell's Fan Content Policy](https://supercell.com/en/fan-content-policy/). Failure to do so may violate Supercell's terms and result in legal consequences.
 
 ## Feedback
 
