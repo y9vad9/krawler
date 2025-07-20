@@ -24,6 +24,7 @@ essenty = "2.5.0"
 detekt = "1.23.8"
 detekt-compose = "0.4.22"
 kover = "0.9.1"
+valdi = "0.1.0"
 
 [libraries]
 # ───────────────────────────────────────────────────────────────────────────────
@@ -53,7 +54,7 @@ ktor-server-statusPages = { module = "io.ktor:ktor-server-status-pages", version
 # Testing Libraries
 # ───────────────────────────────────────────────────────────────────────────────
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 # ───────────────────────────────────────────────────────────────────────────────
@@ -161,6 +162,9 @@ graalvm-metadata = { module = "org.graalvm.buildtools:graalvm-reachability-metad
 # Tools / Utilities
 # ───────────────────────────────────────────────────────────────────────────────
 y9vad9-ktiny-kotlidator = { module = "com.y9vad9.ktiny:kotlidator", version.require = "0.0.3" }
+y9vad9-valdi-validation = { module = "com.y9vad9.valdi:valdi-validation-core", version.ref = "valdi" }
+y9vad9-valdi-domain = { module = "com.y9vad9.valdi:valdi-domain-core", version.ref = "valdi" }
+y9vad9-valdi-domain-detekt = { module = "com.y9vad9.valdi:valdi-domain-detekt", version.ref = "valdi" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Detekt

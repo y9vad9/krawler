@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -11,13 +13,17 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
-        maven("https://jitpack.io")
-        maven("https://maven.y9vad9.com")
     }
 }
 
-rootProject.name = "kotlin-project-template"
+rootProject.name = "brawlex"
 
 includeBuild("build-conventions")
+
+include(
+    ":feature:user:domain",
+    ":feature:user:application"
+)
