@@ -12,6 +12,10 @@ kotlin {
         all {
             compilerOptions {
                 optIn.add("kotlin.uuid.ExperimentalUuidApi")
+                optIn.add("kotlin.time.ExperimentalTime")
+
+                progressiveMode = true
+                freeCompilerArgs.add("-Xreturn-value-checker=full")
             }
         }
     }

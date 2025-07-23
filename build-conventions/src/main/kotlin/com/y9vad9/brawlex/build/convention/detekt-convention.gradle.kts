@@ -78,6 +78,8 @@ detekt {
 
     allRules = true
     parallel = true
+
+    config.from(rootProject.files("detekt.yml"))
 }
 
 tasks.withType<Detekt>().configureEach {
