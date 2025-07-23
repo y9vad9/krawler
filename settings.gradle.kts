@@ -24,6 +24,14 @@ rootProject.name = "brawlex"
 includeBuild("build-conventions")
 
 include(
+    ":core:domain",
+)
+
+include(
+    ":feature:auth:domain",
+)
+
+include(
     ":feature:user:domain",
-    ":feature:user:application"
+    ":feature:user:application",
 )
