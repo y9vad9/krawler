@@ -1,0 +1,33 @@
+title: "Feature: <short summary>"
+labels:
+  - type:feature
+name: "Feature Request"
+description: "Suggest a new feature or improvement."
+body:
+  - type: markdown
+    attributes:
+      value: "Please check if a similar feature request already exists before submitting."
+  - type: input
+    id: summary
+    attributes:
+      label: "Short Summary"
+      placeholder: "e.g. Ban any player that is using Edgar"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Detailed Description"
+      placeholder: "Explain what the feature should do and why it matters."
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Scope"
+      options:
+        - feature:core
+        - feature:user
+        - feature:club
+    validations:
+      required: true
