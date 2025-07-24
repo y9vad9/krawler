@@ -13,8 +13,8 @@ public value class LinkedTelegramChatId private constructor(public val long: Lon
 
         public val factory: Factory<Long, LinkedTelegramChatId, ValueLessThanRequiredMinimum> = factory {
             constraints {
-                gives(ValueLessThanRequiredMinimum) { input ->
-                    input < MIN_VALUE
+                gives(ValueLessThanRequiredMinimum) unless { input ->
+                    input >= MIN_VALUE
                 }
             }
 

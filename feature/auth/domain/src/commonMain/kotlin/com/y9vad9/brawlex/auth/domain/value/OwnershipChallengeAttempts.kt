@@ -17,8 +17,8 @@ public value class OwnershipChallengeAttempts(
 
         public val factory: Factory<Int, OwnershipChallengeAttempts, InvalidMinValue> = factory {
             constraints {
-                gives(InvalidMinValue) { input ->
-                    input < MIN_VALUE
+                gives(InvalidMinValue) unless { input ->
+                    input >= MIN_VALUE
                 }
             }
 

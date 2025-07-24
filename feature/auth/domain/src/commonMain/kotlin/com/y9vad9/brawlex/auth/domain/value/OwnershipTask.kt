@@ -14,7 +14,7 @@ public class OwnershipTask private constructor(
     public companion object {
         public val factory: Factory<Params, OwnershipTask, InvalidBotsAmountForGivenEvent> = factory {
             constraints {
-                gives(InvalidBotsAmountForGivenEvent) { params ->
+                gives(InvalidBotsAmountForGivenEvent) on { params ->
                     when (params.eventType) {
                         OwnershipChallengeEventType.BRAWL_BALL,
                         OwnershipChallengeEventType.GEM_GRAB,

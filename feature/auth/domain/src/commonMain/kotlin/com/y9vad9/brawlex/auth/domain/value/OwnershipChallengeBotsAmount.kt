@@ -18,8 +18,8 @@ public value class OwnershipChallengeBotsAmount private constructor(
 
         public val factory: Factory<Int, OwnershipChallengeBotsAmount, ValueNotWithinRangeFailure> = factory {
             constraints {
-                gives(ValueNotWithinRangeFailure) { input ->
-                    input !in VALUE_RANGE
+                gives(ValueNotWithinRangeFailure) unless { input ->
+                    input in VALUE_RANGE
                 }
             }
 
