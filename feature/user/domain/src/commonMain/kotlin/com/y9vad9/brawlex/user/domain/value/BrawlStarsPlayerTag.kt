@@ -46,9 +46,7 @@ public value class BrawlStarsPlayerTag private constructor(private val string: S
                 gives(CreationFailure.TagNotWithinRangeFailure) unless { input ->
                     input.removePrefix("#").length in LENGTH_RANGE
                 }
-                gives(CreationFailure.InvalidFormatFailure) unless { input ->
-                    input.matches(REGEX)
-                }
+                gives(CreationFailure.InvalidFormatFailure) unless { input -> input.matches(REGEX) }
             }
 
             constructor { BrawlStarsPlayerTag(it.uppercase()) }

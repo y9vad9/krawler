@@ -31,9 +31,7 @@ public value class LinkedTelegramUserName private constructor(public val string:
 
         public val factory: Factory<String, LinkedTelegramUserName, NameNotWithinRangeFailure> = factory {
             constraints {
-                gives(NameNotWithinRangeFailure) unless {
-                    input -> input.length in LENGTH_RANGE
-                }
+                gives(NameNotWithinRangeFailure) unless { input -> input.length in LENGTH_RANGE }
             }
 
             constructor(::LinkedTelegramUserName)

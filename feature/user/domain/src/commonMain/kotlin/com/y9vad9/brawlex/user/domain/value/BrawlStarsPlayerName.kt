@@ -17,9 +17,7 @@ public value class BrawlStarsPlayerName private constructor(public val string: S
 
         public val factory: Factory<String, BrawlStarsPlayerName, NameNotWithinRangeFailure> = factory {
             constraints {
-                gives(NameNotWithinRangeFailure) unless {
-                    input -> input.length in LENGTH_RANGE
-                }
+                gives(NameNotWithinRangeFailure) unless { input -> input.length in LENGTH_RANGE }
             }
 
             constructor(::BrawlStarsPlayerName)
