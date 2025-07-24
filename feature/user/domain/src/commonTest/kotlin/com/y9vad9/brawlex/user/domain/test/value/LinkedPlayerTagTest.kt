@@ -1,7 +1,7 @@
 package com.y9vad9.brawlex.user.domain.test.value
 
-import com.y9vad9.brawlex.user.domain.value.LinkedPlayerTag
-import com.y9vad9.brawlex.user.domain.value.LinkedPlayerTag.CreationFailure
+import com.y9vad9.brawlex.user.domain.value.BrawlStarsPlayerTag
+import com.y9vad9.brawlex.user.domain.value.BrawlStarsPlayerTag.CreationFailure
 import com.y9vad9.valdi.ValidationResult
 import com.y9vad9.valdi.getOrNull
 import com.y9vad9.valdi.isSuccess
@@ -19,7 +19,7 @@ class LinkedPlayerTagTest {
         val input = "abc123"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertTrue(
@@ -49,7 +49,7 @@ class LinkedPlayerTagTest {
         val input = "#ab9"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertTrue(
@@ -79,7 +79,7 @@ class LinkedPlayerTagTest {
         val input = "#ab"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -95,7 +95,7 @@ class LinkedPlayerTagTest {
         val input = "#${"A".repeat(15)}"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -111,7 +111,7 @@ class LinkedPlayerTagTest {
         val input = "#ABC@1"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -127,7 +127,7 @@ class LinkedPlayerTagTest {
         val input = "   "
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -143,7 +143,7 @@ class LinkedPlayerTagTest {
         val input = "aBcDe1"
 
         // WHEN
-        val result = LinkedPlayerTag.factory.create(input)
+        val result = BrawlStarsPlayerTag.factory.create(input)
 
         // THEN
         assertTrue(
@@ -169,7 +169,7 @@ class LinkedPlayerTagTest {
         val input = "#abc123"
 
         // WHEN
-        val tag = LinkedPlayerTag.factory.create(input).getOrNull()
+        val tag = BrawlStarsPlayerTag.factory.create(input).getOrNull()
 
         // THEN
         assertEquals(

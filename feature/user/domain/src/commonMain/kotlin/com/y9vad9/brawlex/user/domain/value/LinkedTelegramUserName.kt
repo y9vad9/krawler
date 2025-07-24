@@ -13,7 +13,7 @@ import kotlin.jvm.JvmInline
  * but is rather an identity the user sets for themselves when they first interact with the bot.
  * Users can change this name later if desired.
  *
- * The [UserName] is a value object with enforced constraints:
+ * The [LinkedTelegramUserName] is a value object with enforced constraints:
  * - Minimum length: [MIN_LENGTH] character(s)
  * - Maximum length: [MAX_LENGTH] characters
  *
@@ -21,22 +21,22 @@ import kotlin.jvm.JvmInline
  */
 @ValueObject
 @JvmInline
-public value class UserName private constructor(public val string: String) {
+public value class LinkedTelegramUserName private constructor(public val string: String) {
 
-    public companion object {
+    public companion object Companion {
         public const val MIN_LENGTH: Int = 1
         public const val MAX_LENGTH: Int = 100
 
         public val LENGTH_RANGE: IntRange = MIN_LENGTH..MAX_LENGTH
 
-        public val factory: Factory<String, UserName, NameNotWithinRangeFailure> = factory {
+        public val factory: Factory<String, LinkedTelegramUserName, NameNotWithinRangeFailure> = factory {
             constraints {
                 gives(NameNotWithinRangeFailure) { input -> input.length !in LENGTH_RANGE }
             }
 
-            constructor(::UserName)
+            constructor(::LinkedTelegramUserName)
         }
     }
 
-    public object NameNotWithinRangeFailure : ValidationFailure
+    public data object NameNotWithinRangeFailure : ValidationFailure
 }

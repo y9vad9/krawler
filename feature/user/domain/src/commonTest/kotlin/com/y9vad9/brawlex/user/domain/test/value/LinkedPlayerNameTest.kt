@@ -1,6 +1,6 @@
 package com.y9vad9.brawlex.user.domain.test.value
 
-import com.y9vad9.brawlex.user.domain.value.LinkedPlayerName
+import com.y9vad9.brawlex.user.domain.value.BrawlStarsPlayerName
 import com.y9vad9.valdi.ValidationResult
 import com.y9vad9.valdi.getOrNull
 import com.y9vad9.valdi.isSuccess
@@ -16,10 +16,10 @@ class LinkedPlayerNameTest {
     @Test
     fun `creates LinkedPlayerName with minimal valid length`() {
         // GIVEN
-        val input = "a".repeat(LinkedPlayerName.MIN_LENGTH)
+        val input = "a".repeat(BrawlStarsPlayerName.MIN_LENGTH)
 
         // WHEN
-        val result = LinkedPlayerName.factory.create(input)
+        val result = BrawlStarsPlayerName.factory.create(input)
 
         // THEN
         assertTrue(
@@ -36,10 +36,10 @@ class LinkedPlayerNameTest {
     @Test
     fun `creates LinkedPlayerName with maximal valid length`() {
         // GIVEN
-        val input = "a".repeat(LinkedPlayerName.MAX_LENGTH)
+        val input = "a".repeat(BrawlStarsPlayerName.MAX_LENGTH)
 
         // WHEN
-        val result = LinkedPlayerName.factory.create(input)
+        val result = BrawlStarsPlayerName.factory.create(input)
 
         // THEN
         assertTrue(
@@ -56,12 +56,12 @@ class LinkedPlayerNameTest {
     @Test
     fun `fails for input just below minimum and just above maximum`() {
         // GIVEN
-        val tooShort = "a".repeat(LinkedPlayerName.MIN_LENGTH - 1)
-        val tooLong = "a".repeat(LinkedPlayerName.MAX_LENGTH + 1)
+        val tooShort = "a".repeat(BrawlStarsPlayerName.MIN_LENGTH - 1)
+        val tooLong = "a".repeat(BrawlStarsPlayerName.MAX_LENGTH + 1)
 
         // WHEN
-        val shortResult = LinkedPlayerName.factory.create(tooShort)
-        val longResult = LinkedPlayerName.factory.create(tooLong)
+        val shortResult = BrawlStarsPlayerName.factory.create(tooShort)
+        val longResult = BrawlStarsPlayerName.factory.create(tooLong)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -73,8 +73,8 @@ class LinkedPlayerNameTest {
             message = "Long input just above the maximum has not failed.",
         )
 
-        assertIs<LinkedPlayerName.NameNotWithinRangeFailure>(shortResult.error)
-        assertIs<LinkedPlayerName.NameNotWithinRangeFailure>(longResult.error)
+        assertIs<BrawlStarsPlayerName.NameNotWithinRangeFailure>(shortResult.error)
+        assertIs<BrawlStarsPlayerName.NameNotWithinRangeFailure>(longResult.error)
     }
 
     @Test
@@ -83,7 +83,7 @@ class LinkedPlayerNameTest {
         val value = "sukara"
 
         // WHEN
-        val result = LinkedPlayerName.factory.create(value)
+        val result = BrawlStarsPlayerName.factory.create(value)
 
         // THEN
         assertIs<ValidationResult.Success<*>>(
@@ -98,11 +98,11 @@ class LinkedPlayerNameTest {
         val value = "veryveryveryverylongname"
 
         // WHEN
-        val result = LinkedPlayerName.factory.create(value)
+        val result = BrawlStarsPlayerName.factory.create(value)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(result)
-        assertIs<LinkedPlayerName.NameNotWithinRangeFailure>(result.error)
+        assertIs<BrawlStarsPlayerName.NameNotWithinRangeFailure>(result.error)
     }
 
     // Test that constructed object holds the correct string (sanity check)
@@ -112,7 +112,7 @@ class LinkedPlayerNameTest {
         val input = "ValidName"
 
         // WHEN
-        val result = LinkedPlayerName.factory.create(input)
+        val result = BrawlStarsPlayerName.factory.create(input)
 
         // THEN
         assertTrue(result.isSuccess())

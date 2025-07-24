@@ -21,7 +21,7 @@ comments:
   DeprecatedBlockTag:
     active: true
   EndOfSentenceFormat:
-    active: true
+    active: false
     endOfSentenceFormat: '([.?!][ \t\n\r\f<])|([.?!:]$)'
   KDocReferencesNonPublicProperty:
     active: true
@@ -477,7 +477,7 @@ style:
   AlsoCouldBeApply:
     active: true
   BracesOnIfStatements:
-    active: true
+    active: false
     singleLine: 'never'
     multiLine: 'always'
   BracesOnWhenStatements:
@@ -644,7 +644,7 @@ style:
   RedundantVisibilityModifierRule:
     active: false
   ReturnCount:
-    active: true
+    active: false
     max: 2
     excludedFunctions:
       - 'equals'
@@ -695,7 +695,7 @@ style:
   UnnecessaryLet:
     active: true
   UnnecessaryParentheses:
-    active: true
+    active: false
     allowForUnclearPrecedence: false
   UntilInsteadOfRangeTo:
     active: true

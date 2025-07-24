@@ -40,4 +40,4 @@ jobs:
           java-version: '17'
 
       - name: Run Detekt
-        run: ./gradlew detekt --no-daemon
+        run: ./gradlew detekt detektJvmMain --no-daemon

@@ -7,26 +7,24 @@ import com.y9vad9.valdi.domain.ValueObject
 
 @ValueObject
 @JvmInline
-public value class LinkedPlayerName private constructor(public val string: String) {
+public value class BrawlStarsPlayerName private constructor(public val string: String) {
 
-    public companion object {
+    public companion object Companion {
         public const val MIN_LENGTH: Int = 1
         public const val MAX_LENGTH: Int = 16
 
         public val LENGTH_RANGE: IntRange = MIN_LENGTH..MAX_LENGTH
 
-        public val factory: Factory<String, LinkedPlayerName, NameNotWithinRangeFailure> = factory {
+        public val factory: Factory<String, BrawlStarsPlayerName, NameNotWithinRangeFailure> = factory {
             constraints {
                 gives(NameNotWithinRangeFailure) { input -> input.length !in LENGTH_RANGE }
             }
 
-            constructor(::LinkedPlayerName)
+            constructor(::BrawlStarsPlayerName)
         }
     }
 
-    override fun toString(): String {
-        return string
-    }
+    override fun toString(): String = string
 
     public object NameNotWithinRangeFailure : ValidationFailure
 }

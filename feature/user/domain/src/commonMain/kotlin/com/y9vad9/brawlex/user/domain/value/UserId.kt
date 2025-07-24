@@ -7,7 +7,5 @@ import kotlin.uuid.Uuid
 @ValueObject
 @JvmInline
 public value class UserId(public val uuid: Uuid) {
-    override fun toString(): String {
-        return uuid.toString()
-    }
+    override fun toString(): String = uuid.toString()
 }

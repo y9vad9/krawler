@@ -1,6 +1,6 @@
 package com.y9vad9.brawlex.user.domain.test.value
 
-import com.y9vad9.brawlex.user.domain.value.UserName
+import com.y9vad9.brawlex.user.domain.value.LinkedTelegramUserName
 import com.y9vad9.valdi.ValidationResult
 import com.y9vad9.valdi.getOrNull
 import com.y9vad9.valdi.isSuccess
@@ -15,10 +15,10 @@ class UserNameTest {
     @Test
     fun `creates UserName with minimal valid length`() {
         // GIVEN
-        val input = "a".repeat(UserName.MIN_LENGTH)
+        val input = "a".repeat(LinkedTelegramUserName.MIN_LENGTH)
 
         // WHEN
-        val result = UserName.factory.create(input)
+        val result = LinkedTelegramUserName.factory.create(input)
 
         // THEN
         assertTrue(
@@ -35,10 +35,10 @@ class UserNameTest {
     @Test
     fun `creates UserName with maximal valid length`() {
         // GIVEN
-        val input = "a".repeat(UserName.MAX_LENGTH)
+        val input = "a".repeat(LinkedTelegramUserName.MAX_LENGTH)
 
         // WHEN
-        val result = UserName.factory.create(input)
+        val result = LinkedTelegramUserName.factory.create(input)
 
         // THEN
         assertTrue(
@@ -55,12 +55,12 @@ class UserNameTest {
     @Test
     fun `fails for input just below minimum and just above maximum`() {
         // GIVEN
-        val tooShort = "a".repeat(UserName.MIN_LENGTH - 1)
-        val tooLong = "a".repeat(UserName.MAX_LENGTH + 1)
+        val tooShort = "a".repeat(LinkedTelegramUserName.MIN_LENGTH - 1)
+        val tooLong = "a".repeat(LinkedTelegramUserName.MAX_LENGTH + 1)
 
         // WHEN
-        val shortResult = UserName.factory.create(tooShort)
-        val longResult = UserName.factory.create(tooLong)
+        val shortResult = LinkedTelegramUserName.factory.create(tooShort)
+        val longResult = LinkedTelegramUserName.factory.create(tooLong)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
@@ -72,17 +72,17 @@ class UserNameTest {
             message = "Expected failure for input above maximum",
         )
 
-        assertIs<UserName.NameNotWithinRangeFailure>(shortResult.error)
-        assertIs<UserName.NameNotWithinRangeFailure>(longResult.error)
+        assertIs<LinkedTelegramUserName.NameNotWithinRangeFailure>(shortResult.error)
+        assertIs<LinkedTelegramUserName.NameNotWithinRangeFailure>(longResult.error)
     }
 
     @Test
     fun `creates UserName with valid arbitrary input`() {
         // GIVEN
-        val input = "sakura"
+        val input = "sukara"
 
         // WHEN
-        val result = UserName.factory.create(input)
+        val result = LinkedTelegramUserName.factory.create(input)
 
         // THEN
         assertTrue(
@@ -102,14 +102,14 @@ class UserNameTest {
         val input = "a".repeat(500)
 
         // WHEN
-        val result = UserName.factory.create(input)
+        val result = LinkedTelegramUserName.factory.create(input)
 
         // THEN
         assertIs<ValidationResult.Failure<*>>(
             value = result,
             message = "Expected failure for input exceeding max length",
         )
-        assertIs<UserName.NameNotWithinRangeFailure>(result.error)
+        assertIs<LinkedTelegramUserName.NameNotWithinRangeFailure>(result.error)
     }
 
     @Test
@@ -118,7 +118,7 @@ class UserNameTest {
         val input = "ValidUser"
 
         // WHEN
-        val result = UserName.factory.create(input)
+        val result = LinkedTelegramUserName.factory.create(input)
 
         // THEN
         assertTrue(

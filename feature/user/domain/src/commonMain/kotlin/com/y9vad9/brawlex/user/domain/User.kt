@@ -1,9 +1,12 @@
 package com.y9vad9.brawlex.user.domain
 
-import com.y9vad9.brawlex.user.domain.value.LinkedPlayerTag
-import com.y9vad9.brawlex.user.domain.value.LinkedPlayers
+import com.y9vad9.brawlex.core.domain.WithDomainUpdateEvent
+import com.y9vad9.brawlex.user.domain.entity.BrawlStarsPlayer
+import com.y9vad9.brawlex.user.domain.entity.LinkedTelegram
+import com.y9vad9.brawlex.user.domain.event.UserUpdateEvent
+import com.y9vad9.brawlex.user.domain.value.BrawlStarsPlayerTag
+import com.y9vad9.brawlex.user.domain.value.LinkedBrawlStarsPlayers
 import com.y9vad9.brawlex.user.domain.value.UserId
-import com.y9vad9.brawlex.user.domain.value.UserName
 import com.y9vad9.valdi.domain.AggregateRoot
 
 /**
@@ -15,50 +18,103 @@ import com.y9vad9.valdi.domain.AggregateRoot
  * - Allowing explicit refresh of player data only if already linked.
  * - Safe removal of linked players by tag.
  *
- * All mutation-like operations return a new [User] instance reflecting the change,
- * preserving immutability and supporting functional style updates.
+ * All mutation-like operations return a [WithDomainUpdateEvent] containing a new [User]
+ * instance reflecting the change, along with a domain event describing the update.
  *
  * Use the provided methods to update user information and linked players explicitly,
  * favoring clarity and explicit intent over implicit or "magical" state changes.
+ *
+ * @property id Unique system identifier for the user.
+ * @property linkedPlayers Collection of Brawl Stars players linked to the user.
+ * @property linkedTelegram Telegram account associated with the user.
  */
 @AggregateRoot
 public class User(
     public val id: UserId,
-    public val name: UserName,
-    public val linkedPlayers: LinkedPlayers,
+    public val linkedPlayers: LinkedBrawlStarsPlayers,
+    public val linkedTelegram: LinkedTelegram,
 ) {
-
-    /** Returns a copy with updated username */
-    public fun withNewName(newName: UserName): User =
-        User(id, newName, linkedPlayers)
-
     /**
-     * Adds a new linked player.
-     * Throws if player is already linked.
+     * Returns a new [User] instance with updated [linkedTelegram],
+     * paired with a [UserUpdateEvent.LinkedTelegramChanged] event.
      */
-    public fun withAddedPlayer(player: LinkedPlayer): User =
-        User(id, name, linkedPlayers.with(player))
+    public fun withNewLinkedTelegram(
+        telegram: LinkedTelegram,
+    ): WithDomainUpdateEvent<User, UserUpdateEvent> {
+        val updated = User(id, linkedPlayers, telegram)
+        val event = UserUpdateEvent.LinkedTelegramChanged(id, telegram)
+        return WithDomainUpdateEvent(updated, event)
+    }
 
     /**
-     * Refreshes an existing linked player.
-     * Throws if player is not linked.
+     * Returns a new [User] with the [linkedTelegram] transformed via [transform],
+     * paired with the corresponding [UserUpdateEvent].
+     */
+    public fun withUpdatedLinkedTelegram(
+        transform: (LinkedTelegram) -> LinkedTelegram,
+    ): WithDomainUpdateEvent<User, UserUpdateEvent> = withNewLinkedTelegram(transform(linkedTelegram))
+
+    /**
+     * Adds a new [player] to the user's linked players.
      *
-     * @throws IllegalArgumentException if player is not linked.
-     * @see LinkedPlayers.withRefreshed
+     * @throws IllegalArgumentException if the player is already linked.
+     *
+     * Returns a new [User] and a [UserUpdateEvent.PlayerAdded] event.
+     */
+    public fun withAddedPlayer(
+        player: BrawlStarsPlayer,
+    ): WithDomainUpdateEvent<User, UserUpdateEvent> {
+        val updated = User(id, linkedPlayers.withNew(player), linkedTelegram)
+        val event = UserUpdateEvent.PlayerAdded(id, player)
+        return WithDomainUpdateEvent(updated, event)
+    }
+
+    /**
+     * Refreshes data for an already linked [player].
+     *
+     * @throws IllegalArgumentException if the player is not currently linked.
+     *
+     * Returns a new [User] and a [UserUpdateEvent.PlayerRefreshed] event.
+     *
+     * @see LinkedBrawlStarsPlayers.withRefreshed
      */
     @Throws(IllegalArgumentException::class)
-    public fun withRefreshedPlayer(player: LinkedPlayer): User =
-        User(id, name, linkedPlayers.withRefreshed(player))
+    public fun withRefreshedPlayer(
+        player: BrawlStarsPlayer,
+    ): WithDomainUpdateEvent<User, UserUpdateEvent.PlayerRefreshed> {
+        val updated = User(id, linkedPlayers.withRefreshed(player), linkedTelegram)
+        val event = UserUpdateEvent.PlayerRefreshed(id, player)
+        return WithDomainUpdateEvent(updated, event)
+    }
 
     /**
-     * Returns a copy with the player unlinked by [tag].
-     * Returns the same user if the player is not found.
+     * Removes a linked player by [tag].
+     *
+     * @return A [WithDomainUpdateEvent] containing the updated [User] with the player removed,
+     *         and a [UserUpdateEvent.PlayerRemoved] event.
+     *
+     * If the player is not linked, returns the current user with a no-op event.
      */
-    public fun withoutLinkedPlayer(tag: LinkedPlayerTag): User =
-        if (!linkedPlayers.has(tag)) this
-        else User(id, name, linkedPlayers.without(tag))
+    public fun withoutLinkedPlayer(
+        tag: BrawlStarsPlayerTag,
+    ): WithDomainUpdateEvent<User, UserUpdateEvent.PlayerRemoved?> {
+        if (!linkedPlayers.has(tag)) {
+            return WithDomainUpdateEvent(this, null)
+        }
+        val updated = User(id, linkedPlayers.without(tag), linkedTelegram)
+        val event = UserUpdateEvent.PlayerRemoved(id, tag)
+        return WithDomainUpdateEvent(updated, event)
+    }
 
-    /** Returns a copy with all linked players removed. */
-    public fun withoutAllLinkedPlayers(): User =
-        User(id, name, linkedPlayers.withoutAll())
+    /**
+     * Removes all linked players from the user.
+     *
+     * Returns a new [User] with an empty [linkedPlayers] list,
+     * paired with a [UserUpdateEvent.AllPlayersRemoved] event.
+     */
+    public fun withoutAllLinkedPlayers(): WithDomainUpdateEvent<User, UserUpdateEvent.AllPlayersRemoved> {
+        val updated = User(id, linkedPlayers.withoutAll(), linkedTelegram)
+        val event = UserUpdateEvent.AllPlayersRemoved(id)
+        return WithDomainUpdateEvent(updated, event)
+    }
 }

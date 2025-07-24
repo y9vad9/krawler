@@ -30,8 +30,8 @@ import kotlin.jvm.JvmInline
  */
 @ValueObject
 @JvmInline
-public value class LinkedPlayerTag private constructor(private val string: String) {
-    public companion object {
+public value class BrawlStarsPlayerTag private constructor(private val string: String) {
+    public companion object Companion {
         public const val MIN_LENGTH: Int = 3
         public const val MAX_LENGTH: Int = 14
 
@@ -41,7 +41,7 @@ public value class LinkedPlayerTag private constructor(private val string: Strin
             option = RegexOption.IGNORE_CASE,
         )
 
-        public val factory: Factory<String, LinkedPlayerTag, CreationFailure> = factory {
+        public val factory: Factory<String, BrawlStarsPlayerTag, CreationFailure> = factory {
             constraints {
                 gives(CreationFailure.TagNotWithinRangeFailure) { input ->
                     input.removePrefix("#").length !in LENGTH_RANGE
@@ -51,7 +51,7 @@ public value class LinkedPlayerTag private constructor(private val string: Strin
                 }
             }
 
-            constructor { LinkedPlayerTag(it.uppercase()) }
+            constructor { BrawlStarsPlayerTag(it.uppercase()) }
         }
     }
 
@@ -59,11 +59,10 @@ public value class LinkedPlayerTag private constructor(private val string: Strin
     public val stringWithoutTagPrefix: String get() = if (string.startsWith("#")) string.substring(1) else string
 
     public sealed interface CreationFailure : ValidationFailure {
-        public data object TagNotWithinRangeFailure : CreationFailure
+        public data object TagNotWithinRangeFailure :
+            CreationFailure
         public data object InvalidFormatFailure : CreationFailure
     }
 
-    override fun toString(): String {
-        return stringWithTagPrefix
-    }
+    override fun toString(): String = stringWithTagPrefix
 }

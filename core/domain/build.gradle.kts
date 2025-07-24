@@ -1,3 +1,3 @@
 plugins {
-    id(conventions.feature.domain)
+    id(conventions.multiplatform.library)
 }
