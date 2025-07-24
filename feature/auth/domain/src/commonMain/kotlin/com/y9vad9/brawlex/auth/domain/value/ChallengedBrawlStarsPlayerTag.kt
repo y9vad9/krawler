@@ -43,12 +43,10 @@ public value class ChallengedBrawlStarsPlayerTag private constructor(private val
 
         public val factory: Factory<String, ChallengedBrawlStarsPlayerTag, CreationFailure> = factory {
             constraints {
-                gives(CreationFailure.TagNotWithinRangeFailure) { input ->
-                    input.removePrefix("#").length !in LENGTH_RANGE
+                gives(CreationFailure.TagNotWithinRangeFailure) unless { input ->
+                    input.removePrefix("#").length in LENGTH_RANGE
                 }
-                gives(CreationFailure.InvalidFormatFailure) { input ->
-                    !input.matches(REGEX)
-                }
+                gives(CreationFailure.InvalidFormatFailure) unless { input -> input.matches(REGEX) }
             }
 
             constructor { ChallengedBrawlStarsPlayerTag(it.uppercase()) }
