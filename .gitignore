@@ -74,4 +74,5 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
-!build-conventions/src/main/kotlin/com/y9vad9/brawlex/build/conventions
+
+!build-conventions/src/main/kotlin/com/y9vad9/krawler/build/conventions

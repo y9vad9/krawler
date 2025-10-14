@@ -1,8 +1,8 @@
-# Brawlex
-[![CodeQL Analysis](https://github.com/y9vad9/brawlex/actions/workflows/analyse.codeql.yml/badge.svg)](https://github.com/y9vad9/brawlex/actions/workflows/analyse.codeql.yml) [![Detekt Checks](https://github.com/y9vad9/brawlex/actions/workflows/check.detekt.yml/badge.svg)](https://github.com/y9vad9/brawlex/actions/workflows/check.detekt.yml) [![Test Suite](https://github.com/y9vad9/brawlex/actions/workflows/check.tests.yml/badge.svg)](https://github.com/y9vad9/brawlex/actions/workflows/check.tests.yml) [![Coverage](https://codecov.io/gh/y9vad9/brawlex/branch/main/graph/badge.svg)](https://codecov.io/gh/y9vad9/brawlex)
+# krawler
+[![CodeQL Analysis](https://github.com/y9vad9/krawler/actions/workflows/analyse.codeql.yml/badge.svg)](https://github.com/y9vad9/krawler/actions/workflows/analyse.codeql.yml) [![Detekt Checks](https://github.com/y9vad9/krawler/actions/workflows/check.detekt.yml/badge.svg)](https://github.com/y9vad9/krawler/actions/workflows/check.detekt.yml) [![Test Suite](https://github.com/y9vad9/krawler/actions/workflows/check.tests.yml/badge.svg)](https://github.com/y9vad9/krawler/actions/workflows/check.tests.yml) [![Coverage](https://codecov.io/gh/y9vad9/krawler/branch/main/graph/badge.svg)](https://codecov.io/gh/y9vad9/krawler)
 <img src="https://github.com/user-attachments/assets/4ca759bd-a9e0-4da2-871c-93d80687f98d" alt="" height="150px" align="right" />
 
-Brawlex is a Telegram bot designed to help managing Brawl Stars Clubs efficiently. It connects your club's activities with a Telegram Chat Group, providing tools to keep track and provide insights of members, activity, and performance. It supports both single and multiple clubs within one system, offering seamless integration to improve club management and member engagement.
+krawler is a Telegram bot designed to help managing Brawl Stars Clubs efficiently. It connects your club's activities with a Telegram Chat Group, providing tools to keep track and provide insights of members, activity, and performance. It supports both single and multiple clubs within one system, offering seamless integration to improve club management and member engagement.
 
 
 ## Features
@@ -40,7 +40,7 @@ This project is distributed under the MIT License. However, use of this project,
 ## Feedback
 
 For bugs, questions and discussions please use
-the [GitHub Issues](https://github.com/y9vad9/brawlex/issues).
+the [GitHub Issues](https://github.com/y9vad9/krawler/issues).
 _______
 *This product is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it.
 For more information see [Supercell’s Fan Content Policy](https://supercell.com/en/fan-content-policy/).*

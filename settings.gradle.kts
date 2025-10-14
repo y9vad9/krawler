@@ -18,7 +18,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "brawlex"
+rootProject.name = "krawler"
 
 includeBuild("build-conventions")
 
