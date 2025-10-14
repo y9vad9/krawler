@@ -64,7 +64,7 @@ interface UserRepository {
     ): Result<Unit>
 
     /**
-     * Adds a new [entity.BrawlStarsPlayer] to the user with [userId].
+     * Adds a new [BrawlStarsPlayer] to the user with [userId].
      */
     suspend fun addLinkedPlayer(
         userId: UserId,
