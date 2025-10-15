@@ -1,7 +1,5 @@
 package com.y9vad9.krawler.build.convention
 
-import org.jetbrains.kotlin.gradle.dsl.*
-
 plugins {
     kotlin("jvm")
 }

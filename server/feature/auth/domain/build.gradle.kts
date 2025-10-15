@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.core.domain)
+    commonMainApi(projects.server.core.domain)
 }

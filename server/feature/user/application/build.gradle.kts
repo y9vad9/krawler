@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(projects.feature.user.domain)
+    commonMainImplementation(projects.server.feature.user.domain)
 }
