@@ -23,5 +23,5 @@ public class Player(
     override fun equals(other: Any?): Boolean =
         this === other || (other is Player && tag == other.tag && name == other.name)
     override fun hashCode(): Int = 31 * tag.hashCode() + name.hashCode()
-    override fun toString(): String = "BrawlStarsPlayer(tag=$tag, name=$name)"
+    override fun toString(): String = "Player(tag=$tag, name=$name)"
 }
