@@ -5,7 +5,6 @@ import krawler.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.MIN_LENGTH
 import krawler.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.create
 import krawler.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.createOrNull
 import krawler.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.createOrThrow
-import krawler.core.domain.ValueObject
 
 /**
  * Represents a Brawl Stars player tag linked to a user within the system.
