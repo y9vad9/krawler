@@ -13,8 +13,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
         mavenCentral()
+        google()
     }
 }
 
@@ -23,14 +23,18 @@ rootProject.name = "krawler"
 includeBuild("build-conventions")
 
 include(
-    ":core:domain",
+    ":foundation:jvm-environment",
+    ":foundation:cli-args",
 )
 
 include(
-    ":feature:auth:domain",
+    ":server",
+    ":server:core:domain",
+    ":server:feature:auth:domain",
+    ":server:feature:user:domain",
+    "server:feature:user:application",
 )
 
 include(
-    ":feature:user:domain",
-    ":feature:user:application",
+    ":telegram:bot",
 )

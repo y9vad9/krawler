@@ -22,16 +22,18 @@ val conventions: ConventionNamespace = ConventionNamespace()
  * (e.g., `jvm`, `multiplatform`, etc.).
  */
 class ConventionNamespace internal constructor(
-    val jvm: String = "com.y9vad9.krawler.build.convention.jvm-convention",
-    val kover: String = "com.y9vad9.krawler.build.convention.kover-convention",
-    val detekt: String = "com.y9vad9.krawler.build.convention.detekt-convention",
+    val jvm: JvmNamespace = JvmNamespace(),
+    val kover: String = "krawler.build.convention.kover-convention",
+    val detekt: String = "krawler.build.convention.detekt-convention",
     val multiplatform: MultiplatformNamespace = MultiplatformNamespace(),
     val feature: FeatureNamespace = FeatureNamespace(),
 )
 
 class JvmNamespace internal constructor(
-    val core: String = "com.y9vad9.krawler.build.convention.jvm-convention",
-    val tests: String = "com.y9vad9.krawler.build.convention.jvm-tests-convention",
+    val core: String = "krawler.build.convention.jvm-convention",
+    val tests: String = "krawler.build.convention.jvm-tests-convention",
+    val library: String = "krawler.build.convention.jvm-library-convention",
+    val bootstrap: String = "krawler.build.convention.jvm-bootstrap-convention",
 )
 
 
@@ -39,13 +41,13 @@ class JvmNamespace internal constructor(
  * Convention plugins used in Kotlin Multiplatform projects.
  */
 class MultiplatformNamespace internal constructor(
-    val core: String = "com.y9vad9.krawler.build.convention.multiplatform-convention",
+    val core: String = "krawler.build.convention.multiplatform-convention",
     /** Convention plugin for setting up shared multiplatform libraries. */
-    val library: String = "com.y9vad9.krawler.build.convention.multiplatform-library-convention",
-    val tests: String = "com.y9vad9.krawler.build.convention.multiplatform-tests-convention"
+    val library: String = "krawler.build.convention.multiplatform-library-convention",
+    val tests: String = "krawler.build.convention.multiplatform-tests-convention"
 )
 
 class FeatureNamespace internal constructor(
-    val domain: String = "com.y9vad9.krawler.build.convention.feature.domain-convention",
-    val application: String = "com.y9vad9.krawler.build.convention.feature.application-convention",
+    val domain: String = "krawler.build.convention.feature.domain-convention",
+    val application: String = "krawler.build.convention.feature.application-convention",
 )

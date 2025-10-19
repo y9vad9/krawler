@@ -3,39 +3,31 @@ kotlin = "2.2.0"
 kotlinx-coroutines = "1.10.2"
 kotlinx-serialization = "1.9.0"
 ktor = "3.2.2"
-android-gradle-plugin = "8.9.1"
-android-compose-version = "1.7.1"
 compose = "1.8.2"
 mockk = "1.14.5"
 sqldelight = "2.1.0"
-clikt = "5.0.3"
-graalvm = "0.10.6"
-mordant = "3.0.2"
-flowmvi = "3.2.0-alpha05"
 koin = "4.1.0"
 koin-annotations = "2.1.0"
 ksp = "2.2.0-2.0.2"
-decompose = "3.3.0"
-kotlinx-datetime = "0.7.1-0.6.x-compat"
-compose-markdown = "0.35.0"
 androidx-appcompat = "1.7.1"
 okio = "3.15.0"
-essenty = "2.5.0"
 detekt = "1.23.8"
 detekt-compose = "0.4.25"
 kover = "0.9.1"
-valdi = "0.2.0"
+grpc = "1.4.3"
+protobuf = "3.22.0"
+protobuf-plugin = "0.9.2"
+grpc-netty = "1.76.0"
+shadowJar = "9.2.2"
+inmo-tgbotapi = "29.0.1"
 
 [libraries]
 # ───────────────────────────────────────────────────────────────────────────────
 # KotlinX Libraries
 # ───────────────────────────────────────────────────────────────────────────────
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
-kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
-kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-kotlinx-serialization-properties = { module = "org.jetbrains.kotlinx:kotlinx-serialization-properties", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Ktor Libraries
@@ -43,12 +35,6 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
-ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
-ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
-ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor" }
-ktor-server-websockets = { module = "io.ktor:ktor-server-websockets", version.ref = "ktor" }
-ktor-server-statusPages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Testing Libraries
@@ -58,6 +44,14 @@ kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", versi
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 # ───────────────────────────────────────────────────────────────────────────────
+# Telegram Bot API
+# ───────────────────────────────────────────────────────────────────────────────
+inmo-tgbotapi-core = { module = "dev.inmo:tgbotapi.core", version.ref = "inmo-tgbotapi" }
+inmo-tgbotapi-extensions = { module = "dev.inmo:tgbotapi.api", version.ref = "inmo-tgbotapi" }
+inmo-tgbotapi-utils = { module = "dev.inmo:tgbotapi.utils", version.ref = "inmo-tgbotapi" }
+inmo-tgbotapi = { module = "dev.inmo:tgbotapi", version.ref = "inmo-tgbotapi" }
+
+# ───────────────────────────────────────────────────────────────────────────────
 # SQLDelight / Database
 # ───────────────────────────────────────────────────────────────────────────────
 sqldelight-jvm-driver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
@@ -65,26 +59,7 @@ sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", ver
 sqldelight-native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
 sqldelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
-xerial-sqlite-jdbc = { module = "org.xerial:sqlite-jdbc", version.require = "3.49.1.0" }
 h2-database = { module = "com.h2database:h2", version.require = "2.2.224" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Jetpack Compose
-# ───────────────────────────────────────────────────────────────────────────────
-jetpack-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "android-gradle-plugin" }
-jetpack-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "android-compose-version" }
-jetpack-compose-material3 = { module = "androidx.compose.material3:material3", version.require = "1.3.0" }
-jetpack-compose-icons = { module = "androidx.compose.material:material-icons-core", version.ref = "android-compose-version" }
-jetpack-compose-extendedIcons = { module = "androidx.compose.material:material-icons-extended", version.ref = "android-compose-version" }
-jetpack-compose-activity = { module = "androidx.activity:activity-compose", version.require = "1.10.1" }
-jetpack-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "android-compose-version" }
-jetpack-compose-material3WindowSizeClass = { module = "androidx.compose.material3:material3-window-size-class", version.require = "1.3.0" }
-compose-windowsize = { module = "org.jetbrains.compose.material3:material3-window-size-class", version.ref = "compose" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Accompanist
-# ───────────────────────────────────────────────────────────────────────────────
-accompanist-systemUiController = { module = "com.google.accompanist:accompanist-systemuicontroller", version.require = "0.32.0" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # DI - Koin
@@ -94,41 +69,6 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
 koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Decompose & Essenty
-# ───────────────────────────────────────────────────────────────────────────────
-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
-decompose-compose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
-decompose-compose-experimental = { module = "com.arkivanov.decompose:extensions-compose-experimental", version.ref = "decompose" }
-essenty-stateKeeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "essenty" }
-essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# FlowMVI
-# ───────────────────────────────────────────────────────────────────────────────
-flowmvi-core = { module = "pro.respawn.flowmvi:core", version.ref = "flowmvi" }
-flowmvi-test = { module = "pro.respawn.flowmvi:test", version.ref = "flowmvi" }
-flowmvi-compose = { module = "pro.respawn.flowmvi:compose", version.ref = "flowmvi" }
-flowmvi-android = { module = "pro.respawn.flowmvi:android", version.ref = "flowmvi" }
-flowmvi-savedstate = { module = "pro.respawn.flowmvi:savedstate", version.ref = "flowmvi" }
-flowmvi-debugger-client = { module = "pro.respawn.flowmvi:debugger-plugin", version.ref = "flowmvi" }
-flowmvi-essenty = { module = "pro.respawn.flowmvi:essenty", version.ref = "flowmvi" }
-flowmvi-essenty-compose = { module = "pro.respawn.flowmvi:essenty-compose", version.ref = "flowmvi" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Markdown Renderer
-# ───────────────────────────────────────────────────────────────────────────────
-compose-markdown = { module = "com.mikepenz:multiplatform-markdown-renderer", version.ref = "compose-markdown" }
-compose-markdown-m3 = { module = "com.mikepenz:multiplatform-markdown-renderer-m3", version.ref = "compose-markdown" }
-compose-markdown-coil3 = { module = "com.mikepenz:multiplatform-markdown-renderer-coil3", version.ref = "compose-markdown" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# CLI Utilities
-# ───────────────────────────────────────────────────────────────────────────────
-clikt-core = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
-mordant = { module = "com.github.ajalt.mordant:mordant", version.ref = "mordant" }
-mordant-markdown = { module = "com.github.ajalt.mordant:mordant-markdown", version.ref = "mordant" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Misc / Core Libraries
@@ -145,31 +85,26 @@ androidx-perfomance-annotation = { module = "androidx.performance:performance-an
 # Build Plugins Classpaths (for `build-conventions`) module
 # ───────────────────────────────────────────────────────────────────────────────
 pluginClasspath-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-pluginClasspath-android = { module = "com.android.tools.build:gradle", version.ref = "android-gradle-plugin" }
 pluginClasspath-sqldelight = { module = "app.cash.sqldelight:gradle-plugin", version.ref = "sqldelight" }
 pluginClasspath-compose = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "compose" }
 pluginClasspath-compose-compiler = { module = "org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
 pluginClasspath-ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 pluginClasspath-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 pluginClasspath-kover = { module = "org.jetbrains.kotlinx.kover:org.jetbrains.kotlinx.kover.gradle.plugin", version.ref = "kover" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# GraalVM
-# ───────────────────────────────────────────────────────────────────────────────
-graalvm-metadata = { module = "org.graalvm.buildtools:graalvm-reachability-metadata", version.ref = "graalvm" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Tools / Utilities
-# ───────────────────────────────────────────────────────────────────────────────
-y9vad9-ktiny-kotlidator = { module = "com.y9vad9.ktiny:kotlidator", version.require = "0.0.3" }
-y9vad9-valdi-validation = { module = "com.y9vad9.valdi:valdi-validation-core", version.ref = "valdi" }
-y9vad9-valdi-domain = { module = "com.y9vad9.valdi:valdi-domain-core", version.ref = "valdi" }
-y9vad9-valdi-domain-detekt = { module = "com.y9vad9.valdi:valdi-domain-detekt", version.ref = "valdi" }
+pluginClasspath-shadowJar = { module = "com.gradleup.shadow:com.gradleup.shadow.gradle.plugin", version.ref = "shadowJar" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Detekt
 # ───────────────────────────────────────────────────────────────────────────────
 detekt-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "detekt-compose" }
+
+# ───────────────────────────────────────────────────────────────────────────────
+# gRPC & ProtoBuf
+# ───────────────────────────────────────────────────────────────────────────────
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.require = "1.54.0" }
+grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc" }
+grpc-netty = { module = "io.grpc:grpc-netty", version.ref = "grpc-netty" }
+protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "protobuf" }
 
 [plugins]
 # ───────────────────────────────────────────────────────────────────────────────
@@ -184,13 +119,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 # Kotlin Compiler Plugins
 # ───────────────────────────────────────────────────────────────────────────────
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
-# ───────────────────────────────────────────────────────────────────────────────
-# Android
-# ───────────────────────────────────────────────────────────────────────────────
-android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Compose
@@ -203,11 +131,6 @@ compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 cashapp-sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 
 # ───────────────────────────────────────────────────────────────────────────────
-# GraalVM
-# ───────────────────────────────────────────────────────────────────────────────
-graalvm-native = { id = "org.graalvm.buildtools.native", version.ref = "graalvm" }
-
-# ───────────────────────────────────────────────────────────────────────────────
 # KSP
 # ───────────────────────────────────────────────────────────────────────────────
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
@@ -216,3 +139,13 @@ google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 # Code Quality
 # ───────────────────────────────────────────────────────────────────────────────
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# ───────────────────────────────────────────────────────────────────────────────
+# Generators
+# ───────────────────────────────────────────────────────────────────────────────
+google-protobuf = { id = "com.google.protobuf", version.ref = "protobuf-plugin" }
+
+# ───────────────────────────────────────────────────────────────────────────────
+# Packaging & Build
+# ───────────────────────────────────────────────────────────────────────────────
+shadowJar = { id = "com.gradleup.shadow", version.ref = "shadowJar" }

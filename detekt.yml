@@ -721,14 +721,14 @@ style:
   UseCheckOrError:
     active: true
   UseDataClass:
-    active: true
+    active: false
     allowVars: false
   UseEmptyCounterpart:
     active: true
   UseIfEmptyOrIfBlank:
     active: true
   UseIfInsteadOfWhen:
-    active: true
+    active: false
     ignoreWhenContainingVariableDeclaration: false
   UseIsNullOrEmpty:
     active: true
