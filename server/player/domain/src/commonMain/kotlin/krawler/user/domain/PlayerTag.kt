@@ -56,7 +56,7 @@ public value class PlayerTag private constructor(private val string: String) {
         public fun createOrThrow(tag: String): PlayerTag {
             val result = create(tag)
             require(result is FactoryResult.Success) {
-                "BrawlStarsPlayerTag creation returned $result instead of success."
+                "PlayerTag creation returned $result instead of success."
             }
             return result.value
         }
