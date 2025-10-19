@@ -29,10 +29,16 @@ include(
 
 include(
     ":server",
-    ":server:core:domain",
-    ":server:feature:auth:domain",
-    ":server:feature:user:domain",
-    "server:feature:user:application",
+    ":server:auth:domain",
+    ":server:player:domain",
+    "server:player:application",
+)
+
+include(
+    ":client:auth:domain",
+    ":client:auth:application",
+    ":client:player:domain",
+    ":client:player:application",
 )
 
 include(
