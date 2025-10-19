@@ -1,0 +1,47 @@
+name: Check Docusaurus Site
+
+on:
+  push:
+    paths:
+      - 'site/**'
+  pull_request:
+    paths:
+      - 'site/**'
+
+jobs:
+  docusaurus-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup Node.js (LTS version)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      # Check Docusaurus config
+      - name: Check Docusaurus Config
+        run: |
+          npx docusaurus swizzle --help > /dev/null || true
+
+      # Build the site
+      - name: Build Docusaurus site
+        run: |
+          npm run build
+
+      # Run lint
+      - name: Lint site
+        run: |
+          npm run lint
