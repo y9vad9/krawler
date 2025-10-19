@@ -30,7 +30,7 @@ public value class PlayerName private constructor(public val string: String) {
         public fun createOrThrow(name: String): PlayerName {
             val result = create(name)
             require(result is FactoryResult.Success) {
-                "BrawlStarsPlayerName creation returned $result instead of success."
+                "PlayerName creation returned $result instead of success."
             }
             return result.value
         }
