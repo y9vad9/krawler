@@ -9,13 +9,13 @@ repositories {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 dependencies {
     api(libs.pluginClasspath.kotlin)
     api(libs.pluginClasspath.kover)
     api(libs.pluginClasspath.detekt)
-    //api(libs.pluginClasspath.sqldelight)
+    api(libs.pluginClasspath.shadowJar)
     api(files((libs).javaClass.superclass.protectionDomain.codeSource.location))
 }
