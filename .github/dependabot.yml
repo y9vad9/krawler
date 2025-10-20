@@ -9,4 +9,4 @@ updates:
       - "type:dependencies"
       - "language:kotlin"
     commit-message:
-      prefix: "[Gradle] "
+      prefix: "chore(deps): "
