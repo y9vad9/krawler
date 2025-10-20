@@ -6,11 +6,6 @@ dependencies {
     // -- Coroutines --
     implementation(libs.kotlinx.coroutines)
 
-    // -- RPC --
-    implementation(libs.grpc.kotlin.stub)
-    implementation(libs.grpc.netty)
-    implementation(libs.protobuf.kotlin)
-
     // -- DI --
     implementation(libs.koin.core)
 
