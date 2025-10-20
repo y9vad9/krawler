@@ -25,6 +25,7 @@ includeBuild("build-conventions")
 include(
     ":foundation:jvm-environment",
     ":foundation:cli-args",
+    ":foundation:logger",
 )
 
 include(
