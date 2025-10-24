@@ -1,9 +1,9 @@
-package krawler.build.convention
+package krawler.gradle
 
 import org.gradle.accessors.dm.LibrariesForLibs
 
 plugins {
-    id("krawler.build.convention.jvm-convention")
+    id("krawler.gradle.jvm-convention")
 }
 
 val libs = the<LibrariesForLibs>()

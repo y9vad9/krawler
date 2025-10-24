@@ -1,4 +1,4 @@
-package krawler.build.convention
+package krawler.gradle
 
 import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.accessors.dm.LibrariesForLibs

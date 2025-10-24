@@ -23,17 +23,19 @@ val conventions: ConventionNamespace = ConventionNamespace()
  */
 class ConventionNamespace internal constructor(
     val jvm: JvmNamespace = JvmNamespace(),
-    val kover: String = "krawler.build.convention.kover-convention",
-    val detekt: String = "krawler.build.convention.detekt-convention",
+    val kover: String = "krawler.gradle.kover-convention",
+    val detekt: String = "krawler.gradle.detekt-convention",
     val multiplatform: MultiplatformNamespace = MultiplatformNamespace(),
-    val feature: FeatureNamespace = FeatureNamespace(),
+    val domain: String = "krawler.gradle.domain-convention",
+    val application: String = "krawler.gradle.application-convention",
+    val server: ServerNamespace = ServerNamespace(),
 )
 
 class JvmNamespace internal constructor(
-    val core: String = "krawler.build.convention.jvm-convention",
-    val tests: String = "krawler.build.convention.jvm-tests-convention",
-    val library: String = "krawler.build.convention.jvm-library-convention",
-    val bootstrap: String = "krawler.build.convention.jvm-bootstrap-convention",
+    val core: String = "krawler.gradle.jvm-convention",
+    val tests: String = "krawler.gradle.jvm-tests-convention",
+    val library: String = "krawler.gradle.jvm-library-convention",
+    val bootstrap: String = "krawler.gradle.jvm-bootstrap-convention",
 )
 
 
@@ -41,13 +43,15 @@ class JvmNamespace internal constructor(
  * Convention plugins used in Kotlin Multiplatform projects.
  */
 class MultiplatformNamespace internal constructor(
-    val core: String = "krawler.build.convention.multiplatform-convention",
+    val core: String = "krawler.gradle.multiplatform-convention",
     /** Convention plugin for setting up shared multiplatform libraries. */
-    val library: String = "krawler.build.convention.multiplatform-library-convention",
-    val tests: String = "krawler.build.convention.multiplatform-tests-convention"
+    val library: String = "krawler.gradle.multiplatform-library-convention",
+    val tests: String = "krawler.gradle.multiplatform-tests-convention"
 )
 
-class FeatureNamespace internal constructor(
-    val domain: String = "krawler.build.convention.feature.domain-convention",
-    val application: String = "krawler.build.convention.feature.application-convention",
+/**
+ * Convention plugins used in Server modules.
+ */
+class ServerNamespace internal constructor(
+    val infrastructure: String = "krawler.gradle.server.infrastructure-convention",
 )

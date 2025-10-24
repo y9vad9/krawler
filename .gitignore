@@ -73,9 +73,7 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
-# lint/reports/
-
-!build-conventions/src/main/kotlin/krawler/build
+lint/reports/
 
 # Dependencies
 node_modules

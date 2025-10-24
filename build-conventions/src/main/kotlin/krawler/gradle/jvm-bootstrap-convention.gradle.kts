@@ -1,13 +1,13 @@
-package krawler.build.convention
+package krawler.gradle
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.invoke
 
 plugins {
-    id("krawler.build.convention.jvm-convention")
-    id("krawler.build.convention.jvm-tests-convention")
-    id("krawler.build.convention.kover-convention")
-    id("krawler.build.convention.detekt-convention")
+    id("krawler.gradle.jvm-convention")
+    id("krawler.gradle.jvm-tests-convention")
+    id("krawler.gradle.kover-convention")
+    id("krawler.gradle.detekt-convention")
     id("com.gradleup.shadow")
     application
     `jvm-test-suite`

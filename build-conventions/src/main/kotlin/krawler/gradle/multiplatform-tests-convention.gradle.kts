@@ -1,9 +1,9 @@
-package krawler.build.convention
+package krawler.gradle
 
 import org.gradle.accessors.dm.LibrariesForLibs
 
 plugins {
-    id("krawler.build.convention.multiplatform-convention")
+    id("krawler.gradle.multiplatform-convention")
 }
 
 val libs = the<LibrariesForLibs>()
