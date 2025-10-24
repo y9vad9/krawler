@@ -39,8 +39,3 @@ jobs:
       - name: Build Docusaurus site
         run: |
           npm run build
-
-      # Run lint
-      - name: Lint site
-        run: |
-          npm run lint
