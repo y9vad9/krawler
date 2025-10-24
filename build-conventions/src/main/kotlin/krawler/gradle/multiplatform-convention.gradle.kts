@@ -1,4 +1,4 @@
-package krawler.build.convention
+package krawler.gradle
 
 plugins {
     kotlin("multiplatform")

@@ -1,14 +1,14 @@
-package krawler.build.convention.feature
+package krawler.gradle
 
 import kotlinx.kover.gradle.plugin.dsl.AggregationType
 import kotlinx.kover.gradle.plugin.dsl.CoverageUnit
 import org.gradle.accessors.dm.LibrariesForLibs
 
 plugins {
-    id("krawler.build.convention.detekt-convention")
-    id("krawler.build.convention.multiplatform-convention")
-    id("krawler.build.convention.multiplatform-tests-convention")
-    id("krawler.build.convention.kover-convention")
+    id("krawler.gradle.detekt-convention")
+    id("krawler.gradle.multiplatform-convention")
+    id("krawler.gradle.multiplatform-tests-convention")
+    id("krawler.gradle.kover-convention")
 }
 
 val libs = the<LibrariesForLibs>()
