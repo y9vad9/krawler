@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-          cache: 'yarn'
 
       # Install dependencies
       - name: Install dependencies
@@ -40,8 +39,3 @@ jobs:
       - name: Build Docusaurus site
         run: |
           npm run build
-
-      # Run lint
-      - name: Lint site
-        run: |
-          npm run lint

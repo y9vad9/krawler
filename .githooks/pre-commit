@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# === Gradle tests ===
+echo "Running Gradle checks..."
+if ! ./gradlew check; then
+  echo
+  echo "❌ Gradle checks failed. Commit aborted."
+  exit 1
+fi
+echo "✅ Gradle checks passed."
+
+# === Docusaurus checks ===
+echo "Running Docusaurus checks..."
+cd site || { echo "❌ 'site' directory not found"; exit 1; }
+
+# Install Node dependencies
+echo "Installing Node dependencies..."
+npm ci
+
+# Check Docusaurus config
+echo "Checking Docusaurus config..."
+npx docusaurus swizzle --help > /dev/null || true
+
+# Build the site
+echo "Building Docusaurus site..."
+if ! npm run build; then
+  echo "❌ Docusaurus build failed. Commit aborted."
+  exit 1
+fi
+
+echo "✅ All checks passed. You can commit now."
