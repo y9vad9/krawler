@@ -1,0 +1,2577 @@
+{
+  "items": [
+    {
+      "tag": "#2GRVVCYUQG",
+      "name": "SUPER⭐️STAR",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000843
+      },
+      "trophies": 1,
+      "rank": 1,
+      "club": {
+        "name": "<c7>TOP ONE</c>"
+      }
+    },
+    {
+      "tag": "#8QQJ0QLQG",
+      "name": "SneaX☔️",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000612
+      },
+      "trophies": 1,
+      "rank": 2,
+      "club": {
+        "name": "‼️Carry Ranks‼️"
+      }
+    },
+    {
+      "tag": "#290J9GGV8",
+      "name": "Psychodark☔️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 3,
+      "club": {
+        "name": "‼️Carry Ranks‼️"
+      }
+    },
+    {
+      "tag": "#VRYP09L0",
+      "name": "ruslana_super💔",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000660
+      },
+      "trophies": 1,
+      "rank": 4,
+      "club": {
+        "name": "GET RANK❗"
+      }
+    },
+    {
+      "tag": "#GJRV99Q8",
+      "name": "!3nzo_59🍋",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000205
+      },
+      "trophies": 1,
+      "rank": 5,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#9YVV8PC2",
+      "name": "ShOttiK",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000367
+      },
+      "trophies": 1,
+      "rank": 6,
+      "club": {
+        "name": "‼️LOOK BIO‼️"
+      }
+    },
+    {
+      "tag": "#8L88CVQLG",
+      "name": "Mr.Nick🐙",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000913
+      },
+      "trophies": 1,
+      "rank": 7,
+      "club": {
+        "name": "‼️CHECK BIO‼️"
+      }
+    },
+    {
+      "tag": "#8PG0LC0VR",
+      "name": "MAX LE CAILLOUX",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000138
+      },
+      "trophies": 1,
+      "rank": 8,
+      "club": {
+        "name": "FC OWEE 🐐"
+      }
+    },
+    {
+      "tag": "#PUU08029G",
+      "name": "@Ak1lz",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000554
+      },
+      "trophies": 1,
+      "rank": 9,
+      "club": {
+        "name": "⁉️RANKS⁉️BIO‼️"
+      }
+    },
+    {
+      "tag": "#LU9PVCP08",
+      "name": "Maytho💚",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000466
+      },
+      "trophies": 1,
+      "rank": 10,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#YLJC8CV9",
+      "name": "Mirkoo ㌓",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000210
+      },
+      "trophies": 1,
+      "rank": 11
+    },
+    {
+      "tag": "#2R2QG29CC",
+      "name": "Ege",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 12,
+      "club": {
+        "name": "ig: egeskr_"
+      }
+    },
+    {
+      "tag": "#8JVV0P808",
+      "name": "y4uff🍀",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000167
+      },
+      "trophies": 1,
+      "rank": 13,
+      "club": {
+        "name": "A Few Good Men"
+      }
+    },
+    {
+      "tag": "#GCCYUGJP",
+      "name": "Mobe97",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 14,
+      "club": {
+        "name": "Secta97"
+      }
+    },
+    {
+      "tag": "#PU8808RQC",
+      "name": "YT: MystiX",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 15,
+      "club": {
+        "name": "‼️IN LIVE NOW‼️"
+      }
+    },
+    {
+      "tag": "#YCGVJGPVJ",
+      "name": "Gozaline",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000831
+      },
+      "trophies": 1,
+      "rank": 16,
+      "club": {
+        "name": "ㅤㅤ"
+      }
+    },
+    {
+      "tag": "#8GYGJYC8V",
+      "name": "MT|Kerem 🇹🇷",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000672
+      },
+      "trophies": 1,
+      "rank": 17,
+      "club": {
+        "name": "MT Community"
+      }
+    },
+    {
+      "tag": "#YCQ8299GU",
+      "name": "☔ᵒᵖ|Dragon",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 18,
+      "club": {
+        "name": "<c5>Just</c>Win"
+      }
+    },
+    {
+      "tag": "#PGVQU822",
+      "name": "JeKsTD❤️‍🔥🥀",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000496
+      },
+      "trophies": 1,
+      "rank": 19,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#28LUCUGJP",
+      "name": "Zenythϟ",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 20,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#8P0PCY0G",
+      "name": "JangaBs",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000933
+      },
+      "trophies": 1,
+      "rank": 21,
+      "club": {
+        "name": "Top 1 🤒"
+      }
+    },
+    {
+      "tag": "#2C82CVLRP",
+      "name": "Lv77狩人🏹べるきゅん",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000077
+      },
+      "trophies": 1,
+      "rank": 22,
+      "club": {
+        "name": "140K"
+      }
+    },
+    {
+      "tag": "#82JPG02",
+      "name": "KCP | JDBG🍥",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000021
+      },
+      "trophies": 1,
+      "rank": 23,
+      "club": {
+        "name": "Secta97"
+      }
+    },
+    {
+      "tag": "#98900902U",
+      "name": "UNS|Velora",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000912
+      },
+      "trophies": 1,
+      "rank": 24,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#9Y98LJUYJ",
+      "name": "INI|suckaAndi",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000765
+      },
+      "trophies": 1,
+      "rank": 25,
+      "club": {
+        "name": "WANT ADD?"
+      }
+    },
+    {
+      "tag": "#PGPY82CQ2",
+      "name": "虚空🤞",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000851
+      },
+      "trophies": 1,
+      "rank": 26,
+      "club": {
+        "name": "CRAZY COCOON"
+      }
+    },
+    {
+      "tag": "#2RLCPVGUG",
+      "name": "Pedryck 💤",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000765
+      },
+      "trophies": 1,
+      "rank": 27,
+      "club": {
+        "name": "iKaoss Gvng"
+      }
+    },
+    {
+      "tag": "#88YV8VQJL",
+      "name": "🧊Siubing🧊",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000312
+      },
+      "trophies": 1,
+      "rank": 28,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#PVGGJ0LL9",
+      "name": "〆|ζ͜Έʛ͢ԑɱ͠εͷ 🔥",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000888
+      },
+      "trophies": 1,
+      "rank": 29,
+      "club": {
+        "name": "〆|ζ͜Ϝο͢ʀƶ͜͡ɑ"
+      }
+    },
+    {
+      "tag": "#2YCPG0U0",
+      "name": "๛ÐamnChaotix",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 30,
+      "club": {
+        "name": "Get Carried 🍃"
+      }
+    },
+    {
+      "tag": "#90GJUJVLG",
+      "name": "SeBBy🩵智",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000339
+      },
+      "trophies": 1,
+      "rank": 31,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#8080JULUP",
+      "name": "Mariotampo🍥",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000285
+      },
+      "trophies": 1,
+      "rank": 32,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#P0RCLQPV2",
+      "name": "Tiktok·bs_Vaal",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000388
+      },
+      "trophies": 1,
+      "rank": 33,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#82GPP9LQ",
+      "name": "DPB|Tobi🍉",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000771
+      },
+      "trophies": 1,
+      "rank": 34,
+      "club": {
+        "name": "BBCC"
+      }
+    },
+    {
+      "tag": "#22PG0LYQP",
+      "name": "Skibidi🩵Juppi",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000402
+      },
+      "trophies": 1,
+      "rank": 35,
+      "club": {
+        "name": "WANT ADD?"
+      }
+    },
+    {
+      "tag": "#J2RJ8Y",
+      "name": "Spytino ฅ^•ﻌ•^ฅ",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000565
+      },
+      "trophies": 1,
+      "rank": 36,
+      "club": {
+        "name": "<c8>Cats<3</c>"
+      }
+    },
+    {
+      "tag": "#RJLU80U9",
+      "name": "てんさい",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000348
+      },
+      "trophies": 1,
+      "rank": 37,
+      "club": {
+        "name": "第37190期Tヴァイ兵団"
+      }
+    },
+    {
+      "tag": "#82YCCY02",
+      "name": "Sybe✰",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000748
+      },
+      "trophies": 1,
+      "rank": 38,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#UPQPY082",
+      "name": "Jdizz🍥",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000610
+      },
+      "trophies": 1,
+      "rank": 39,
+      "club": {
+        "name": "Eclipsed 🌓"
+      }
+    },
+    {
+      "tag": "#8LVQVYU20",
+      "name": "D1zmoral?🕊️",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 40,
+      "club": {
+        "name": "Хижина ПАБЛО"
+      }
+    },
+    {
+      "tag": "#9C8PYVJP8",
+      "name": "☘️|Diego°⚡",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 41
+    },
+    {
+      "tag": "#2CQPYLVV9",
+      "name": "MATITI🎀",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000224
+      },
+      "trophies": 1,
+      "rank": 42,
+      "club": {
+        "name": "Eclipsed 🌓"
+      }
+    },
+    {
+      "tag": "#PP8Q28JP8",
+      "name": "Rayze♛",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000780
+      },
+      "trophies": 1,
+      "rank": 43,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#8QPU8JL2J",
+      "name": "Sigma Nexus🎩",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000588
+      },
+      "trophies": 1,
+      "rank": 44,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#GQ202LY8G",
+      "name": "愛Yogi🩷",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000135
+      },
+      "trophies": 1,
+      "rank": 45,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#8JPUP0RLG",
+      "name": "Bonzai↯",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000321
+      },
+      "trophies": 1,
+      "rank": 46,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#89CC28L88",
+      "name": "kkxtanyx!",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000624
+      },
+      "trophies": 1,
+      "rank": 47,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#9YVJJV9YJ",
+      "name": "Angus🔜130k🏆",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000135
+      },
+      "trophies": 1,
+      "rank": 48,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#89VL8Y90G",
+      "name": "Mozart↯",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000239
+      },
+      "trophies": 1,
+      "rank": 49,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#9QJLLRG8",
+      "name": "rawiy",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 50,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#2J0Y92QQ9",
+      "name": "Adik💋Marysia",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 51,
+      "club": {
+        "name": "BrawlRoyale Hub"
+      }
+    },
+    {
+      "tag": "#CJUL0RYJ",
+      "name": "BLS|ᵒᵖKozmo♛",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000758
+      },
+      "trophies": 1,
+      "rank": 52,
+      "club": {
+        "name": "Bulls|E-spor"
+      }
+    },
+    {
+      "tag": "#9QY9YVUL",
+      "name": "𝓼𝓱𝓪𝓭𝓮𝔃𝔃彡",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000905
+      },
+      "trophies": 1,
+      "rank": 53,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#Q8LCP92",
+      "name": "Julian票",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 54,
+      "club": {
+        "name": "tt:firstjulian"
+      }
+    },
+    {
+      "tag": "#LQJ9VLGL",
+      "name": "4SV|vikiwitch",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000626
+      },
+      "trophies": 1,
+      "rank": 55,
+      "club": {
+        "name": "Loyal Grace"
+      }
+    },
+    {
+      "tag": "#PJ922C0QG",
+      "name": "Axel Blaze",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000150
+      },
+      "trophies": 1,
+      "rank": 56,
+      "club": {
+        "name": "Storm🌪️"
+      }
+    },
+    {
+      "tag": "#PUV8LGJY9",
+      "name": "HmA|Neytron?",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000378
+      },
+      "trophies": 1,
+      "rank": 57,
+      "club": {
+        "name": "Invincible👅"
+      }
+    },
+    {
+      "tag": "#P880RVGR2",
+      "name": "あKrtoo🦦",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000321
+      },
+      "trophies": 1,
+      "rank": 58,
+      "club": {
+        "name": "AKRIJ1211"
+      }
+    },
+    {
+      "tag": "#9GCU9VVYQ",
+      "name": "Sleepy Vaśko😴",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000930
+      },
+      "trophies": 1,
+      "rank": 59,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#YR822PRQL",
+      "name": "Jordi8100",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000911
+      },
+      "trophies": 1,
+      "rank": 60,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#GVY9QU22",
+      "name": "FrB|Le Best⚜️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000032
+      },
+      "trophies": 1,
+      "rank": 61,
+      "club": {
+        "name": "Night Fury⚡️"
+      }
+    },
+    {
+      "tag": "#GUVP22L",
+      "name": "TikTok|rotbrawl",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000764
+      },
+      "trophies": 1,
+      "rank": 62,
+      "club": {
+        "name": "rotbrawl Gang🗿"
+      }
+    },
+    {
+      "tag": "#888J9998L",
+      "name": "oof",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000534
+      },
+      "trophies": 1,
+      "rank": 63,
+      "club": {
+        "name": "Shrek Squad"
+      }
+    },
+    {
+      "tag": "#PY2UV9JP",
+      "name": "brau 冷",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 64,
+      "club": {
+        "name": "FWs Club 🌮"
+      }
+    },
+    {
+      "tag": "#LRLUL0JGU",
+      "name": "STR|Kirby🥞",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000862
+      },
+      "trophies": 1,
+      "rank": 65,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#9P2QJLGCY",
+      "name": "ζ͜͡Cengiz最",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000018
+      },
+      "trophies": 1,
+      "rank": 66,
+      "club": {
+        "name": "igx:wcengiz21"
+      }
+    },
+    {
+      "tag": "#899ULJ9QG",
+      "name": "GusikFemboy🎀💍",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000889
+      },
+      "trophies": 1,
+      "rank": 67,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#Y9RQVJP28",
+      "name": "🥀soli🥀",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000901
+      },
+      "trophies": 1,
+      "rank": 68,
+      "club": {
+        "name": "⁉️RANKS⁉️BIO‼️"
+      }
+    },
+    {
+      "tag": "#YJUGJ9RU",
+      "name": "LLC|Zyx🦈",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000140
+      },
+      "trophies": 1,
+      "rank": 69,
+      "club": {
+        "name": "Zyx’s family"
+      }
+    },
+    {
+      "tag": "#8VCQCLJ22",
+      "name": "ζ͜͡𝐃𝐖𝐎𝐙🩸",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000293
+      },
+      "trophies": 1,
+      "rank": 70,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#82JGQCJ22",
+      "name": "無敵の怪獣王✨",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000020
+      },
+      "trophies": 1,
+      "rank": 71,
+      "club": {
+        "name": "140K"
+      }
+    },
+    {
+      "tag": "#228VQYUR2",
+      "name": "あ| Iconyx📚",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000468
+      },
+      "trophies": 1,
+      "rank": 72,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#L899Q22",
+      "name": "Seкtum 金",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000541
+      },
+      "trophies": 1,
+      "rank": 73,
+      "club": {
+        "name": "BrawlRoyale Hub"
+      }
+    },
+    {
+      "tag": "#209RGQ8QG",
+      "name": "gogo/Matteo#1",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 74,
+      "club": {
+        "name": "gogo"
+      }
+    },
+    {
+      "tag": "#2C8YV0J9P",
+      "name": "Rens玄",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000366
+      },
+      "trophies": 1,
+      "rank": 75,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#20V08C9QV",
+      "name": "tiktok:ogaaa🌺",
+      "nameColor": "0xfff9775d",
+      "icon": {
+        "id": 28000757
+      },
+      "trophies": 1,
+      "rank": 76,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#P0PCY8L2R",
+      "name": "Twitch•Nyxx_bs",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000810
+      },
+      "trophies": 1,
+      "rank": 77,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#RJGYRP9P",
+      "name": "YT: zestyy_bss",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 78,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#JLCGUCG",
+      "name": "LB | Aleesfc❄️",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000388
+      },
+      "trophies": 1,
+      "rank": 79,
+      "club": {
+        "name": "LadderBots🤡"
+      }
+    },
+    {
+      "tag": "#PR8YLY899",
+      "name": "这是AT|Balla❤️🔥",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000933
+      },
+      "trophies": 1,
+      "rank": 80,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#8V0R08U82",
+      "name": "Arthious🤍",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000135
+      },
+      "trophies": 1,
+      "rank": 81,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#P8JQL8RUQ",
+      "name": "PYA|Kpevetka夏🦋",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000020
+      },
+      "trophies": 1,
+      "rank": 82,
+      "club": {
+        "name": "ЗАХОДИ НА СТРИМ"
+      }
+    },
+    {
+      "tag": "#YQURUPR80",
+      "name": "Leonidas☃️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000210
+      },
+      "trophies": 1,
+      "rank": 83,
+      "club": {
+        "name": "Bulls|E-spor"
+      }
+    },
+    {
+      "tag": "#8VQC280CJ",
+      "name": "alex",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000774
+      },
+      "trophies": 1,
+      "rank": 84,
+      "club": {
+        "name": "RED/ESPORT"
+      }
+    },
+    {
+      "tag": "#Q8QQUUUP",
+      "name": "けんちゃまる🌙🍀",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000758
+      },
+      "trophies": 1,
+      "rank": 85,
+      "club": {
+        "name": "<c0>Abyss⚜️</c>"
+      }
+    },
+    {
+      "tag": "#89GQ0GL22",
+      "name": "Cesar🎀",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000117
+      },
+      "trophies": 1,
+      "rank": 86,
+      "club": {
+        "name": "RED/ESPORT"
+      }
+    },
+    {
+      "tag": "#8VQ8GRP0V",
+      "name": "Tiktok•Luks🪴",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 87,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#2829UQVG0",
+      "name": "Emma Watson",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 88,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#8JG2PJGCL",
+      "name": "アオイ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000020
+      },
+      "trophies": 1,
+      "rank": 89,
+      "club": {
+        "name": "140K"
+      }
+    },
+    {
+      "tag": "#YGGJPUYJ0",
+      "name": "No Fear Léxâs.",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000555
+      },
+      "trophies": 1,
+      "rank": 90,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#9JU8PVCPY",
+      "name": "Kapy",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000777
+      },
+      "trophies": 1,
+      "rank": 91,
+      "club": {
+        "name": "Хижина ПАБЛО"
+      }
+    },
+    {
+      "tag": "#8L0UVQQLU",
+      "name": "ICON|SIRIUS",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 92,
+      "club": {
+        "name": "<c7>Seraph </c>"
+      }
+    },
+    {
+      "tag": "#2CGYV8LYQ",
+      "name": "〆|ζ͜Ϝɛα͜͡ʀℓ͢ɛᴤそ",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000265
+      },
+      "trophies": 1,
+      "rank": 93,
+      "club": {
+        "name": "〆|ζ͜Ϝο͢ʀƶ͜͡ɑ"
+      }
+    },
+    {
+      "tag": "#9V2CY20C0",
+      "name": "tookaa <3",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000466
+      },
+      "trophies": 1,
+      "rank": 94,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#20LUPQJ2J",
+      "name": "NF|Seth⚡️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000870
+      },
+      "trophies": 1,
+      "rank": 95,
+      "club": {
+        "name": "Night Fury⚡️"
+      }
+    },
+    {
+      "tag": "#YUVPVCQ",
+      "name": "qLab Nathxn",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000889
+      },
+      "trophies": 1,
+      "rank": 96,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#G2CPPYC0Q",
+      "name": "Levi❤️Amy",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000881
+      },
+      "trophies": 1,
+      "rank": 97,
+      "club": {
+        "name": "AutoAimBosses"
+      }
+    },
+    {
+      "tag": "#JG0R9JUY",
+      "name": "xAℓcяaкzを🐼",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 98,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#8G2RPPGCL",
+      "name": "Uncle X",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000020
+      },
+      "trophies": 1,
+      "rank": 99,
+      "club": {
+        "name": "Genesis Elite"
+      }
+    },
+    {
+      "tag": "#GCQGGPC0J",
+      "name": "kocham kicie 😻",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000382
+      },
+      "trophies": 1,
+      "rank": 100,
+      "club": {
+        "name": "TT: kkacper_bs"
+      }
+    },
+    {
+      "tag": "#QY9JLRU2L",
+      "name": "ESE|ronalbanbg",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000188
+      },
+      "trophies": 1,
+      "rank": 101,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#J9QCJLU0",
+      "name": "Sweetenzo",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000912
+      },
+      "trophies": 1,
+      "rank": 102,
+      "club": {
+        "name": "sweet"
+      }
+    },
+    {
+      "tag": "#L88V8QLQP",
+      "name": "gogo/matyan#3",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 103,
+      "club": {
+        "name": "gogo"
+      }
+    },
+    {
+      "tag": "#JUUVLGL8",
+      "name": "ᴵᴬᴹCrouchaf",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000855
+      },
+      "trophies": 1,
+      "rank": 104,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#88G09QCQ2",
+      "name": "TT: Metra🌀",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000205
+      },
+      "trophies": 1,
+      "rank": 105,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#PCL8LGVP9",
+      "name": "tt:sprayjx",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000058
+      },
+      "trophies": 1,
+      "rank": 106,
+      "club": {
+        "name": "Talents Recoil"
+      }
+    },
+    {
+      "tag": "#Y00Q29PUJ",
+      "name": "Michalャ",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000913
+      },
+      "trophies": 1,
+      "rank": 107,
+      "club": {
+        "name": "Vortex"
+      }
+    },
+    {
+      "tag": "#80VRC2YUP",
+      "name": "Tatsuya ★",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000278
+      },
+      "trophies": 1,
+      "rank": 108,
+      "club": {
+        "name": "I Love Kaylla"
+      }
+    },
+    {
+      "tag": "#9UV8VUVUQ",
+      "name": "Isreal🩵",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000194
+      },
+      "trophies": 1,
+      "rank": 109,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#8RV20QRGJ",
+      "name": "安|Ludacriss 🕊️",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 110,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#9RVR9UPRQ",
+      "name": "LeoNard™️",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000587
+      },
+      "trophies": 1,
+      "rank": 111,
+      "club": {
+        "name": "⚡️TeamSpeedy⚡️"
+      }
+    },
+    {
+      "tag": "#2J82LJJG2",
+      "name": "Pikaヤ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000242
+      },
+      "trophies": 1,
+      "rank": 112,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#G89PQRVL",
+      "name": "trucoc 124",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000526
+      },
+      "trophies": 1,
+      "rank": 113,
+      "club": {
+        "name": "Top 1 🤒"
+      }
+    },
+    {
+      "tag": "#8LRPCC2Q",
+      "name": "AAG|Fr0ggy",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000371
+      },
+      "trophies": 1,
+      "rank": 114,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#RGLJJPG8L",
+      "name": "Twinkll❤️",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000579
+      },
+      "trophies": 1,
+      "rank": 115
+    },
+    {
+      "tag": "#LGR29JYQ",
+      "name": "Denis🍉",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000071
+      },
+      "trophies": 1,
+      "rank": 116,
+      "club": {
+        "name": "BLESSED ONES"
+      }
+    },
+    {
+      "tag": "#9QQ9880JP",
+      "name": "ɖʀɮ|Âgent🥶",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 117,
+      "club": {
+        "name": "anti winx"
+      }
+    },
+    {
+      "tag": "#80V2UC0P2",
+      "name": "SW|Apoxi.",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000003
+      },
+      "trophies": 1,
+      "rank": 118,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#8P09JU2QV",
+      "name": "Rsmx.46乂",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 119,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#VUV0L22Y",
+      "name": "Twitch•Bsnilsys",
+      "nameColor": "0xfff05637",
+      "icon": {
+        "id": 28000802
+      },
+      "trophies": 1,
+      "rank": 120,
+      "club": {
+        "name": "DeathMoon"
+      }
+    },
+    {
+      "tag": "#92CPGPJJ",
+      "name": "Akai玄",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000542
+      },
+      "trophies": 1,
+      "rank": 121,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#PJ2UQQGUG",
+      "name": "Jr Banďík🌠",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000063
+      },
+      "trophies": 1,
+      "rank": 122,
+      "club": {
+        "name": "DrEaM TeAm"
+      }
+    },
+    {
+      "tag": "#8R9CG0L0J",
+      "name": "么 | Noah • ♛",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 123,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#UYG0U08G",
+      "name": "Inarizz.",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000486
+      },
+      "trophies": 1,
+      "rank": 124,
+      "club": {
+        "name": "Orion Diamond"
+      }
+    },
+    {
+      "tag": "#2Q88JGR02",
+      "name": "⚡️Strezz⚡️シ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 125,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#9GVJQVG2C",
+      "name": "NHN|iJonyyy29",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000213
+      },
+      "trophies": 1,
+      "rank": 126,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#PLUUL8GCL",
+      "name": "Kain",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000630
+      },
+      "trophies": 1,
+      "rank": 127,
+      "club": {
+        "name": "Хижина ПАБЛО"
+      }
+    },
+    {
+      "tag": "#P2QCPV8Y",
+      "name": "NHN | GabyYT",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000757
+      },
+      "trophies": 1,
+      "rank": 128,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#2JV2P0890",
+      "name": "LujleR 🏹",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000757
+      },
+      "trophies": 1,
+      "rank": 129,
+      "club": {
+        "name": "<c5>HOR</c>IZON"
+      }
+    },
+    {
+      "tag": "#C08882G2",
+      "name": "Démon¬✝️",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000631
+      },
+      "trophies": 1,
+      "rank": 130,
+      "club": {
+        "name": "vMoove"
+      }
+    },
+    {
+      "tag": "#R22PU2VC",
+      "name": "愛𝓟𝓲𝓶𝓮𝓷𝓽🌶",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000385
+      },
+      "trophies": 1,
+      "rank": 131,
+      "club": {
+        "name": "SD cooking"
+      }
+    },
+    {
+      "tag": "#82VRCCJ8R",
+      "name": "舞FrostShadowX♣️",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000135
+      },
+      "trophies": 1,
+      "rank": 132,
+      "club": {
+        "name": "Vortex"
+      }
+    },
+    {
+      "tag": "#89L9Q2RLU",
+      "name": "zadrotikk🩵B",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 133,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#GULYQUPG",
+      "name": "𝓚𝓻𝓲𝓲𝓼𝓼 ₰",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000150
+      },
+      "trophies": 1,
+      "rank": 134,
+      "club": {
+        "name": "EC|Infinite🩷"
+      }
+    },
+    {
+      "tag": "#20R88PV",
+      "name": "HmA|Vanessk?🎀",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000738
+      },
+      "trophies": 1,
+      "rank": 135,
+      "club": {
+        "name": "Ranked Wallace"
+      }
+    },
+    {
+      "tag": "#8VVPVQ8QG",
+      "name": "NAVI|COL2🇷🇺",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000140
+      },
+      "trophies": 1,
+      "rank": 136,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#PQ0UY229U",
+      "name": "SR|QUAR£SMA",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000539
+      },
+      "trophies": 1,
+      "rank": 137,
+      "club": {
+        "name": "Series"
+      }
+    },
+    {
+      "tag": "#82QGG282P",
+      "name": "hilo x",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000077
+      },
+      "trophies": 1,
+      "rank": 138,
+      "club": {
+        "name": "<c9>Eternty</c>"
+      }
+    },
+    {
+      "tag": "#99JY82CQ9",
+      "name": "Fax❤️‍🔥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000021
+      },
+      "trophies": 1,
+      "rank": 139,
+      "club": {
+        "name": "⭐New York ⭐"
+      }
+    },
+    {
+      "tag": "#98VP80P8J",
+      "name": "Tiktok-Kaafetz",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000534
+      },
+      "trophies": 1,
+      "rank": 140,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#80GPJQCG0",
+      "name": "Eyûp💛Edaá",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000707
+      },
+      "trophies": 1,
+      "rank": 141,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#RJPU0UCU",
+      "name": "Twitch:aktilion",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000442
+      },
+      "trophies": 1,
+      "rank": 142,
+      "club": {
+        "name": "Хижина ПАБЛО"
+      }
+    },
+    {
+      "tag": "#9Q2RPUY0",
+      "name": "きりたんぽ🍥",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000605
+      },
+      "trophies": 1,
+      "rank": 143,
+      "club": {
+        "name": "色即是空"
+      }
+    },
+    {
+      "tag": "#UYP89V0L",
+      "name": "TikTok•Jett_bs",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000318
+      },
+      "trophies": 1,
+      "rank": 144
+    },
+    {
+      "tag": "#CYUL2J0L",
+      "name": "PRIME|nico🔥",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000242
+      },
+      "trophies": 1,
+      "rank": 145,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#PPCY8VPQ2",
+      "name": "Asensio Prime あ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 146,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#VL0GPPJV",
+      "name": "Code: Physic 🦢",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000399
+      },
+      "trophies": 1,
+      "rank": 147,
+      "club": {
+        "name": "i❤️cla"
+      }
+    },
+    {
+      "tag": "#LYYG8GUPC",
+      "name": "SCG|Sainz55",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 148,
+      "club": {
+        "name": "Grenouilland"
+      }
+    },
+    {
+      "tag": "#PVQPUYUVU",
+      "name": "Daxzz.🍥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000071
+      },
+      "trophies": 1,
+      "rank": 149,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#2JLV9UJUQ",
+      "name": "頂点に♡FREEZE",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000378
+      },
+      "trophies": 1,
+      "rank": 150
+    },
+    {
+      "tag": "#Y2LCL0LR2",
+      "name": "BG|Punisher17",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000402
+      },
+      "trophies": 1,
+      "rank": 151,
+      "club": {
+        "name": "Bulls|E-spor"
+      }
+    },
+    {
+      "tag": "#PUP0C2L0J",
+      "name": "Crow❤️Sneaxy",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000135
+      },
+      "trophies": 1,
+      "rank": 152,
+      "club": {
+        "name": "rotbrawl Gang🗿"
+      }
+    },
+    {
+      "tag": "#YYJGGR00G",
+      "name": "alex🐣💛",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000757
+      },
+      "trophies": 1,
+      "rank": 153,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#2PRPJ2QC8",
+      "name": "うちゅうのろとぴぃ〜👻",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000539
+      },
+      "trophies": 1,
+      "rank": 154,
+      "club": {
+        "name": "<c5>恋雪</c>"
+      }
+    },
+    {
+      "tag": "#PPLQ2JP8R",
+      "name": "PDR|River☂️",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000619
+      },
+      "trophies": 1,
+      "rank": 155,
+      "club": {
+        "name": "Élite Nexus"
+      }
+    },
+    {
+      "tag": "#2208090C8",
+      "name": "ビスケさん",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000267
+      },
+      "trophies": 1,
+      "rank": 156,
+      "club": {
+        "name": "CRAZY COCOON"
+      }
+    },
+    {
+      "tag": "#GCV9G900G",
+      "name": "Lighting⚡️",
+      "nameColor": "0xfff05637",
+      "icon": {
+        "id": 28000888
+      },
+      "trophies": 1,
+      "rank": 157,
+      "club": {
+        "name": "UNDERDOG 🇵🇱"
+      }
+    },
+    {
+      "tag": "#9GU0YPJ8V",
+      "name": "PD|CostasPR🇵🇸",
+      "nameColor": "0xfff05637",
+      "icon": {
+        "id": 28000339
+      },
+      "trophies": 1,
+      "rank": 158,
+      "club": {
+        "name": "Pitagyro 3"
+      }
+    },
+    {
+      "tag": "#P20LUC0C8",
+      "name": "Tiktok•Nerlet🦋",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000912
+      },
+      "trophies": 1,
+      "rank": 159,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#99YV28JVC",
+      "name": "Enginn.’🖤",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000167
+      },
+      "trophies": 1,
+      "rank": 160,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#JPCV8GQ",
+      "name": "RS | Prox",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000863
+      },
+      "trophies": 1,
+      "rank": 161,
+      "club": {
+        "name": "Real |Squad"
+      }
+    },
+    {
+      "tag": "#20PJCU2P0",
+      "name": "ZN|Kâjirø❤️‍🔥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000748
+      },
+      "trophies": 1,
+      "rank": 162,
+      "club": {
+        "name": "200.002 🏆"
+      }
+    },
+    {
+      "tag": "#98P82G0GJ",
+      "name": "SM|NODJ777",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000788
+      },
+      "trophies": 1,
+      "rank": 163,
+      "club": {
+        "name": "SM Gaming"
+      }
+    },
+    {
+      "tag": "#PYJQLV098",
+      "name": "TNT|Insanity",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000402
+      },
+      "trophies": 1,
+      "rank": 164,
+      "club": {
+        "name": "The Ark"
+      }
+    },
+    {
+      "tag": "#98RULGJRL",
+      "name": "Shizzy",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000402
+      },
+      "trophies": 1,
+      "rank": 165,
+      "club": {
+        "name": "FWs Club 🌮"
+      }
+    },
+    {
+      "tag": "#2CVV8P29",
+      "name": "Kactus.",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000822
+      },
+      "trophies": 1,
+      "rank": 166,
+      "club": {
+        "name": "7 Dwarves"
+      }
+    },
+    {
+      "tag": "#P2P929UGV",
+      "name": "🦾AQM|Mage🍭",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000520
+      },
+      "trophies": 1,
+      "rank": 167,
+      "club": {
+        "name": "🏯SKR|TØKARA🪵"
+      }
+    },
+    {
+      "tag": "#Y8PR2C2Q8",
+      "name": "波蘭|𝓐𝓵𝓮𝓴𝓼🌸",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000139
+      },
+      "trophies": 1,
+      "rank": 168,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#UJGLJV2P",
+      "name": "It's🤍✧Mail ◆",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000564
+      },
+      "trophies": 1,
+      "rank": 169,
+      "club": {
+        "name": "MementoMori"
+      }
+    },
+    {
+      "tag": "#PR9U2JL",
+      "name": "STMN|JuanCarlos",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000119
+      },
+      "trophies": 1,
+      "rank": 170
+    },
+    {
+      "tag": "#8GGLYCVC8",
+      "name": "StyneVGX",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000244
+      },
+      "trophies": 1,
+      "rank": 171,
+      "club": {
+        "name": "Chosen Destiny"
+      }
+    },
+    {
+      "tag": "#89CG982QQ",
+      "name": "Inco?🦋",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 172
+    },
+    {
+      "tag": "#9CLRULP29",
+      "name": "KxdeRy愛",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000711
+      },
+      "trophies": 1,
+      "rank": 173,
+      "club": {
+        "name": "•New Gen愛"
+      }
+    },
+    {
+      "tag": "#YCJR2L8YU",
+      "name": "ZN|Wéxyy🫧",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000234
+      },
+      "trophies": 1,
+      "rank": 174
+    },
+    {
+      "tag": "#2J99U9LU",
+      "name": "༄Korbini🍥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000321
+      },
+      "trophies": 1,
+      "rank": 175,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#LYU228V9Q",
+      "name": "Emreè↯",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 176,
+      "club": {
+        "name": "lluvia"
+      }
+    },
+    {
+      "tag": "#9YR0GR2JJ",
+      "name": "PDR|YF7🔱",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 177,
+      "club": {
+        "name": "Orion Amethyst"
+      }
+    },
+    {
+      "tag": "#9UC0R2V2L",
+      "name": "A$AP_kill_you🥱",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000529
+      },
+      "trophies": 1,
+      "rank": 178,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#8J8UCYURJ",
+      "name": "кᴀяᴀмᴇʟʟσ🍬",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000919
+      },
+      "trophies": 1,
+      "rank": 179
+    },
+    {
+      "tag": "#YPVGLJUG",
+      "name": "MPK | Ŀ𝖔ū𝑘𝙖☔",
+      "nameColor": "0xfff05637",
+      "icon": {
+        "id": 28000512
+      },
+      "trophies": 1,
+      "rank": 180,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    },
+    {
+      "tag": "#P29LYQV9C",
+      "name": "Topràkk 👒",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000539
+      },
+      "trophies": 1,
+      "rank": 181,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#9LL2G8URR",
+      "name": "DaddyEli",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000534
+      },
+      "trophies": 1,
+      "rank": 182,
+      "club": {
+        "name": "Winterslaap."
+      }
+    },
+    {
+      "tag": "#R2RCVGR",
+      "name": "Nuclii Top 1 🐬",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 183,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#2LYRQVRP2",
+      "name": "Q7|SᴡɪSᴇ🐦",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000740
+      },
+      "trophies": 1,
+      "rank": 184,
+      "club": {
+        "name": "<c7>Queen 7</c>"
+      }
+    },
+    {
+      "tag": "#UPQCYQP",
+      "name": "LS|Hâlil",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 185,
+      "club": {
+        "name": "LastStop↯"
+      }
+    },
+    {
+      "tag": "#PLPV0LRG0",
+      "name": "hQd|Gera",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000807
+      },
+      "trophies": 1,
+      "rank": 186
+    },
+    {
+      "tag": "#82P0RCYPR",
+      "name": "🍭KF|GARTICUL🥀",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000402
+      },
+      "trophies": 1,
+      "rank": 187,
+      "club": {
+        "name": "Fear of God"
+      }
+    },
+    {
+      "tag": "#88P8VCYVL",
+      "name": "Kirytempo🏆",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000930
+      },
+      "trophies": 1,
+      "rank": 188,
+      "club": {
+        "name": "Apexium 🏆"
+      }
+    },
+    {
+      "tag": "#9CCVCGJYC",
+      "name": "₹Вързето🌀",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000299
+      },
+      "trophies": 1,
+      "rank": 189,
+      "club": {
+        "name": "Entity"
+      }
+    },
+    {
+      "tag": "#U9CGLJ99",
+      "name": "柱| 𝑼𝒛𝒖𝒊ッ🌸",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000874
+      },
+      "trophies": 1,
+      "rank": 190,
+      "club": {
+        "name": "柱| Hashiras 🤍"
+      }
+    },
+    {
+      "tag": "#JG92CPQ8",
+      "name": "༄TropicTB🍥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000321
+      },
+      "trophies": 1,
+      "rank": 191,
+      "club": {
+        "name": "Skyfall 🍁"
+      }
+    },
+    {
+      "tag": "#LGCUR09J",
+      "name": "VG | Zero❤️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000851
+      },
+      "trophies": 1,
+      "rank": 192,
+      "club": {
+        "name": "Valued Guys"
+      }
+    },
+    {
+      "tag": "#8YRGYGP8Q",
+      "name": "TTV | Denobob",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000123
+      },
+      "trophies": 1,
+      "rank": 193,
+      "club": {
+        "name": "DenobobsKrieger"
+      }
+    },
+    {
+      "tag": "#2G8RJ2U88",
+      "name": "༄ᶦᶰᵈ᭄＾＾キルア",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000192
+      },
+      "trophies": 1,
+      "rank": 194,
+      "club": {
+        "name": "Love Us ❤️"
+      }
+    },
+    {
+      "tag": "#PQG9L0YVR",
+      "name": "Aℓexzz🌀",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000299
+      },
+      "trophies": 1,
+      "rank": 195,
+      "club": {
+        "name": "family friendly"
+      }
+    },
+    {
+      "tag": "#GJ0VQCPP",
+      "name": "TTK:Megaprimebs",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000177
+      },
+      "trophies": 1,
+      "rank": 196,
+      "club": {
+        "name": "Eternal Prime"
+      }
+    },
+    {
+      "tag": "#22QCLQ9QV",
+      "name": "Champ🌺",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000850
+      },
+      "trophies": 1,
+      "rank": 197,
+      "club": {
+        "name": "Paralyse"
+      }
+    },
+    {
+      "tag": "#2RQGYQ0QL",
+      "name": "karu🧸",
+      "nameColor": "0xffffce89",
+      "icon": {
+        "id": 28000219
+      },
+      "trophies": 1,
+      "rank": 198,
+      "club": {
+        "name": "ALCATEIA PRIME"
+      }
+    },
+    {
+      "tag": "#GJ20G8QU",
+      "name": "NHN|Leoos 🍥",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000666
+      },
+      "trophies": 1,
+      "rank": 199,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#80LCL9Q2R",
+      "name": "FRZ|DoJo🐚",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000278
+      },
+      "trophies": 1,
+      "rank": 200,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

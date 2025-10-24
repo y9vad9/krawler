@@ -1,0 +1,140 @@
+{
+  "items": [
+    {
+      "tag": "#8P0PCY0G",
+      "name": "JangaBs",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000933
+      },
+      "trophies": 1,
+      "rank": 21,
+      "club": {
+        "name": "Top 1 🤒"
+      }
+    },
+    {
+      "tag": "#2C82CVLRP",
+      "name": "Lv77狩人🏹べるきゅん",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000077
+      },
+      "trophies": 1,
+      "rank": 22,
+      "club": {
+        "name": "140K"
+      }
+    },
+    {
+      "tag": "#82JPG02",
+      "name": "KCP | JDBG🍥",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000021
+      },
+      "trophies": 1,
+      "rank": 23,
+      "club": {
+        "name": "Secta97"
+      }
+    },
+    {
+      "tag": "#98900902U",
+      "name": "UNS|Velora",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000912
+      },
+      "trophies": 1,
+      "rank": 24,
+      "club": {
+        "name": "Heaven🍁"
+      }
+    },
+    {
+      "tag": "#9Y98LJUYJ",
+      "name": "INI|suckaAndi",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000765
+      },
+      "trophies": 1,
+      "rank": 25,
+      "club": {
+        "name": "WANT ADD?"
+      }
+    },
+    {
+      "tag": "#PGPY82CQ2",
+      "name": "虚空🤞",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000851
+      },
+      "trophies": 1,
+      "rank": 26,
+      "club": {
+        "name": "CRAZY COCOON"
+      }
+    },
+    {
+      "tag": "#2RLCPVGUG",
+      "name": "Pedryck 💤",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000765
+      },
+      "trophies": 1,
+      "rank": 27,
+      "club": {
+        "name": "iKaoss Gvng"
+      }
+    },
+    {
+      "tag": "#88YV8VQJL",
+      "name": "🧊Siubing🧊",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000312
+      },
+      "trophies": 1,
+      "rank": 28,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#PVGGJ0LL9",
+      "name": "〆|ζ͜Έʛ͢ԑɱ͠εͷ 🔥",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000888
+      },
+      "trophies": 1,
+      "rank": 29,
+      "club": {
+        "name": "〆|ζ͜Ϝο͢ʀƶ͜͡ɑ"
+      }
+    },
+    {
+      "tag": "#2YCPG0U0",
+      "name": "๛ÐamnChaotix",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 30,
+      "club": {
+        "name": "Get Carried 🍃"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjMwfQ",
+      "before": "eyJwb3MiOjIwfQ"
+    }
+  }
+}

@@ -15,6 +15,8 @@ detekt-compose = "0.4.27"
 kover = "0.9.3"
 shadowJar = "9.2.2"
 inmo-tgbotapi = "29.0.1"
+exposed = "1.0.0-rc-2"
+h2 = "2.2.224"
 
 [libraries]
 # ───────────────────────────────────────────────────────────────────────────────
@@ -29,6 +31,8 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 # ───────────────────────────────────────────────────────────────────────────────
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 # ───────────────────────────────────────────────────────────────────────────────
@@ -47,13 +51,21 @@ inmo-tgbotapi-utils = { module = "dev.inmo:tgbotapi.utils", version.ref = "inmo-
 inmo-tgbotapi = { module = "dev.inmo:tgbotapi", version.ref = "inmo-tgbotapi" }
 
 # ───────────────────────────────────────────────────────────────────────────────
-# SQLDelight / Database
+# Database
 # ───────────────────────────────────────────────────────────────────────────────
 sqldelight-jvm-driver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
 sqldelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqldelight" }
+sqldelight-r2dbc = { module = "app.cash.sqldelight:r2dbc-driver", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
+
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-json = { module = "org.jetbrains.exposed:exposed-json", version.ref = "exposed" }
+exposed-time = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed" }
+exposed-r2dbc = { module = "org.jetbrains.exposed:exposed-r2dbc", version.ref = "exposed" }
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+
 h2-database = { module = "com.h2database:h2", version.require = "2.2.224" }
 
 # ───────────────────────────────────────────────────────────────────────────────

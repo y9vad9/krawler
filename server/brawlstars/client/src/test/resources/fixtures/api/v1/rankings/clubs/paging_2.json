@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "tag": "#2U28UVY80",
+      "name": "🌻Sunflowers🌻",
+      "badgeId": 8000057,
+      "trophies": 2860763,
+      "rank": 11,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2UG0VRPUQ",
+      "name": "Frozen handZ",
+      "badgeId": 8000055,
+      "trophies": 2855644,
+      "rank": 12,
+      "memberCount": 30
+    },
+    {
+      "tag": "#20CQP2VPG",
+      "name": "YT:Bilek Gücü",
+      "badgeId": 8000023,
+      "trophies": 2852332,
+      "rank": 13,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2RPYGU8RQ",
+      "name": "THRONE",
+      "badgeId": 8000029,
+      "trophies": 2843422,
+      "rank": 14,
+      "memberCount": 30
+    },
+    {
+      "tag": "#JRJ28QPR",
+      "name": "No Mayhem",
+      "badgeId": 8000021,
+      "trophies": 2837377,
+      "rank": 15,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2UUC2YGCQ",
+      "name": "Crazy Monkeys🐒",
+      "badgeId": 8000004,
+      "trophies": 2836246,
+      "rank": 16,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2YL2RQ9YC",
+      "name": "LGD|Légende",
+      "badgeId": 8000037,
+      "trophies": 2835762,
+      "rank": 17,
+      "memberCount": 30
+    },
+    {
+      "tag": "#J9V2V9PU",
+      "name": "Élite Nexus",
+      "badgeId": 8000021,
+      "trophies": 2834902,
+      "rank": 18,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2VV80U8LP",
+      "name": "<c6>Prevail</c>",
+      "badgeId": 8000024,
+      "trophies": 2832876,
+      "rank": 19,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2LPV2J0G8",
+      "name": "KickTheBucket⚠️",
+      "badgeId": 8000028,
+      "trophies": 2830029,
+      "rank": 20,
+      "memberCount": 30
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjIwfQ",
+      "before": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

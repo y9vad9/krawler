@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "tag": "#2GRVVCYUQG",
+      "name": "SUPER⭐️STAR",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000843
+      },
+      "trophies": 1,
+      "rank": 1,
+      "club": {
+        "name": "<c7>TOP ONE</c>"
+      }
+    },
+    {
+      "tag": "#8QQJ0QLQG",
+      "name": "SneaX☔️",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000612
+      },
+      "trophies": 1,
+      "rank": 2,
+      "club": {
+        "name": "‼️Carry Ranks‼️"
+      }
+    },
+    {
+      "tag": "#290J9GGV8",
+      "name": "Psychodark☔️",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1,
+      "rank": 3,
+      "club": {
+        "name": "‼️Carry Ranks‼️"
+      }
+    },
+    {
+      "tag": "#VRYP09L0",
+      "name": "ruslana_super💔",
+      "nameColor": "0xffa2e3fe",
+      "icon": {
+        "id": 28000660
+      },
+      "trophies": 1,
+      "rank": 4,
+      "club": {
+        "name": "GET RANK❗"
+      }
+    },
+    {
+      "tag": "#GJRV99Q8",
+      "name": "!3nzo_59🍋",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000205
+      },
+      "trophies": 1,
+      "rank": 5,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    },
+    {
+      "tag": "#9YVV8PC2",
+      "name": "ShOttiK",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000367
+      },
+      "trophies": 1,
+      "rank": 6,
+      "club": {
+        "name": "‼️LOOK BIO‼️"
+      }
+    },
+    {
+      "tag": "#8L88CVQLG",
+      "name": "Mr.Nick🐙",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000913
+      },
+      "trophies": 1,
+      "rank": 7,
+      "club": {
+        "name": "‼️CHECK BIO‼️"
+      }
+    },
+    {
+      "tag": "#8PG0LC0VR",
+      "name": "MAX LE CAILLOUX",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000138
+      },
+      "trophies": 1,
+      "rank": 8,
+      "club": {
+        "name": "FC OWEE 🐐"
+      }
+    },
+    {
+      "tag": "#PUU08029G",
+      "name": "@Ak1lz",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000554
+      },
+      "trophies": 1,
+      "rank": 9,
+      "club": {
+        "name": "⁉️RANKS⁉️BIO‼️"
+      }
+    },
+    {
+      "tag": "#LU9PVCP08",
+      "name": "Maytho💚",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000466
+      },
+      "trophies": 1,
+      "rank": 10,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

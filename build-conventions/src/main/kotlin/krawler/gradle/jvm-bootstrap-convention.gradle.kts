@@ -55,6 +55,17 @@ testing {
                 all {
                     testTask.configure {
                         shouldRunAfter(functionalTest)
+
+                        val envFile = rootProject.file(".env.local")
+                        if (envFile.exists()) {
+                            envFile.readLines()
+                                .map { it.trim() }
+                                .filter { it.isNotEmpty() && !it.startsWith("#") }
+                                .forEach { line ->
+                                    val (key, value) = line.split("=", limit = 2)
+                                    environment(key, value)
+                                }
+                        }
                     }
                 }
             }

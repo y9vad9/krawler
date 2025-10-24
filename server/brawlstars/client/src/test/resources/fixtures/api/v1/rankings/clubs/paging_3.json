@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "tag": "#20PYGGGPU",
+      "name": "PV toxic",
+      "badgeId": 8000025,
+      "trophies": 2824644,
+      "rank": 21,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2CGPR0RJR",
+      "name": "Rinek",
+      "badgeId": 8000049,
+      "trophies": 2823677,
+      "rank": 22,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2VLVQ9LG0",
+      "name": "Ro|⚡Tʜᴜɴᴅᴇʀs⚡",
+      "badgeId": 8000053,
+      "trophies": 2822424,
+      "rank": 23,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2U8QRGCUP",
+      "name": "🌻Sunflowers🌻",
+      "badgeId": 8000043,
+      "trophies": 2822236,
+      "rank": 24,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2ULJ0YLJU",
+      "name": "Eclipse Empire",
+      "badgeId": 8000055,
+      "trophies": 2822148,
+      "rank": 25,
+      "memberCount": 30
+    },
+    {
+      "tag": "#80YQUC2PY",
+      "name": "TSN~eSports🥀",
+      "badgeId": 8000027,
+      "trophies": 2821717,
+      "rank": 26,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2LQJPQ0YG",
+      "name": "<c9>X</c>Blood™",
+      "badgeId": 8000037,
+      "trophies": 2821622,
+      "rank": 27,
+      "memberCount": 30
+    },
+    {
+      "tag": "#802LU9GGC",
+      "name": "<cff0000>ØP</c>",
+      "badgeId": 8000029,
+      "trophies": 2821582,
+      "rank": 28,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2V0L9VL8P",
+      "name": "CARAMBAR",
+      "badgeId": 8000037,
+      "trophies": 2819900,
+      "rank": 29,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2JU2L90CJ",
+      "name": "𝑨𝒍𝒐𝒏𝒆'𝒔",
+      "badgeId": 8000010,
+      "trophies": 2819380,
+      "rank": 30,
+      "memberCount": 30
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjMwfQ",
+      "before": "eyJwb3MiOjIwfQ"
+    }
+  }
+}

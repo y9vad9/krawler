@@ -1,0 +1,137 @@
+{
+  "items": [
+    {
+      "tag": "#YLJC8CV9",
+      "name": "Mirkoo ㌓",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000210
+      },
+      "trophies": 1,
+      "rank": 11
+    },
+    {
+      "tag": "#2R2QG29CC",
+      "name": "Ege",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 12,
+      "club": {
+        "name": "ig: egeskr_"
+      }
+    },
+    {
+      "tag": "#8JVV0P808",
+      "name": "y4uff🍀",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000167
+      },
+      "trophies": 1,
+      "rank": 13,
+      "club": {
+        "name": "A Few Good Men"
+      }
+    },
+    {
+      "tag": "#GCCYUGJP",
+      "name": "Mobe97",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 14,
+      "club": {
+        "name": "Secta97"
+      }
+    },
+    {
+      "tag": "#PU8808RQC",
+      "name": "YT: MystiX",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1,
+      "rank": 15,
+      "club": {
+        "name": "‼️IN LIVE NOW‼️"
+      }
+    },
+    {
+      "tag": "#YCGVJGPVJ",
+      "name": "Gozaline",
+      "nameColor": "0xffa8e132",
+      "icon": {
+        "id": 28000831
+      },
+      "trophies": 1,
+      "rank": 16,
+      "club": {
+        "name": "ㅤㅤ"
+      }
+    },
+    {
+      "tag": "#8GYGJYC8V",
+      "name": "MT|Kerem 🇹🇷",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000672
+      },
+      "trophies": 1,
+      "rank": 17,
+      "club": {
+        "name": "MT Community"
+      }
+    },
+    {
+      "tag": "#YCQ8299GU",
+      "name": "☔ᵒᵖ|Dragon",
+      "nameColor": "0xff4ddba2",
+      "icon": {
+        "id": 28000403
+      },
+      "trophies": 1,
+      "rank": 18,
+      "club": {
+        "name": "<c5>Just</c>Win"
+      }
+    },
+    {
+      "tag": "#PGVQU822",
+      "name": "JeKsTD❤️‍🔥🥀",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000496
+      },
+      "trophies": 1,
+      "rank": 19,
+      "club": {
+        "name": "New Heaven"
+      }
+    },
+    {
+      "tag": "#28LUCUGJP",
+      "name": "Zenythϟ",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1,
+      "rank": 20,
+      "club": {
+        "name": "5v5 Talents"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjIwfQ",
+      "before": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

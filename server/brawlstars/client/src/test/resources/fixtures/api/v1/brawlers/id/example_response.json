@@ -1,0 +1,24 @@
+{
+  "id": 16000000,
+  "name": "SHELLY",
+  "starPowers": [
+    {
+      "id": 23000076,
+      "name": "SHELL SHOCK"
+    },
+    {
+      "id": 23000135,
+      "name": "BAND-AID"
+    }
+  ],
+  "gadgets": [
+    {
+      "id": 23000255,
+      "name": "FAST FORWARD"
+    },
+    {
+      "id": 23000288,
+      "name": "CLAY PIGEONS"
+    }
+  ]
+}
