@@ -1,0 +1,250 @@
+{
+  "items": [
+    {
+      "id": 16000020,
+      "name": "FRANK",
+      "starPowers": [
+        {
+          "id": 23000104,
+          "name": "POWER GRAB"
+        },
+        {
+          "id": 23000153,
+          "name": "SPONGE"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000261,
+          "name": "ACTIVE NOISE CANCELING"
+        },
+        {
+          "id": 23000351,
+          "name": "IRRESISTIBLE ATTRACTION"
+        }
+      ]
+    },
+    {
+      "id": 16000021,
+      "name": "GENE",
+      "starPowers": [
+        {
+          "id": 23000109,
+          "name": "MAGIC PUFFS"
+        },
+        {
+          "id": 23000159,
+          "name": "SPIRIT SLAP"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000252,
+          "name": "LAMP BLOWOUT"
+        },
+        {
+          "id": 23000352,
+          "name": "VENGEFUL SPIRITS"
+        }
+      ]
+    },
+    {
+      "id": 16000022,
+      "name": "TICK",
+      "starPowers": [
+        {
+          "id": 23000114,
+          "name": "WELL OILED"
+        },
+        {
+          "id": 23000161,
+          "name": "AUTOMA-TICK RELOAD"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000253,
+          "name": "MINE MANIA"
+        },
+        {
+          "id": 23000355,
+          "name": "LAST HURRAH"
+        }
+      ]
+    },
+    {
+      "id": 16000023,
+      "name": "LEON",
+      "starPowers": [
+        {
+          "id": 23000119,
+          "name": "SMOKE TRAILS"
+        },
+        {
+          "id": 23000141,
+          "name": "INVISIHEAL"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000276,
+          "name": "CLONE PROJECTOR"
+        },
+        {
+          "id": 23000408,
+          "name": "LOLLIPOP DROP"
+        }
+      ]
+    },
+    {
+      "id": 16000024,
+      "name": "ROSA",
+      "starPowers": [
+        {
+          "id": 23000124,
+          "name": "PLANT LIFE"
+        },
+        {
+          "id": 23000147,
+          "name": "THORNY GLOVES"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000242,
+          "name": "GROW LIGHT"
+        },
+        {
+          "id": 23000348,
+          "name": "UNFRIENDLY BUSHES"
+        }
+      ]
+    },
+    {
+      "id": 16000025,
+      "name": "CARL",
+      "starPowers": [
+        {
+          "id": 23000129,
+          "name": "POWER THROW"
+        },
+        {
+          "id": 23000145,
+          "name": "PROTECTIVE PIROUETTE"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000262,
+          "name": "HEAT EJECTOR"
+        },
+        {
+          "id": 23000317,
+          "name": "FLYING HOOK"
+        }
+      ]
+    },
+    {
+      "id": 16000026,
+      "name": "BIBI",
+      "starPowers": [
+        {
+          "id": 23000134,
+          "name": "HOME RUN"
+        },
+        {
+          "id": 23000146,
+          "name": "BATTING STANCE"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000275,
+          "name": "VITAMIN BOOSTER"
+        },
+        {
+          "id": 23000458,
+          "name": "EXTRA STICKY"
+        }
+      ]
+    },
+    {
+      "id": 16000027,
+      "name": "8-BIT",
+      "starPowers": [
+        {
+          "id": 23000168,
+          "name": "BOOSTED BOOSTER"
+        },
+        {
+          "id": 23000181,
+          "name": "PLUGGED IN"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000259,
+          "name": "CHEAT CARTRIDGE"
+        },
+        {
+          "id": 23000318,
+          "name": "EXTRA CREDITS"
+        }
+      ]
+    },
+    {
+      "id": 16000028,
+      "name": "SANDY",
+      "starPowers": [
+        {
+          "id": 23000186,
+          "name": "RUDE SANDS"
+        },
+        {
+          "id": 23000187,
+          "name": "HEALING WINDS"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000270,
+          "name": "SLEEP STIMULATOR"
+        },
+        {
+          "id": 23000405,
+          "name": "SWEET DREAMS"
+        }
+      ]
+    },
+    {
+      "id": 16000029,
+      "name": "BEA",
+      "starPowers": [
+        {
+          "id": 23000192,
+          "name": "INSTA BEALOAD"
+        },
+        {
+          "id": 23000193,
+          "name": "HONEYCOMB"
+        }
+      ],
+      "gadgets": [
+        {
+          "id": 23000271,
+          "name": "HONEY MOLASSES"
+        },
+        {
+          "id": 23000312,
+          "name": "RATTLED HIVE"
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjMwfQ",
+      "before": "eyJwb3MiOjIwfQ"
+    }
+  }
+}

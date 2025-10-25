@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "tag": "#28V9CJ900",
+      "name": "iMuniir",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000134
+      },
+      "trophies": 1828,
+      "rank": 21,
+      "club": {
+        "name": "Enigma XI"
+      }
+    },
+    {
+      "tag": "#28999VRP0",
+      "name": "𝙈𝙖𝙣𝙚𝙠لء💛",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000518
+      },
+      "trophies": 1826,
+      "rank": 22,
+      "club": {
+        "name": "Ranked Owner’s"
+      }
+    },
+    {
+      "tag": "#889JPYJ8",
+      "name": "REM CHAN🩵",
+      "nameColor": "0xff1ba5f5",
+      "icon": {
+        "id": 28000529
+      },
+      "trophies": 1821,
+      "rank": 23,
+      "club": {
+        "name": "!NegrosGarça.🖤"
+      }
+    },
+    {
+      "tag": "#YLJUP2R9C",
+      "name": "Love u J💕",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000707
+      },
+      "trophies": 1819,
+      "rank": 24,
+      "club": {
+        "name": "Apocalypse🐦‍🔥"
+      }
+    },
+    {
+      "tag": "#2C89J8YJ9Y",
+      "name": "kutas",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1809,
+      "rank": 25,
+      "club": {
+        "name": "Napadacze PL"
+      }
+    },
+    {
+      "tag": "#82RC9LYLY",
+      "name": "qTundder🎀",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000014
+      },
+      "trophies": 1805,
+      "rank": 26,
+      "club": {
+        "name": "New Dawn"
+      }
+    },
+    {
+      "tag": "#YPCYVV8PQ",
+      "name": "#1 Lucas 🔛🔝",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000912
+      },
+      "trophies": 1805,
+      "rank": 27,
+      "club": {
+        "name": "Top 1 🤒"
+      }
+    },
+    {
+      "tag": "#L2PJUV0UL",
+      "name": "I’ᴍ Mɪʟᴜꜱ🐗",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1804,
+      "rank": 28
+    },
+    {
+      "tag": "#P2L2V9YL0",
+      "name": "Sven〆",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000290
+      },
+      "trophies": 1803,
+      "rank": 29,
+      "club": {
+        "name": "euphoria🖤"
+      }
+    },
+    {
+      "tag": "#PGJ2QRPVG",
+      "name": "诶|𝑙𝑟𝑥𝑚𝑛 ʷᵗ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1801,
+      "rank": 30
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjMwfQ",
+      "before": "eyJwb3MiOjIwfQ"
+    }
+  }
+}

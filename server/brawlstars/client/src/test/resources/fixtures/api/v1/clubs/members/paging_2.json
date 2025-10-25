@@ -1,0 +1,110 @@
+{
+  "items": [
+    {
+      "tag": "#LRLUL0JGU",
+      "name": "STR|Kirby🥞",
+      "nameColor": "0xfff9c908",
+      "role": "member",
+      "trophies": 108484,
+      "icon": {
+        "id": 28000862
+      }
+    },
+    {
+      "tag": "#899ULJ9QG",
+      "name": "GusikFemboy🎀💍",
+      "nameColor": "0xffffffff",
+      "role": "member",
+      "trophies": 108271,
+      "icon": {
+        "id": 28000889
+      }
+    },
+    {
+      "tag": "#228VQYUR2",
+      "name": "あ| Iconyx📚",
+      "nameColor": "0xffff9727",
+      "role": "member",
+      "trophies": 107922,
+      "icon": {
+        "id": 28000468
+      }
+    },
+    {
+      "tag": "#20V08C9QV",
+      "name": "tiktok:ogaaa🌺",
+      "nameColor": "0xfff9775d",
+      "role": "member",
+      "trophies": 107520,
+      "icon": {
+        "id": 28000757
+      }
+    },
+    {
+      "tag": "#RJGYRP9P",
+      "name": "YT: zestyy_bss",
+      "nameColor": "0xff1ba5f5",
+      "role": "member",
+      "trophies": 107447,
+      "icon": {
+        "id": 28000403
+      }
+    },
+    {
+      "tag": "#8V0R08U82",
+      "name": "Arthious🤍",
+      "nameColor": "0xffffffff",
+      "role": "member",
+      "trophies": 107236,
+      "icon": {
+        "id": 28000135
+      }
+    },
+    {
+      "tag": "#PR8YLY899",
+      "name": "这是AT|Balla❤️🔥",
+      "nameColor": "0xffa2e3fe",
+      "role": "member",
+      "trophies": 107222,
+      "icon": {
+        "id": 28000933
+      }
+    },
+    {
+      "tag": "#8VQ8GRP0V",
+      "name": "Tiktok•Luks🪴",
+      "nameColor": "0xffffffff",
+      "role": "member",
+      "trophies": 106537,
+      "icon": {
+        "id": 28000139
+      }
+    },
+    {
+      "tag": "#YGGJPUYJ0",
+      "name": "No Fear Léxâs.",
+      "nameColor": "0xff1ba5f5",
+      "role": "member",
+      "trophies": 106403,
+      "icon": {
+        "id": 28000555
+      }
+    },
+    {
+      "tag": "#9V2CY20C0",
+      "name": "tookaa <3",
+      "nameColor": "0xffff8afb",
+      "role": "member",
+      "trophies": 106224,
+      "icon": {
+        "id": 28000466
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjIwfQ",
+      "before": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

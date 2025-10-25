@@ -1,0 +1,1757 @@
+{
+  "items": [
+    {
+      "battleTime": "20250814T184607.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 45,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1194,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1174,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1073,
+                "trophyChange": 4
+              }
+            ]
+          },
+          {
+            "tag": "#2YRJJQ9U",
+            "name": "けんちゃな👻✨️空ぼとる🙊",
+            "brawlers": [
+              {
+                "id": 16000094,
+                "name": "KAZE",
+                "power": 11,
+                "trophies": 997,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000051,
+                "name": "ASH",
+                "power": 1,
+                "trophies": 87,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000046,
+                "name": "BELLE",
+                "power": 11,
+                "trophies": 32,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T184430.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 175,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1189,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1169,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1069,
+                "trophyChange": 4
+              }
+            ]
+          },
+          {
+            "tag": "#R2PPG20U",
+            "name": "아일릿 노윤아 곱다",
+            "brawlers": [
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 832,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000002,
+                "name": "BULL",
+                "power": 11,
+                "trophies": 839,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000012,
+                "name": "CROW",
+                "power": 11,
+                "trophies": 1081,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T184101.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 61,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1184,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1164,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1066,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#2JJJJ0QL92",
+            "name": "極光",
+            "brawlers": [
+              {
+                "id": 16000000,
+                "name": "SHELLY",
+                "power": 2,
+                "trophies": 142,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000054,
+                "name": "FANG",
+                "power": 11,
+                "trophies": 1005,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000027,
+                "name": "8-BIT",
+                "power": 11,
+                "trophies": 444,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T183924.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 118,
+        "players": [
+          {
+            "tag": "#2LRU0RGVR",
+            "name": "BreakTheFlow",
+            "brawlers": [
+              {
+                "id": 16000043,
+                "name": "EDGAR",
+                "power": 11,
+                "trophies": 1058,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000084,
+                "name": "MOE",
+                "power": 11,
+                "trophies": 1054,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000035,
+                "name": "GALE",
+                "power": 11,
+                "trophies": 1050,
+                "trophyChange": -3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1180,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1160,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1062,
+                "trophyChange": 4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T183632.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 42,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1176,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1156,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1059,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#2LUGCJUU0Q",
+            "name": "Yungteo",
+            "brawlers": [
+              {
+                "id": 16000042,
+                "name": "BYRON",
+                "power": 11,
+                "trophies": 1087,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000045,
+                "name": "STU",
+                "power": 11,
+                "trophies": 81,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000044,
+                "name": "RUFFS",
+                "power": 1,
+                "trophies": 69,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T183523.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 144,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1172,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1153,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1056,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#8UCUR9QVU",
+            "name": "ken",
+            "brawlers": [
+              {
+                "id": 16000058,
+                "name": "BONNIE",
+                "power": 11,
+                "trophies": 917,
+                "trophyChange": -6
+              },
+              {
+                "id": 16000071,
+                "name": "DOUG",
+                "power": 11,
+                "trophies": 1351,
+                "trophyChange": -6
+              },
+              {
+                "id": 16000049,
+                "name": "BUZZ",
+                "power": 11,
+                "trophies": 1002,
+                "trophyChange": -2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T183220.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 124,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1169,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1150,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1053,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#P922GLPR9",
+            "name": "HUYU",
+            "brawlers": [
+              {
+                "id": 16000025,
+                "name": "CARL",
+                "power": 11,
+                "trophies": 1003,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000074,
+                "name": "CHARLIE",
+                "power": 11,
+                "trophies": 1010,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1009,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T182001.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "defeat",
+        "duration": 176,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1173,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1154,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1057,
+                "trophyChange": -4
+              }
+            ]
+          },
+          {
+            "tag": "#8QYCQJ00R",
+            "name": "そんなバナナ",
+            "brawlers": [
+              {
+                "id": 16000001,
+                "name": "COLT",
+                "power": 11,
+                "trophies": 1169,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000059,
+                "name": "OTIS",
+                "power": 11,
+                "trophies": 1256,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000041,
+                "name": "LOU",
+                "power": 11,
+                "trophies": 1156,
+                "trophyChange": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T181604.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 192,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1168,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1149,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1054,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#2YJJQLVCQ",
+            "name": "moai",
+            "brawlers": [
+              {
+                "id": 16000003,
+                "name": "BROCK",
+                "power": 11,
+                "trophies": 882,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000058,
+                "name": "BONNIE",
+                "power": 11,
+                "trophies": 239,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000081,
+                "name": "LILY",
+                "power": 11,
+                "trophies": 1052,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T181223.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 93,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1164,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1145,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1050,
+                "trophyChange": 4
+              }
+            ]
+          },
+          {
+            "tag": "#2QCG0Y00Y2",
+            "name": "大谷翔平の通訳",
+            "brawlers": [
+              {
+                "id": 16000040,
+                "name": "AMBER",
+                "power": 11,
+                "trophies": 1017,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000061,
+                "name": "GUS",
+                "power": 11,
+                "trophies": 739,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000045,
+                "name": "STU",
+                "power": 11,
+                "trophies": 930,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T180908.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 192,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1160,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1141,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1047,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#YU09V8GQ",
+            "name": "FNX|Nicole",
+            "brawlers": [
+              {
+                "id": 16000094,
+                "name": "KAZE",
+                "power": 11,
+                "trophies": 1256,
+                "trophyChange": -5
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1023,
+                "trophyChange": -5
+              },
+              {
+                "id": 16000089,
+                "name": "MEEPLE",
+                "power": 11,
+                "trophies": 1126,
+                "trophyChange": -5
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T180527.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 105,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1156,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1138,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1044,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#RG2LU9UGU",
+            "name": "いもすてぃー",
+            "brawlers": [
+              {
+                "id": 16000025,
+                "name": "CARL",
+                "power": 11,
+                "trophies": 804,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000060,
+                "name": "SAM",
+                "power": 11,
+                "trophies": 838,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000011,
+                "name": "MORTIS",
+                "power": 11,
+                "trophies": 1000,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T180306.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 146,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1153,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1135,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1041,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#LQ92U9U9",
+            "name": "잘못함",
+            "brawlers": [
+              {
+                "id": 16000010,
+                "name": "EL PRIMO",
+                "power": 11,
+                "trophies": 1005,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000075,
+                "name": "MICO",
+                "power": 11,
+                "trophies": 1008,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000059,
+                "name": "OTIS",
+                "power": 11,
+                "trophies": 693,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T180016.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "defeat",
+        "duration": 167,
+        "players": [
+          {
+            "tag": "#8QUUG00RQ",
+            "name": "KILLER 0007",
+            "brawlers": [
+              {
+                "id": 16000036,
+                "name": "NANI",
+                "power": 11,
+                "trophies": 1021,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1030,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000058,
+                "name": "BONNIE",
+                "power": 11,
+                "trophies": 1015,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1157,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1139,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1045,
+                "trophyChange": -4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T175640.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 60,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1153,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1136,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1042,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#8YC8VPRQV",
+            "name": "Em10002",
+            "brawlers": [
+              {
+                "id": 16000023,
+                "name": "LEON",
+                "power": 11,
+                "trophies": 1082,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000094,
+                "name": "KAZE",
+                "power": 11,
+                "trophies": 24,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000012,
+                "name": "CROW",
+                "power": 11,
+                "trophies": 796,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T175517.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 68,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1150,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1133,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000057,
+                "name": "JANET",
+                "power": 11,
+                "trophies": 1039,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#89J82QU2L",
+            "name": "Raptor_974",
+            "brawlers": [
+              {
+                "id": 16000017,
+                "name": "TARA",
+                "power": 11,
+                "trophies": 999,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1000,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000081,
+                "name": "LILY",
+                "power": 11,
+                "trophies": 1019,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T175329.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "defeat",
+        "duration": 103,
+        "players": [
+          {
+            "tag": "#2220J0UG0",
+            "name": "chetan",
+            "brawlers": [
+              {
+                "id": 16000081,
+                "name": "LILY",
+                "power": 11,
+                "trophies": 1075,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000074,
+                "name": "CHARLIE",
+                "power": 11,
+                "trophies": 1085,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000058,
+                "name": "BONNIE",
+                "power": 11,
+                "trophies": 1054,
+                "trophyChange": 4
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1154,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1137,
+                "trophyChange": -4
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1085,
+                "trophyChange": -4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T175040.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 92,
+        "players": [
+          {
+            "tag": "#GGL9Q0VJ8",
+            "name": "鬥士",
+            "brawlers": [
+              {
+                "id": 16000044,
+                "name": "RUFFS",
+                "power": 11,
+                "trophies": 111,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000000,
+                "name": "SHELLY",
+                "power": 11,
+                "trophies": 854,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000070,
+                "name": "CORDELIUS",
+                "power": 11,
+                "trophies": 1036,
+                "trophyChange": -3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1149,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1132,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1081,
+                "trophyChange": 4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T174741.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 105,
+        "players": [
+          {
+            "tag": "#R280VQYLG",
+            "name": "田中星人",
+            "brawlers": [
+              {
+                "id": 16000089,
+                "name": "MEEPLE",
+                "power": 11,
+                "trophies": 279,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000016,
+                "name": "PAM",
+                "power": 11,
+                "trophies": 1056,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000074,
+                "name": "CHARLIE",
+                "power": 11,
+                "trophies": 1041,
+                "trophyChange": -3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1144,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1127,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1077,
+                "trophyChange": 4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T174518.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 53,
+        "players": [
+          {
+            "tag": "#YRC00PJQ",
+            "name": "???",
+            "brawlers": [
+              {
+                "id": 16000065,
+                "name": "MANDY",
+                "power": 11,
+                "trophies": 1042,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000036,
+                "name": "NANI",
+                "power": 11,
+                "trophies": 795,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000051,
+                "name": "ASH",
+                "power": 11,
+                "trophies": 959,
+                "trophyChange": -3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1139,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1122,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1073,
+                "trophyChange": 4
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T174314.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 38,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1134,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1117,
+                "trophyChange": 5
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1070,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#RRQRYR2C",
+            "name": "ÆFUT|Troll🤪",
+            "brawlers": [
+              {
+                "id": 16000009,
+                "name": "DYNAMIKE",
+                "power": 11,
+                "trophies": 1007,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000002,
+                "name": "BULL",
+                "power": 11,
+                "trophies": 633,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000058,
+                "name": "BONNIE",
+                "power": 11,
+                "trophies": 629,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T174154.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 75,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1130,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1113,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1066,
+                "trophyChange": 4
+              }
+            ]
+          },
+          {
+            "tag": "#8029CY8QR",
+            "name": "👑kin kong👑",
+            "brawlers": [
+              {
+                "id": 16000043,
+                "name": "EDGAR",
+                "power": 11,
+                "trophies": 1000,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000087,
+                "name": "JUJU",
+                "power": 10,
+                "trophies": 498,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000001,
+                "name": "COLT",
+                "power": 10,
+                "trophies": 623,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T173800.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 51,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1126,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1109,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1063,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#9LU9CRVPV",
+            "name": "#𝐿𝐴𝑊𝑅𝐼𝐸❦",
+            "brawlers": [
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 10,
+                "trophies": 486,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000002,
+                "name": "BULL",
+                "power": 9,
+                "trophies": 549,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000043,
+                "name": "EDGAR",
+                "power": 11,
+                "trophies": 1006,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T173525.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 83,
+        "players": [
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1122,
+                "trophyChange": 4
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1106,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1060,
+                "trophyChange": 3
+              }
+            ]
+          },
+          {
+            "tag": "#2QRQVRR0QL",
+            "name": "NY|123",
+            "brawlers": [
+              {
+                "id": 16000000,
+                "name": "SHELLY",
+                "power": 11,
+                "trophies": 1008,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1023,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000016,
+                "name": "PAM",
+                "power": 11,
+                "trophies": 502,
+                "trophyChange": -3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "battleTime": "20250814T173103.000Z",
+      "event": {
+        "id": 15001060,
+        "mode": "duels",
+        "map": "Coin Flip"
+      },
+      "battle": {
+        "mode": "duels",
+        "type": "ranked",
+        "result": "victory",
+        "duration": 63,
+        "players": [
+          {
+            "tag": "#PLL9CQ2QC",
+            "name": "🎋ℚ𝕦ḁ🎋",
+            "brawlers": [
+              {
+                "id": 16000048,
+                "name": "GROM",
+                "power": 11,
+                "trophies": 1000,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000094,
+                "name": "KAZE",
+                "power": 11,
+                "trophies": 287,
+                "trophyChange": -3
+              },
+              {
+                "id": 16000017,
+                "name": "TARA",
+                "power": 11,
+                "trophies": 216,
+                "trophyChange": -3
+              }
+            ]
+          },
+          {
+            "tag": "#88YV8VQJL",
+            "name": "🧊Siubing🧊",
+            "brawlers": [
+              {
+                "id": 16000021,
+                "name": "GENE",
+                "power": 11,
+                "trophies": 1119,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000076,
+                "name": "KIT",
+                "power": 11,
+                "trophies": 1103,
+                "trophyChange": 3
+              },
+              {
+                "id": 16000066,
+                "name": "R-T",
+                "power": 11,
+                "trophies": 1057,
+                "trophyChange": 3
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

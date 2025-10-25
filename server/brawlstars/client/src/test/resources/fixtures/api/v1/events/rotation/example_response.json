@@ -1,0 +1,148 @@
+[
+  {
+    "startTime": "20250814T080000.000Z",
+    "endTime": "20250815T080000.000Z",
+    "slotId": 1,
+    "event": {
+      "id": 15000026,
+      "mode": "brawlBall",
+      "map": "Pinhole Punt"
+    }
+  },
+  {
+    "startTime": "20250814T200000.000Z",
+    "endTime": "20250815T200000.000Z",
+    "slotId": 2,
+    "event": {
+      "id": 15000965,
+      "mode": "soloShowdown",
+      "map": "Double Trouble"
+    }
+  },
+  {
+    "startTime": "20250815T020000.000Z",
+    "endTime": "20250816T020000.000Z",
+    "slotId": 3,
+    "event": {
+      "id": 15001051,
+      "mode": "gemGrab",
+      "map": "Whisper Vale"
+    }
+  },
+  {
+    "startTime": "20250814T140000.000Z",
+    "endTime": "20250815T140000.000Z",
+    "slotId": 4,
+    "event": {
+      "id": 15000527,
+      "mode": "hotZone",
+      "map": "Open Zone"
+    }
+  },
+  {
+    "startTime": "20250814T200000.000Z",
+    "endTime": "20250815T200000.000Z",
+    "slotId": 5,
+    "event": {
+      "id": 15000966,
+      "mode": "duoShowdown",
+      "map": "Double Trouble"
+    }
+  },
+  {
+    "startTime": "20250814T140000.000Z",
+    "endTime": "20250815T140000.000Z",
+    "slotId": 6,
+    "event": {
+      "id": 15001060,
+      "mode": "duels",
+      "map": "Coin Flip"
+    }
+  },
+  {
+    "startTime": "20250814T080000.000Z",
+    "endTime": "20250815T080000.000Z",
+    "slotId": 8,
+    "event": {
+      "id": 15000123,
+      "mode": "soloShowdown",
+      "map": "Flying Fantasies",
+      "modifiers": [
+        "showdown+"
+      ]
+    }
+  },
+  {
+    "startTime": "20250814T080000.000Z",
+    "endTime": "20250815T080000.000Z",
+    "slotId": 10,
+    "event": {
+      "id": 15000642,
+      "mode": "gemGrab5V5",
+      "map": "Snowman forest",
+      "modifiers": [
+        "unknown"
+      ]
+    }
+  },
+  {
+    "startTime": "20250815T020000.000Z",
+    "endTime": "20250816T020000.000Z",
+    "slotId": 15,
+    "event": {
+      "id": 15000502,
+      "mode": "knockout",
+      "map": "Flowing Springs"
+    }
+  },
+  {
+    "startTime": "20250814T090000.000Z",
+    "endTime": "20250820T090000.000Z",
+    "slotId": 20,
+    "event": {
+      "id": 15001036,
+      "mode": "trophyThieves",
+      "map": "Thin Walls"
+    }
+  },
+  {
+    "startTime": "20250814T090000.000Z",
+    "endTime": "20250820T090000.000Z",
+    "slotId": 21,
+    "event": {
+      "id": 15001030,
+      "mode": "trophyThieves",
+      "map": "Case of the Mondays"
+    }
+  },
+  {
+    "startTime": "20250814T090000.000Z",
+    "endTime": "20250820T090000.000Z",
+    "slotId": 22,
+    "event": {
+      "id": 15001068,
+      "mode": "trophyThieves",
+      "map": "Million Dollars"
+    }
+  },
+  {
+    "startTime": "20250814T080000.000Z",
+    "endTime": "20250815T080000.000Z",
+    "slotId": 33,
+    "event": {
+      "id": 15000980,
+      "mode": "gemGrab5V5",
+      "map": "Treasure Island"
+    }
+  },
+  {
+    "startTime": "20250814T200000.000Z",
+    "endTime": "20250815T200000.000Z",
+    "slotId": 39,
+    "event": {
+      "id": 15000967,
+      "mode": "trioShowdown",
+      "map": "Double Trouble"
+    }
+  }
+]

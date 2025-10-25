@@ -1,0 +1,89 @@
+{
+  "items": [
+    {
+      "tag": "#80GP0LRL0",
+      "name": "Top ladder🍋",
+      "badgeId": 8000045,
+      "trophies": 3223816,
+      "rank": 1,
+      "memberCount": 30
+    },
+    {
+      "tag": "#80R8CCC02",
+      "name": "5v5 Talents",
+      "badgeId": 8000056,
+      "trophies": 3070306,
+      "rank": 2,
+      "memberCount": 30
+    },
+    {
+      "tag": "#800L2GY8Y",
+      "name": "New Heaven",
+      "badgeId": 8000052,
+      "trophies": 3053506,
+      "rank": 3,
+      "memberCount": 30
+    },
+    {
+      "tag": "#802UULP8U",
+      "name": "Heaven🍁",
+      "badgeId": 8000055,
+      "trophies": 2938859,
+      "rank": 4,
+      "memberCount": 30
+    },
+    {
+      "tag": "#808P92CUU",
+      "name": "Storm🌪️",
+      "badgeId": 8000003,
+      "trophies": 2928153,
+      "rank": 5,
+      "memberCount": 30
+    },
+    {
+      "tag": "#QGRYCGQ0",
+      "name": "gogo",
+      "badgeId": 8000037,
+      "trophies": 2910432,
+      "rank": 6,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2RR2YYUL2",
+      "name": "MT Community",
+      "badgeId": 8000023,
+      "trophies": 2903989,
+      "rank": 7,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2VCVC9VJJ",
+      "name": "LadderBots🤡",
+      "badgeId": 8000037,
+      "trophies": 2877607,
+      "rank": 8,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2VLCQYLVJ",
+      "name": "<c3>Stylërz</c>",
+      "badgeId": 8000044,
+      "trophies": 2873048,
+      "rank": 9,
+      "memberCount": 30
+    },
+    {
+      "tag": "#2YCYGU90P",
+      "name": "𝐆𝐏|’eSports",
+      "badgeId": 8000021,
+      "trophies": 2862790,
+      "rank": 10,
+      "memberCount": 30
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

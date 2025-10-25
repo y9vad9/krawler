@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "tag": "#YLP9RY8V9",
+      "name": "栗山 | Z̶e̶f̶f̶ツ",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 2000,
+      "rank": 11,
+      "club": {
+        "name": "Maczaki Biznesu"
+      }
+    },
+    {
+      "tag": "#GYJYUQ29L",
+      "name": "Nukedoll",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1965,
+      "rank": 12
+    },
+    {
+      "tag": "#8PCJV2Y8U",
+      "name": "༄𝐇𝐚𝐬𝐢𝐧⛩️🦋",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000004
+      },
+      "trophies": 1953,
+      "rank": 13,
+      "club": {
+        "name": "A Few Good Boys"
+      }
+    },
+    {
+      "tag": "#GU02QGJYU",
+      "name": "SF|Thurzini 🍌",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000041
+      },
+      "trophies": 1900,
+      "rank": 14,
+      "club": {
+        "name": "🌻Sunflowers🌻"
+      }
+    },
+    {
+      "tag": "#L8L0PJG0Q",
+      "name": "Alexxx♡",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000132
+      },
+      "trophies": 1891,
+      "rank": 15,
+      "club": {
+        "name": "DSM | ESPORT"
+      }
+    },
+    {
+      "tag": "#2J0Y92QQ9",
+      "name": "Adik💋Marysia",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1880,
+      "rank": 16,
+      "club": {
+        "name": "BrawlRoyale Hub"
+      }
+    },
+    {
+      "tag": "#2RUPGRR8J",
+      "name": "kreyuwu",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000186
+      },
+      "trophies": 1873,
+      "rank": 17,
+      "club": {
+        "name": "Coitadolândia!"
+      }
+    },
+    {
+      "tag": "#2QRRULRLQG",
+      "name": "Eren🗽",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 1871,
+      "rank": 18
+    },
+    {
+      "tag": "#LLLVYC008",
+      "name": "STMN }Grezx",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000757
+      },
+      "trophies": 1855,
+      "rank": 19,
+      "club": {
+        "name": "Dark Echo💜"
+      }
+    },
+    {
+      "tag": "#8RRYR02JV",
+      "name": "Arex弓",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000033
+      },
+      "trophies": 1831,
+      "rank": 20,
+      "club": {
+        "name": "LA Snow"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjIwfQ",
+      "before": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

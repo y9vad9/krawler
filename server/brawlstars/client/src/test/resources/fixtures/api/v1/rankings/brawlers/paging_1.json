@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "tag": "#2Q9VQR0CPR",
+      "name": "Avenix?",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000000
+      },
+      "trophies": 5898,
+      "rank": 1,
+      "club": {
+        "name": "Talents"
+      }
+    },
+    {
+      "tag": "#L0V2QCC",
+      "name": "ENM|☆PLUGED17☆",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000732
+      },
+      "trophies": 3480,
+      "rank": 2,
+      "club": {
+        "name": "ENIGMA"
+      }
+    },
+    {
+      "tag": "#PPQQV9RYY",
+      "name": "Axetan💜Lana",
+      "nameColor": "0xffcb5aff",
+      "icon": {
+        "id": 28000565
+      },
+      "trophies": 2814,
+      "rank": 3,
+      "club": {
+        "name": "AVE Esports"
+      }
+    },
+    {
+      "tag": "#8RYURQCVL",
+      "name": "Slycix 捐神",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000796
+      },
+      "trophies": 2427,
+      "rank": 4,
+      "club": {
+        "name": "Brawlhub 24/7"
+      }
+    },
+    {
+      "tag": "#9C2YPR2QJ",
+      "name": "性 Rick⁴⁷",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000679
+      },
+      "trophies": 2406,
+      "rank": 5,
+      "club": {
+        "name": "Máfia do Push"
+      }
+    },
+    {
+      "tag": "#PCCLPGYY",
+      "name": "Jeff Redd",
+      "nameColor": "0xfff9c908",
+      "icon": {
+        "id": 28000494
+      },
+      "trophies": 2402,
+      "rank": 6,
+      "club": {
+        "name": "Denk Yok#🤡👇"
+      }
+    },
+    {
+      "tag": "#2C8UUJC8RR",
+      "name": "Travis Noviceϟ",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000150
+      },
+      "trophies": 2242,
+      "rank": 7,
+      "club": {
+        "name": "A Few Good Boys"
+      }
+    },
+    {
+      "tag": "#29UGQG2JP",
+      "name": "TMT|Wizard 🐐",
+      "nameColor": "0xffffffff",
+      "icon": {
+        "id": 28000930
+      },
+      "trophies": 2030,
+      "rank": 8,
+      "club": {
+        "name": "ALCATEIA PRIME"
+      }
+    },
+    {
+      "tag": "#LJCC8YCRV",
+      "name": "zQslzz.夂",
+      "nameColor": "0xffff8afb",
+      "icon": {
+        "id": 28000486
+      },
+      "trophies": 2002,
+      "rank": 9,
+      "club": {
+        "name": "Brawl House"
+      }
+    },
+    {
+      "tag": "#GJRV99Q8",
+      "name": "!3nzo_59🍋",
+      "nameColor": "0xffff9727",
+      "icon": {
+        "id": 28000205
+      },
+      "trophies": 2002,
+      "rank": 10,
+      "club": {
+        "name": "Top ladder🍋"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjEwfQ"
+    }
+  }
+}
