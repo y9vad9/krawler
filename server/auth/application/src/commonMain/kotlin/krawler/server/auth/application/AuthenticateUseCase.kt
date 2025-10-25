@@ -3,7 +3,7 @@ package krawler.server.auth.application
 import krawler.logger.Logger
 import krawler.logger.withThrowable
 import krawler.server.auth.domain.ChallengeId
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import krawler.server.auth.domain.OwnershipChallenge
 import krawler.server.auth.domain.OwnershipChallengeAttempts
 import krawler.server.auth.domain.OwnershipChallengeTimeFrame
@@ -57,7 +57,7 @@ class AuthenticateUseCase(
      *         [Result.TooManyAttempts] if recent failed or active sessions exceed threshold,
      *         [Result.Failure] if an unexpected repository or infrastructure error occurs.
      */
-    suspend fun execute(tag: ChallengedPlayerTag, logger: Logger): Result {
+    suspend fun execute(tag: ChallengedBrawlStarsPlayerTag, logger: Logger): Result {
         val exists = playerRepository.exists(tag).getOrElse { throwable ->
             logger.withField(PLAYER_TAG_LOGGER_KEY, tag.stringWithTagPrefix)
                 .withThrowable(throwable)

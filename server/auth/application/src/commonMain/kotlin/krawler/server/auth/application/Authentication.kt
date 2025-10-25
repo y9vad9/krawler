@@ -1,6 +1,6 @@
 package krawler.server.auth.application
 
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import kotlin.time.Instant
 
 /**
@@ -17,5 +17,5 @@ class Authentication(
     val refreshToken: RefreshToken,
     val issueTime: Instant,
     val expiresAt: Instant,
-    val playerTag: ChallengedPlayerTag,
+    val playerTag: ChallengedBrawlStarsPlayerTag,
 )

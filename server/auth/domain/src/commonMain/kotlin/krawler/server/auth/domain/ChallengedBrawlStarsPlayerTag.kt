@@ -1,10 +1,10 @@
 package krawler.server.auth.domain
 
-import krawler.server.auth.domain.ChallengedPlayerTag.Companion.MAX_LENGTH
-import krawler.server.auth.domain.ChallengedPlayerTag.Companion.MIN_LENGTH
-import krawler.server.auth.domain.ChallengedPlayerTag.Companion.create
-import krawler.server.auth.domain.ChallengedPlayerTag.Companion.createOrNull
-import krawler.server.auth.domain.ChallengedPlayerTag.Companion.createOrThrow
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.MAX_LENGTH
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.MIN_LENGTH
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.create
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.createOrNull
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag.Companion.createOrThrow
 
 /**
  * Represents a Brawl Stars player tag linked to a user within the system.
@@ -31,7 +31,7 @@ import krawler.server.auth.domain.ChallengedPlayerTag.Companion.createOrThrow
  * @param string The normalized tag string (always uppercase, may include `#` prefix).
  */
 @JvmInline
-public value class ChallengedPlayerTag private constructor(private val string: String) {
+public value class ChallengedBrawlStarsPlayerTag private constructor(private val string: String) {
 
     public val stringWithTagPrefix: String get() = if (string.startsWith("#")) string else "#$string"
     public val stringWithoutTagPrefix: String get() = if (string.startsWith("#")) string.substring(1) else string
@@ -50,14 +50,14 @@ public value class ChallengedPlayerTag private constructor(private val string: S
             return when {
                 normalized.length !in LENGTH_RANGE -> FactoryResult.TagNotWithinRange
                 !normalized.matches(REGEX) -> FactoryResult.InvalidFormat
-                else -> FactoryResult.Success(ChallengedPlayerTag(normalized))
+                else -> FactoryResult.Success(ChallengedBrawlStarsPlayerTag(normalized))
             }
         }
 
-        public fun createOrNull(tag: String): ChallengedPlayerTag? =
+        public fun createOrNull(tag: String): ChallengedBrawlStarsPlayerTag? =
             (create(tag) as? FactoryResult.Success)?.value
 
-        public fun createOrThrow(tag: String): ChallengedPlayerTag {
+        public fun createOrThrow(tag: String): ChallengedBrawlStarsPlayerTag {
             val result = create(tag)
             require(result is FactoryResult.Success) {
                 "ChallengedBrawlStarsPlayerTag creation returned $result instead of success."
@@ -69,7 +69,7 @@ public value class ChallengedPlayerTag private constructor(private val string: S
     public sealed interface FactoryResult {
         public data object TagNotWithinRange : FactoryResult
         public data object InvalidFormat : FactoryResult
-        public data class Success(public val value: ChallengedPlayerTag) : FactoryResult
+        public data class Success(public val value: ChallengedBrawlStarsPlayerTag) : FactoryResult
     }
 
     override fun toString(): String = stringWithTagPrefix

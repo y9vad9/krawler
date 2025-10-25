@@ -16,7 +16,7 @@ import krawler.server.auth.application.PlayerRepository
 import krawler.server.auth.application.SessionTokenGenerator
 import krawler.server.auth.application.TimeProvider
 import krawler.server.auth.application.UuidProvider
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import krawler.server.auth.domain.OwnershipTask
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -50,7 +50,7 @@ class AuthenticateUseCaseTest {
         config = config
     )
 
-    private val tag = ChallengedPlayerTag.createOrThrow("#ABC123")
+    private val tag = ChallengedBrawlStarsPlayerTag.createOrThrow("#ABC123")
     private val now = kotlin.time.Clock.System.now()
     private val token = AuthenticationSessionToken("token")
     private val ownershipTask = mockk<OwnershipTask>()

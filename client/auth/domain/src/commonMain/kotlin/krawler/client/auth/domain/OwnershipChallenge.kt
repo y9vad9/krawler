@@ -1,4 +1,4 @@
-package krawler.server.auth.domain
+package krawler.client.auth.domain
 
 import kotlin.time.Duration
 import kotlin.time.Instant
@@ -24,19 +24,4 @@ public class OwnershipChallenge(
         timeframe.remainingDuration(currentTime)
 
     public fun isAttemptsExceeded(): Boolean = attempts >= maxAttempts
-
-    public fun attempt(
-        currentTime: Instant,
-        battle: OwnershipTaskBattle,
-    ): OwnershipChallengeResult {
-        return when {
-            isAttemptsExceeded() -> OwnershipChallengeResult.AttemptsExceeded
-            timeframe.isBeforeStart(battle.endTime) -> OwnershipChallengeResult.BattleBeforeTask
-            isExpired(currentTime) -> OwnershipChallengeResult.TaskExpired
-            task.brawlerId != battle.brawlerId -> OwnershipChallengeResult.InvalidBrawler
-            task.botsAmount != battle.botsAmount -> OwnershipChallengeResult.InvalidBotsAmount
-            task.eventType != battle.eventType -> OwnershipChallengeResult.InvalidEventType
-            else -> OwnershipChallengeResult.Success
-        }
     }
-}
