@@ -1,4 +1,4 @@
-package krawler.server.auth.domain
+package krawler.client.auth.domain
 
 import kotlin.time.Duration
 import kotlin.time.Instant
@@ -8,8 +8,6 @@ import kotlin.time.Instant
  *
  * The challenge requires the user to complete a specific task in a friendly battle within the defined timeframe
  * and before exceeding the maximum number of allowed attempts.
- *
- * Use [attempt] to evaluate whether a submitted battle satisfies the challenge.
  */
 public class OwnershipChallenge(
     public val id: ChallengeId,
@@ -24,19 +22,4 @@ public class OwnershipChallenge(
         timeframe.remainingDuration(currentTime)
 
     public fun isAttemptsExceeded(): Boolean = attempts >= maxAttempts
-
-    public fun attempt(
-        currentTime: Instant,
-        battle: OwnershipTaskBattle,
-    ): OwnershipChallengeResult {
-        return when {
-            isAttemptsExceeded() -> OwnershipChallengeResult.AttemptsExceeded
-            timeframe.isBeforeStart(battle.endTime) -> OwnershipChallengeResult.BattleBeforeTask
-            isExpired(currentTime) -> OwnershipChallengeResult.TaskExpired
-            task.brawlerId != battle.brawlerId -> OwnershipChallengeResult.InvalidBrawler
-            task.botsAmount != battle.botsAmount -> OwnershipChallengeResult.InvalidBotsAmount
-            task.eventType != battle.eventType -> OwnershipChallengeResult.InvalidEventType
-            else -> OwnershipChallengeResult.Success
-        }
     }
-}

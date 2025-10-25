@@ -1,6 +1,6 @@
-package krawler.server.auth.domain.test
+package krawler.client.auth.domain.test
 
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.client.auth.domain.ChallengedBrawlStarsPlayerTag
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -8,7 +8,7 @@ import kotlin.test.assertIs
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 
-class ChallengedPlayerTagTest {
+class ChallengedBrawlStarsPlayerTagTest {
 
     // region — Core factory tests
 
@@ -18,10 +18,10 @@ class ChallengedPlayerTagTest {
         val input = "abc123"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.Success>(
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.Success>(
             value = result,
             message = "Expected success for input: $input",
         )
@@ -37,10 +37,10 @@ class ChallengedPlayerTagTest {
         val input = "#ab9"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.Success>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.Success>(result)
         val tag = result.value
         assertNotNull(tag)
         assertEquals("#AB9", tag.stringWithTagPrefix)
@@ -53,10 +53,10 @@ class ChallengedPlayerTagTest {
         val input = "#ab"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.TagNotWithinRange>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.TagNotWithinRange>(result)
     }
 
     @Test
@@ -65,10 +65,10 @@ class ChallengedPlayerTagTest {
         val input = "#${"A".repeat(15)}"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.TagNotWithinRange>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.TagNotWithinRange>(result)
     }
 
     @Test
@@ -77,10 +77,10 @@ class ChallengedPlayerTagTest {
         val input = "#ABC@1"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.InvalidFormat>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.InvalidFormat>(result)
     }
 
     @Test
@@ -89,10 +89,10 @@ class ChallengedPlayerTagTest {
         val input = "   "
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.InvalidFormat>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.InvalidFormat>(result)
     }
 
     @Test
@@ -101,10 +101,10 @@ class ChallengedPlayerTagTest {
         val input = "aBcDe1"
 
         // WHEN
-        val result = ChallengedPlayerTag.create(input)
+        val result = ChallengedBrawlStarsPlayerTag.create(input)
 
         // THEN
-        assertIs<ChallengedPlayerTag.FactoryResult.Success>(result)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.Success>(result)
         val tag = result.value
         assertEquals("#ABCDE1", tag.stringWithTagPrefix)
         assertEquals("ABCDE1", tag.stringWithoutTagPrefix)
@@ -116,7 +116,7 @@ class ChallengedPlayerTagTest {
         val input = "#abc123"
 
         // WHEN
-        val tag = ChallengedPlayerTag.createOrThrow(input)
+        val tag = ChallengedBrawlStarsPlayerTag.createOrThrow(input)
 
         // THEN
         assertEquals("#ABC123", tag.toString())
@@ -133,19 +133,19 @@ class ChallengedPlayerTagTest {
         val invalidInput = "#ab" // below min length
 
         // WHEN / THEN
-        val successResult = ChallengedPlayerTag.create(validInput)
-        val tagOrNull = ChallengedPlayerTag.createOrNull(validInput)
-        val tagOrThrow = ChallengedPlayerTag.createOrThrow(validInput)
+        val successResult = ChallengedBrawlStarsPlayerTag.create(validInput)
+        val tagOrNull = ChallengedBrawlStarsPlayerTag.createOrNull(validInput)
+        val tagOrThrow = ChallengedBrawlStarsPlayerTag.createOrThrow(validInput)
 
-        assertIs<ChallengedPlayerTag.FactoryResult.Success>(successResult)
+        assertIs<ChallengedBrawlStarsPlayerTag.FactoryResult.Success>(successResult)
         assertNotNull(tagOrNull)
         assertEquals("#ABC123", tagOrNull.stringWithTagPrefix)
         assertEquals("#ABC123", tagOrThrow.stringWithTagPrefix)
 
-        assertNull(ChallengedPlayerTag.createOrNull(invalidInput))
+        assertNull(ChallengedBrawlStarsPlayerTag.createOrNull(invalidInput))
         assertFailsWith<IllegalArgumentException> {
             @Suppress("RETURN_VALUE_NOT_USED")
-            ChallengedPlayerTag.createOrThrow(invalidInput)
+            ChallengedBrawlStarsPlayerTag.createOrThrow(invalidInput)
         }
     }
 
