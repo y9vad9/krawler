@@ -1,6 +1,5 @@
 package krawler.server.auth.domain
 
-
 /**
  * The list of brawl stars event types for an ownership challenge.
  *
