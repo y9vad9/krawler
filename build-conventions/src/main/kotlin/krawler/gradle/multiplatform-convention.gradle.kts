@@ -13,6 +13,7 @@ kotlin {
             compilerOptions {
                 optIn.add("kotlin.uuid.ExperimentalUuidApi")
                 optIn.add("kotlin.time.ExperimentalTime")
+                optIn.add("kotlinx.serialization.ExperimentalSerializationApi")
 
                 progressiveMode = true
                 freeCompilerArgs.add("-Xreturn-value-checker=full")
