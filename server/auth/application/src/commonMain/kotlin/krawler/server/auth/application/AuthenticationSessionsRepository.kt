@@ -1,6 +1,6 @@
 package krawler.server.auth.application
 
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import krawler.server.auth.domain.OwnershipChallenge
 import kotlin.time.Duration
 import kotlin.time.Instant
@@ -23,7 +23,7 @@ interface AuthenticationSessionsRepository {
      * @return [Result] wrapping [Unit] on success or failure.
      */
     suspend fun issueSession(
-        tag: ChallengedPlayerTag,
+        tag: ChallengedBrawlStarsPlayerTag,
         token: AuthenticationSessionToken,
         challenge: OwnershipChallenge,
         currentTime: Instant,

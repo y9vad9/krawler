@@ -1,6 +1,6 @@
 package krawler.server.auth.application
 
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import kotlin.time.Instant
 
 /**
@@ -18,7 +18,7 @@ interface AuthenticationTokenGenerator {
      * @param expiresAt The lifetime of the access token.
      * @return A new [AccessToken] valid for the given duration.
      */
-    fun generateAccessToken(tag: ChallengedPlayerTag, expiresAt: Instant): AccessToken
+    fun generateAccessToken(tag: ChallengedBrawlStarsPlayerTag, expiresAt: Instant): AccessToken
 
     /**
      * Generates a new refresh token.

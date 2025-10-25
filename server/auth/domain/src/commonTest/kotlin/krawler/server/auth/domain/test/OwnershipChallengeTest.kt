@@ -1,7 +1,7 @@
 package krawler.server.auth.domain.test
 
 import krawler.server.auth.domain.ChallengeId
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import krawler.server.auth.domain.OwnershipChallenge
 import krawler.server.auth.domain.OwnershipChallengeAttempts
 import krawler.server.auth.domain.OwnershipChallengeBotsAmount
@@ -185,7 +185,7 @@ class OwnershipChallengeTest {
     private val defaultChallengeId = Uuid.random()
 
     private fun id() = ChallengeId(defaultChallengeId)
-    private fun playerTag() = ChallengedPlayerTag.createOrThrow("#ABCDFE")
+    private fun playerTag() = ChallengedBrawlStarsPlayerTag.createOrThrow("#ABCDFE")
     private fun attempts(v: Int) = OwnershipChallengeAttempts.createOrThrow(v)
     private fun bots(v: Int) = OwnershipChallengeBotsAmount.createOrThrow(v)
 

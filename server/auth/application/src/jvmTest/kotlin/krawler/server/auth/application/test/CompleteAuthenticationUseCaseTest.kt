@@ -19,7 +19,7 @@ import kotlin.test.Test
 import kotlin.test.assertIs
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Instant
-import krawler.server.auth.domain.ChallengedPlayerTag
+import krawler.server.auth.domain.ChallengedBrawlStarsPlayerTag
 import krawler.server.auth.domain.OwnershipChallenge
 import krawler.server.auth.application.CompleteAuthenticationUseCase.Result.AttemptsExceeded
 import krawler.server.auth.application.CompleteAuthenticationUseCase.Result.AttemptFailed
@@ -54,7 +54,7 @@ class CompleteAuthenticationUseCaseTest {
     )
 
     private val token = AuthenticationSessionToken(string = "token")
-    private val tag = ChallengedPlayerTag.createOrThrow("#ABC123")
+    private val tag = ChallengedBrawlStarsPlayerTag.createOrThrow("#ABC123")
     private val now = Instant.parse("2025-01-01T00:00:00Z")
 
     @Test
