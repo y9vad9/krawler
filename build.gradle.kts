@@ -14,7 +14,9 @@ val installGitHooks by tasks.registering(Copy::class) {
 
     // Make copied files executable
     eachFile {
-        fileMode = 0b111101101 // 755 in octal
+        filePermissions {
+            unix("rwxr-xr-x")
+        }
     }
 
     includeEmptyDirs = false

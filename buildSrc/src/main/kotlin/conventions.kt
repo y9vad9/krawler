@@ -54,4 +54,5 @@ class MultiplatformNamespace internal constructor(
  */
 class ServerNamespace internal constructor(
     val infrastructure: String = "krawler.gradle.server.infrastructure-convention",
+    val integration: String = "krawler.gradle.server.integration-convention",
 )
