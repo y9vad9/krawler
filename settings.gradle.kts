@@ -26,13 +26,13 @@ include(
     ":foundation:jvm-environment",
     ":foundation:cli-args",
     ":foundation:logger",
+    ":foundation:exposed-r2dbc-ext"
 )
 
 include(
     ":server",
     ":server:auth:domain",
     ":server:auth:application",
-    ":server:player:domain",
     "server:player:application",
 )
 
