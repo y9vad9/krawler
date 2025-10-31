@@ -95,7 +95,7 @@ class PlayerRecordsTest {
         assertTrue(result.isFailure)
         val exception = result.exceptionOrNull()
         assertIs<IllegalArgumentException>(exception)
-        assertEquals("Durations must be non-negative.", exception?.message)
+        assertEquals("Durations must be positive.", exception.message)
     }
 
     @Test

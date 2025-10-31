@@ -70,9 +70,6 @@ class GetPlayerBattlelogUseCase(
             val nextCursor: PaginationCursor?,
         ) : Result
 
-        /** Player was not found. */
-        data object PlayerNotFound : Result
-
         /** Requester does not have permission to view the battle log. */
         data object PermissionDenied : Result
 

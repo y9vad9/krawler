@@ -226,16 +226,7 @@ val Battle.isVictory: Boolean
         if (isRanked()) return result?.isVictory == true
         if (isDuel()) return result.isVictory
         if (isTeamVsTeamBattle()) return result?.isVictory == true
-
-        return when (this) {
-            is CooperativeBattle -> result.isDefeat
-            is TeamRankingBattle -> rank < RankingPosition.THIRD
-            is SoloRankingBattle -> rank < RankingPosition.FIFTH
-            is RankedBattle -> result?.isVictory == true
-            is DuelBattle -> result.isVictory
-            is TeamVsTeamBattle -> result?.isVictory == true
-            is TrophyLeagueBattle -> return trophyChange.isUnchanged
-        }
+        return false
     }
 
 

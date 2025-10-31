@@ -5,10 +5,7 @@ import krawler.server.player.application.BrawlersAmount.Companion.createOrNull
 import krawler.server.player.application.BrawlersAmount.Companion.createOrThrow
 
 /**
- * Represents the number of victories a Brawl Stars player has achieved.
- *
- * Victories are accumulated through successful battles in various game modes.
- * This value class ensures the count is always non-negative.
+ * Represents the number of brawlers a Brawl Stars player has.
  *
  * Use the [create], [createOrThrow], or [createOrNull] methods to construct valid instances.
  *

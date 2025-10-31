@@ -40,7 +40,7 @@ value class PlayerTag private constructor(
          * of valid length. Matching is case-insensitive for convenience.
          */
         val REGEX: Regex = Regex(
-            pattern = "^#?[A-Z0-9]{$MIN_LENGTH,$MAX_LENGTH}",
+            pattern = "^#?[A-Z0-9]{$MIN_LENGTH,$MAX_LENGTH}$",
             option = RegexOption.IGNORE_CASE,
         )
 
@@ -59,7 +59,7 @@ value class PlayerTag private constructor(
          * if invalid.
          */
         fun create(input: String): Result<PlayerTag> =
-            if (isValid(input)) Result.success(PlayerTag(input))
+            if (isValid(input)) Result.success(PlayerTag(input.uppercase()))
             else Result.failure(IllegalArgumentException("Invalid tag: $input"))
 
         /**

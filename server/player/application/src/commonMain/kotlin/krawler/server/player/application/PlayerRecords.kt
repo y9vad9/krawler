@@ -31,7 +31,7 @@ data class PlayerRecords private constructor(
     val bestTimeAsBigBrawler: Duration,
 ) {
     companion object {
-        private const val ERROR = "Durations must be non-negative."
+        private const val ERROR = "Durations must be positive."
 
         /**
          * Validates that both durations are non-negative.
