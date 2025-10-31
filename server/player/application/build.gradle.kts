@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(projects.server.player.domain)
+    commonMainImplementation(projects.foundation.logger)
 }
