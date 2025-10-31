@@ -7,7 +7,7 @@ import krawler.server.player.application.DefeatAmount.Companion.createOrThrow
 /**
  * Represents the number of defeats a Brawl Stars player has achieved.
  *
- * Defeats are accumulated through successful battles in various game modes.
+ * Defeats are accumulated through lost battles in various game modes.
  * This value class ensures the count is always non-negative.
  *
  * Use the [create], [createOrThrow], or [createOrNull] methods to construct valid instances.
