@@ -278,7 +278,7 @@ val PlayerRankedStage.isAtLeastSilverTwo: Boolean
 
 /** Returns true if this stage is at least Silver III. */
 val PlayerRankedStage.isAtLeastSilverThree: Boolean
-    get() = isAtLeast(PlayerRankedStage.SILVER_TWO)
+    get() = isAtLeast(PlayerRankedStage.SILVER_THREE)
 
 
 // Gold
