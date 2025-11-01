@@ -22,10 +22,10 @@ value class BrawlerGearId(val value: Int) : Comparable<BrawlerGearId> {
 
     /** Minimum valid gear ID value. */
     companion object {
-        const val MIN_VALUE: Int = 23_000_000
+        const val MIN_VALUE: Int = 62_000_000
 
         /** Maximum valid gear ID value. */
-        const val MAX_VALUE: Int = 23_001_000
+        const val MAX_VALUE: Int = 62_001_000
 
         /** Inclusive range of valid gear IDs. */
         val VALUE_RANGE: IntRange = MIN_VALUE..MAX_VALUE

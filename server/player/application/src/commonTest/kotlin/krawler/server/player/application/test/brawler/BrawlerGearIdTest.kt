@@ -13,7 +13,7 @@ class BrawlerGearIdTest {
     @Test
     fun `valid GearId creation succeeds`() {
         // Given
-        val validId = 23_000_500
+        val validId = 62_000_000
 
         // When
         val gearId = BrawlerGearId(validId)
