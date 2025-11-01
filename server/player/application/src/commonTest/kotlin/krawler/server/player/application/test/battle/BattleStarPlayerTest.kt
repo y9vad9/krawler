@@ -31,14 +31,14 @@ class BattleStarPlayerTest {
     private val trophyBrawler = TrophyLeagueBattleBrawler(
         id = BrawlerId.COLT,
         name = BrawlerName("Colt"),
-        powerLevel = BrawlerPowerLevel.createOrThrow(10),
-        trophies = Trophies.createOrThrow(500)
+        powerLevel = BrawlerPowerLevel(10),
+        trophies = Trophies(500)
     )
 
     private val rankedBrawler = RankedBattleBrawler(
         id = BrawlerId.COLT,
         name = BrawlerName("Colt"),
-        powerLevel = BrawlerPowerLevel.createOrThrow(10),
+        powerLevel = BrawlerPowerLevel(10),
         rankedStage = PlayerRankedStage(5)
     )
 

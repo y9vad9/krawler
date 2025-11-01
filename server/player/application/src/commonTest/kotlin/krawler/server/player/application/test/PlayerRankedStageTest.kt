@@ -22,9 +22,9 @@ import krawler.server.player.application.isMaster
 import krawler.server.player.application.isMythic
 import krawler.server.player.application.isSilver
 import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 /**
  * Unit tests for [PlayerRankedStage] and its extension properties.

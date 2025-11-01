@@ -1,23 +1,18 @@
 package krawler.server.player.application.test.battle
 
 import io.mockk.mockk
-import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
-import kotlin.time.Duration.Companion.seconds
-import kotlin.time.Instant
+import krawler.server.player.application.battle.BattleEvent
+import krawler.server.player.application.battle.BattleResult
 import krawler.server.player.application.battle.ClassicFriendlyRankedBattle
+import krawler.server.player.application.battle.FriendlyBattleParticipants
+import krawler.server.player.application.battle.FriendlyBattleStarPlayer
 import krawler.server.player.application.battle.FriendlyMapMakerRankedBattle
-import krawler.server.player.application.battle.RankedLeagueBattle
+import krawler.server.player.application.battle.MapMakerBattleEvent
 import krawler.server.player.application.battle.RankedBattle
 import krawler.server.player.application.battle.RankedBattle.Round
-import krawler.server.player.application.battle.BattleResult
-import krawler.server.player.application.battle.BattleEvent
-import krawler.server.player.application.battle.MapMakerBattleEvent
-import krawler.server.player.application.battle.FriendlyBattleStarPlayer
-import krawler.server.player.application.battle.FriendlyBattleParticipants
 import krawler.server.player.application.battle.RankedBattlePlayers
 import krawler.server.player.application.battle.RankedBattleStarPlayer
+import krawler.server.player.application.battle.RankedLeagueBattle
 import krawler.server.player.application.battle.RankedMatchmakingType
 import krawler.server.player.application.battle.isDuoMatchmaking
 import krawler.server.player.application.battle.isFinished
@@ -28,7 +23,12 @@ import krawler.server.player.application.battle.isLeague
 import krawler.server.player.application.battle.isSoloMatchmaking
 import krawler.server.player.application.battle.isTrioMatchmaking
 import krawler.server.player.application.battle.totalDuration
+import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
+import kotlin.time.Duration.Companion.seconds
+import kotlin.time.Instant
 
 class RankedBattleTest {
 

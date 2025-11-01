@@ -29,18 +29,14 @@ class BattleDuelParticipantTest {
 
     private val friendlyBrawler = FriendlyBattleBrawler(
         id = BrawlerId.COLT,
-        name = mockBrawlerName("Shelly"),
+        name = BrawlerName("Shelly"),
     )
     private val trophyBrawler = TrophyLeagueBattleBrawler(
         id = BrawlerId.SHELLY,
-        name = mockBrawlerName("Colt"),
-        trophies = mockTrophies(100),
+        name = BrawlerName("Colt"),
+        trophies = Trophies(100),
         powerLevel = BrawlerPowerLevel.MAX,
     )
-
-    /** Helpers to simplify brawler creation */
-    private fun mockBrawlerName(name: String) = BrawlerName(name)
-    private fun mockTrophies(amount: Int) = Trophies.createOrThrow(amount)
 
     @Test
     fun `GIVEN FriendlyBattleDuelPlayer WHEN isFriendly THEN returns true`() {

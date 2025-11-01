@@ -21,7 +21,6 @@ value class BrawlerId private constructor(
     val rawInt: Int,
 ) : Comparable<BrawlerId> {
 
-    /** Constants with constraints and validation */
     companion object {
         /** Minimum valid value for a brawler ID. */
         const val MIN_VALUE: Int = 16_000_000
@@ -33,55 +32,51 @@ value class BrawlerId private constructor(
         val VALUE_RANGE: IntRange = MIN_VALUE..MAX_VALUE
 
         /**
-         * Returns `true` if the given [input] is within the valid brawler ID range.
-         *
-         * This function performs a sanity check to ensure [input] falls within
-         * the expected ID range for brawlers.
-         */
-        fun isValid(input: Int): Boolean =
-            input in VALUE_RANGE
-
-        /**
          * Attempts to create a [BrawlerId] from the given [input].
          *
-         * Returns a [Result.success] containing a valid [BrawlerId], or
-         * a [Result.failure] with an [IllegalArgumentException] if [input] is invalid.
+         * Returns a [FactoryResult.Success] if valid, or one of the [FactoryResult.Failure] types if invalid.
          */
-        fun create(input: Int): Result<BrawlerId> =
-            if (isValid(input)) Result.success(BrawlerId(input))
-            else Result.failure(IllegalArgumentException("Invalid brawler ID: $input"))
+        fun create(input: Int): FactoryResult =
+            when {
+                input < MIN_VALUE -> FactoryResult.TooLow
+                input > MAX_VALUE -> FactoryResult.TooHigh
+                else -> FactoryResult.Success(BrawlerId(input))
+            }
 
-        /**
-         * Creates a [BrawlerId] from [input] or throws [IllegalArgumentException] if invalid.
-         */
+        /** Creates or throws [IllegalArgumentException] if invalid. */
         fun createOrThrow(input: Int): BrawlerId =
-            create(input).getOrThrow()
+            when (val result = create(input)) {
+                is FactoryResult.Success -> result.value
+                FactoryResult.TooLow -> throw IllegalArgumentException("Brawler ID below range ($VALUE_RANGE): $input")
+                FactoryResult.TooHigh -> throw IllegalArgumentException("Brawler ID above range ($VALUE_RANGE): $input")
+            }
 
-        /**
-         * Creates a [BrawlerId] from [input], or returns `null` if invalid.
-         */
+        /** Creates or returns `null` if invalid. */
         fun createOrNull(input: Int): BrawlerId? =
-            create(input).getOrNull()
+            (create(input) as? FactoryResult.Success)?.value
 
-        /**
-         * Constant for Brawler ID representing Shelly.
-         * **[Learn more about Brawler on Brawlify](https://brawlify.com/brawlers/detail/Shelly)**
-         */
+        /** Constant for Brawler ID representing Shelly. */
         val SHELLY: BrawlerId = BrawlerId(16_000_000)
 
-        /**
-         * Constant for Brawler ID representing Colt.
-         * **[Learn more about Brawler on Brawlify](https://brawlify.com/brawlers/detail/Colt)**
-         */
+        /** Constant for Brawler ID representing Colt. */
         val COLT: BrawlerId = BrawlerId(16_000_001)
     }
 
-    /**
-     * Compares this [BrawlerId] with another based on their integer values.
-     *
-     * @param other The other [BrawlerId] to compare against.
-     * @return A negative integer, zero, or a positive integer as this ID
-     * is less than, equal to, or greater than the other ID.
-     */
     override fun compareTo(other: BrawlerId): Int = rawInt.compareTo(other.rawInt)
+
+    /**
+     * Represents the result of attempting to create a [BrawlerId].
+     *
+     * This type-safe result makes validation outcomes explicit.
+     */
+    sealed interface FactoryResult {
+        /** Creation succeeded with a valid [BrawlerId]. */
+        data class Success(val value: BrawlerId) : FactoryResult
+
+        /** Input below [MIN_VALUE]. */
+        data object TooLow : FactoryResult
+
+        /** Input above [MAX_VALUE]. */
+        data object TooHigh : FactoryResult
+    }
 }

@@ -3,8 +3,8 @@ package krawler.server.player.application.test.battle
 import krawler.server.player.application.battle.BattleEventMode
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 import kotlin.test.assertNotEquals
+import kotlin.test.assertTrue
 
 class BattleEventModeTest {
 

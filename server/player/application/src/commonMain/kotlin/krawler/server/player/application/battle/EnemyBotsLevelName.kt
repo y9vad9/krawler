@@ -1,7 +1,5 @@
 package krawler.server.player.application.battle
 
-import kotlin.jvm.JvmInline
-
 /**
  * Represents the display name of a **Last Stand** difficulty level in Brawl Stars.
  *

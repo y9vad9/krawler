@@ -14,16 +14,16 @@ import krawler.server.player.application.brawler.BrawlerName
 import krawler.server.player.application.brawler.BrawlerPowerLevel
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 @Suppress("KotlinConstantConditions")
 class BattleBrawlerTest {
 
     private val dummyId = BrawlerId.createOrThrow(16_000_100)
     private val dummyName = BrawlerName("Shelly")
-    private val dummyPower = BrawlerPowerLevel.createOrThrow(10)
-    private val dummyTrophies = Trophies.createOrThrow(500)
+    private val dummyPower = BrawlerPowerLevel(10)
+    private val dummyTrophies = Trophies(500)
     private val dummyRankedStage = PlayerRankedStage(20)
 
     @Test

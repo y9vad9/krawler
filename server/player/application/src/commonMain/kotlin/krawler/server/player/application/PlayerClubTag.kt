@@ -22,12 +22,11 @@ import krawler.server.player.application.PlayerClubTag.Companion.REGEX
 value class PlayerClubTag private constructor(
     private val rawString: String,
 ) {
+
     /**
      * Returns the tag string with a leading `#`, even if not originally present.
      *
      * Useful for display or when sending to the Brawl Stars API.
-     *
-     * @return The tag string prefixed with `#`.
      */
     val stringWithTagPrefix: String
         get() = if (rawString.startsWith("#")) rawString else "#$rawString"
@@ -36,21 +35,16 @@ value class PlayerClubTag private constructor(
      * Returns the tag string without the leading `#`.
      *
      * Useful for comparisons, storage, or internal usage.
-     *
-     * @return The tag string without the `#` prefix.
      */
     val stringWithoutTagPrefix: String
         get() = if (rawString.startsWith("#")) rawString.substring(1) else rawString
 
     /**
      * Returns the canonical display format of the tag, always prefixed with `#`.
-     *
-     * @return The tag string with leading `#`.
-     * @see stringWithTagPrefix
      */
     override fun toString(): String = stringWithTagPrefix
 
-    /** Constants and validation */
+    /** Validation constants and factories */
     companion object {
         /** Minimum allowed length for a tag, excluding `#`. */
         const val MIN_LENGTH: Int = 3
@@ -71,48 +65,79 @@ value class PlayerClubTag private constructor(
         )
 
         /**
-         * Validates whether the [input] string is a valid club tag.
-         *
-         * Case-insensitive.
-         *
-         * @param input The tag string to validate, with or without leading `#`.
-         * @return `true` if [input] is a valid club tag, otherwise `false`.
-         */
-        fun isValid(input: String): Boolean =
-            REGEX.matches(input)
-
-        /**
          * Attempts to create a [PlayerClubTag] from the given [input].
          *
-         * The input is uppercased and validated using [REGEX].
+         * Returns a [FactoryResult] describing whether the tag is valid.
+         * The input is normalized to uppercase before validation.
          *
-         * @param input The tag string to create a [PlayerClubTag] from.
-         * @return [Result.success] with a valid [PlayerClubTag] if input is valid,
-         *         otherwise [Result.failure] with an [IllegalArgumentException].
+         * @param input The tag string to validate.
+         * @return A [FactoryResult] describing the outcome.
          */
-        fun create(input: String): Result<PlayerClubTag> {
+        fun create(input: String): FactoryResult {
+            if (input.isBlank()) return FactoryResult.EmptyInput
+
             val normalized = input.uppercase()
-            return if (isValid(normalized)) Result.success(PlayerClubTag(normalized))
-            else Result.failure(IllegalArgumentException("Invalid club tag: $input"))
+            val value = normalized.removePrefix("#")
+
+            return when {
+                value.length !in MIN_LENGTH..MAX_LENGTH ->
+                    FactoryResult.InvalidLength
+
+                !REGEX.matches(normalized) ->
+                    FactoryResult.InvalidFormat
+
+                else ->
+                    FactoryResult.Success(PlayerClubTag(normalized))
+            }
         }
 
         /**
-         * Creates a [PlayerClubTag] from [input] or throws [IllegalArgumentException] if invalid.
-         *
-         * @param input The tag string to create a [PlayerClubTag] from.
-         * @return A valid [PlayerClubTag] instance.
-         * @throws IllegalArgumentException if [input] is invalid.
+         * Creates a [PlayerClubTag] or throws an [IllegalArgumentException]
+         * with a descriptive message based on [FactoryResult].
          */
         fun createOrThrow(input: String): PlayerClubTag =
-            create(input).getOrThrow()
+            when (val result = create(input)) {
+                is FactoryResult.Success -> result.value
+                FactoryResult.EmptyInput ->
+                    throw IllegalArgumentException("Club tag cannot be empty or blank.")
+
+                FactoryResult.InvalidLength ->
+                    throw IllegalArgumentException(
+                        "Club tag length must be between $MIN_LENGTH and" +
+                                " $MAX_LENGTH (excluding '#')."
+                    )
+
+                FactoryResult.InvalidFormat ->
+                    throw IllegalArgumentException(
+                        "Club tag may only contain A–Z and 0–9 characters, optionally " +
+                                "prefixed with '#'."
+                    )
+            }
 
         /**
-         * Creates a [PlayerClubTag] from [input] or returns `null` if invalid.
-         *
-         * @param input The tag string to create a [PlayerClubTag] from.
-         * @return A valid [PlayerClubTag], or `null` if invalid.
+         * Creates a [PlayerClubTag], or returns `null` if the [input] is invalid.
          */
         fun createOrNull(input: String): PlayerClubTag? =
-            create(input).getOrNull()
+            when (val result = create(input)) {
+                is FactoryResult.Success -> result.value
+                else -> null
+            }
+    }
+
+    /**
+     * Type-safe factory result for [PlayerClubTag] creation.
+     */
+    sealed interface FactoryResult {
+        /** Successful creation with a valid tag. */
+        data class Success(val value: PlayerClubTag) : FactoryResult
+
+        /** Tag was empty or blank. */
+        data object EmptyInput : FactoryResult
+
+        /** Tag contained invalid characters or format. */
+        data object InvalidFormat : FactoryResult
+
+        /** Tag length outside allowed range. */
+        data object InvalidLength : FactoryResult
     }
 }

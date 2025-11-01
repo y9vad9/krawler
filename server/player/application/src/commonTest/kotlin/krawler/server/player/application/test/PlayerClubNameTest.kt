@@ -3,124 +3,89 @@ package krawler.server.player.application.test
 import krawler.server.player.application.PlayerClubName
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
 import kotlin.test.assertFailsWith
-import kotlin.test.assertNull
 
 class PlayerClubNameTest {
 
     @Test
-    fun `isValid returns true for valid club names`() {
-        // GIVEN a list of valid club names
-        val validNames = listOf(
-            "Alpha", "Bravo123", "Club🚀", "A", "ABCDEFGHIJKLMNO" // 15 chars
+    fun `given valid club name within limits when created then should hold the value`() {
+        // Given
+        val validName = "Legends"
+
+        // When
+        val clubName = PlayerClubName(validName)
+
+        // Then
+        assertEquals(validName, clubName.rawString, "PlayerClubName should store the valid name string")
+    }
+
+    @Test
+    fun `given club name shorter than minimum when created then should throw IllegalArgumentException`() {
+        // Given
+        val invalidName = ""
+
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubName(invalidName)
+        }
+        assertEquals(
+            "Club name length must be between ${PlayerClubName.MIN_LENGTH} and ${PlayerClubName.MAX_LENGTH}" +
+                    " characters: ",
+            exception.message
         )
-
-        // WHEN we check validity
-        validNames.forEach { name ->
-            // THEN it should return true
-            assertTrue(actual = PlayerClubName.isValid(input = name), message = "Expected $name to be valid")
-        }
     }
 
     @Test
-    fun `isValid returns false for invalid club names`() {
-        // GIVEN a list of invalid club names
-        val invalidNames = listOf(
-            "",                       // too short
-            "A".repeat(16)            // too long
+    fun `given club name longer than maximum when created then should throw IllegalArgumentException`() {
+        // Given
+        val invalidName = "X".repeat(PlayerClubName.MAX_LENGTH + 1)
+
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubName(invalidName)
+        }
+        assertEquals(
+            "Club name length must be between ${PlayerClubName.MIN_LENGTH} and ${PlayerClubName.MAX_LENGTH}" +
+                    " characters: $invalidName",
+            exception.message
         )
-
-        // WHEN we check validity
-        invalidNames.forEach { name ->
-            // THEN it should return false
-            assertFalse(actual = PlayerClubName.isValid(input = name), message = "Expected $name to be invalid")
-        }
     }
 
     @Test
-    fun `create returns success for valid club name`() {
-        // GIVEN a valid club name
-        val input = "MyClub"
+    fun `given two club names when compared then should reflect lexicographical order`() {
+        // Given
+        val first = PlayerClubName("Alpha")
+        val second = PlayerClubName("Bravo")
 
-        // WHEN we create a PlayerClubName
-        val result = PlayerClubName.create(input = input)
+        // When
+        val result = first < second
 
-        // THEN it should succeed and wrap the name
-        assertTrue(actual = result.isSuccess)
-        assertEquals(expected = "MyClub", actual = result.getOrThrow().rawString)
+        // Then
+        assertEquals(true, result, "Comparison should follow lexicographical order")
     }
 
     @Test
-    fun `create returns failure for invalid club name`() {
-        // GIVEN an invalid club name
-        val input = ""
+    fun `given club name when converted to string then should return its raw value`() {
+        // Given
+        val name = "Elite Squad"
+        val clubName = PlayerClubName(name)
 
-        // WHEN we attempt to create a PlayerClubName
-        val result = PlayerClubName.create(input = input)
+        // When
+        val stringValue = clubName.toString()
 
-        // THEN it should fail
-        assertTrue(actual = result.isFailure)
-        assertTrue(actual = result.exceptionOrNull() is IllegalArgumentException)
+        // Then
+        assertEquals(name, stringValue, "toString should return the raw club name string")
     }
 
     @Test
-    fun `createOrThrow returns instance for valid club name`() {
-        // GIVEN a valid club name
-        val input = "CoolClub"
+    fun `given club name with emojis and symbols when created then should be valid`() {
+        // Given
+        val nameWithEmojis = "🔥🔥 Legends ✨"
 
-        // WHEN we call createOrThrow
-        val clubName = PlayerClubName.createOrThrow(input = input)
+        // When
+        val clubName = PlayerClubName(nameWithEmojis)
 
-        // THEN it should return a PlayerClubName instance
-        assertEquals(expected = "CoolClub", actual = clubName.rawString)
-    }
-
-    @Test
-    fun `createOrThrow throws for invalid club name`() {
-        // GIVEN an invalid club name
-        val input = ""
-
-        // WHEN/THEN it should throw IllegalArgumentException
-        assertFailsWith<IllegalArgumentException> {
-            val _ = PlayerClubName.createOrThrow(input = input)
-        }
-    }
-
-    @Test
-    fun `createOrNull returns instance for valid club name`() {
-        // GIVEN a valid club name
-        val input = "FunClub"
-
-        // WHEN we call createOrNull
-        val clubName = PlayerClubName.createOrNull(input = input)
-
-        // THEN it should return a PlayerClubName instance
-        assertEquals(expected = "FunClub", actual = clubName?.rawString)
-    }
-
-    @Test
-    fun `createOrNull returns null for invalid club name`() {
-        // GIVEN an invalid club name
-        val input = ""
-
-        // WHEN we call createOrNull
-        val clubName = PlayerClubName.createOrNull(input = input)
-
-        // THEN it should return null
-        assertNull(actual = clubName)
-    }
-
-    @Test
-    fun `compareTo compares club names lexicographically`() {
-        // GIVEN two club names
-        val nameA = PlayerClubName.createOrThrow(input = "Alpha")
-        val nameB = PlayerClubName.createOrThrow(input = "Beta")
-
-        // THEN compareTo should return negative if first is less
-        assertTrue(actual = nameA < nameB)
-        assertTrue(actual = nameB > nameA)
-        assertEquals(expected = 0, actual = nameA.compareTo(nameA))
+        // Then
+        assertEquals(nameWithEmojis, clubName.rawString, "Club name should support emojis and symbols")
     }
 }

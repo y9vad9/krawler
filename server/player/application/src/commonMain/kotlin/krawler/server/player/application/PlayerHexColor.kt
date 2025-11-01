@@ -1,7 +1,5 @@
 package krawler.server.player.application
 
-import krawler.server.player.application.PlayerHexColor.Companion.FORMAT
-
 /**
  * Represents the hexadecimal color assigned to a player's name in Brawl Stars.
  *
@@ -11,50 +9,33 @@ import krawler.server.player.application.PlayerHexColor.Companion.FORMAT
  * @property rawString The raw hexadecimal string representing the color, possibly with a leading `#`.
  */
 @JvmInline
-value class PlayerHexColor private constructor(
+value class PlayerHexColor(
     val rawString: String,
 ) {
+    init {
+        require(rawString.length <= MAX_LENGTH) {
+            "Invalid HexColor: '$rawString'. Must be at most 9 characters long (including optional '#')."
+        }
+
+        require(FORMAT.matches(rawString)) {
+            "Invalid HexColor format: '$rawString'. Must be 3 or 6 hexadecimal digits, optionally prefixed with '#'."
+        }
+    }
+
     companion object {
         /**
          * Regex used to validate a valid color string (with optional `#`).
          */
-        val FORMAT: Regex = Regex("^#?(?:[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+        val FORMAT: Regex = Regex("^#?(?:[A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$")
 
         /**
-         * Checks whether the given color string is valid.
-         *
-         * @param value The raw string to check.
-         * @return `true` if it matches the [FORMAT], `false` otherwise.
+         * Max length of the string containing player's hex color.
          */
-        fun isValid(value: String): Boolean = FORMAT.matches(value)
-
-        /**
-         * Creates a [PlayerHexColor] instance if the provided [value] is valid.
-         *
-         * @param value The raw string to validate and wrap.
-         * @return [Result.success] with a [PlayerHexColor], or [Result.failure] if invalid.
-         */
-        fun create(value: String): Result<PlayerHexColor> =
-            if (isValid(value)) Result.success(PlayerHexColor(value))
-            else Result.failure(IllegalArgumentException("Invalid HexColor: '$value'"))
-
-        /**
-         * Creates a [PlayerHexColor] or returns `null` if the string is invalid.
-         *
-         * @param value The raw string to validate and wrap.
-         * @return A [PlayerHexColor] or `null`.
-         */
-        fun createOrNull(value: String): PlayerHexColor? =
-            create(value).getOrNull()
-
-        /**
-         * Creates a [PlayerHexColor] or throws [IllegalArgumentException] if the string is invalid.
-         *
-         * @param value The raw string to validate and wrap.
-         * @return A [PlayerHexColor] instance.
-         * @throws IllegalArgumentException if [value] is not valid.
-         */
-        fun createOrThrow(value: String): PlayerHexColor =
-            create(value).getOrThrow()
+        const val MAX_LENGTH: Int = 9
     }
+
+    /**
+     * Returns the canonical string representation of the color.
+     */
+    override fun toString(): String = rawString
 }

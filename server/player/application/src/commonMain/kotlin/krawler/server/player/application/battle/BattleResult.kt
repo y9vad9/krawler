@@ -1,5 +1,9 @@
 package krawler.server.player.application.battle
 
+import krawler.server.player.application.battle.BattleResult.DEFEAT
+import krawler.server.player.application.battle.BattleResult.DRAW
+import krawler.server.player.application.battle.BattleResult.VICTORY
+
 /**
  * Represents the result of a team-based battle (or in duels) in Brawl Stars.
  *
@@ -23,16 +27,16 @@ enum class BattleResult {
  * Returns `true` if this [BattleResult] represents a victory.
  */
 val BattleResult.isVictory: Boolean
-    get() = this == BattleResult.VICTORY
+    get() = this == VICTORY
 
 /**
  * Returns `true` if this [BattleResult] represents a draw.
  */
 val BattleResult.isDraw: Boolean
-    get() = this == BattleResult.DRAW
+    get() = this == DRAW
 
 /**
  * Returns `true` if this [BattleResult] represents a defeat.
  */
 val BattleResult.isDefeat: Boolean
-    get() = this == BattleResult.DEFEAT
+    get() = this == DEFEAT

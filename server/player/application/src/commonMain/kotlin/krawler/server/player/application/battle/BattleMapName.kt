@@ -1,7 +1,5 @@
 package krawler.server.player.application.battle
 
-import kotlin.jvm.JvmInline
-
 /**
  * Represents the name of a Brawl Stars map as a raw [String] value.
  *

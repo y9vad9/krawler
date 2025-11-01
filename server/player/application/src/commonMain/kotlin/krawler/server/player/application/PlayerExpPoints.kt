@@ -1,9 +1,5 @@
 package krawler.server.player.application
 
-import krawler.server.player.application.PlayerExpPoints.Companion.create
-import krawler.server.player.application.PlayerExpPoints.Companion.createOrNull
-import krawler.server.player.application.PlayerExpPoints.Companion.createOrThrow
-
 /**
  * Represents the experience points (XP) earned by a Brawl Stars player.
  *
@@ -18,9 +14,13 @@ import krawler.server.player.application.PlayerExpPoints.Companion.createOrThrow
  * @see <a href="https://brawlstars.fandom.com/wiki/Experience">Brawl Stars Experience - Fandom Wiki</a>
  */
 @JvmInline
-value class PlayerExpPoints private constructor(
+value class PlayerExpPoints(
     val int: Int
 ) : Comparable<PlayerExpPoints> {
+
+    init {
+        require(int >= 0) { "Player experience points must be zero or greater, but was $int." }
+    }
 
     /**
      * Compares this [PlayerExpPoints] with another based on their numeric value.
@@ -31,55 +31,7 @@ value class PlayerExpPoints private constructor(
     override fun compareTo(other: PlayerExpPoints): Int = int.compareTo(other.int)
 
     /**
-     * Provides factory methods and validation logic for constructing [PlayerExpPoints] instances.
-     *
-     * Use this companion to safely create instances of [PlayerExpPoints], ensuring the XP is non-negative.
-     * It offers multiple creation methods depending on your error-handling strategy:
-     *
-     * - [create]: Returns a [Result] encapsulating success or failure.
-     * - [createOrThrow]: Throws [IllegalArgumentException] if input is invalid.
-     * - [createOrNull]: Returns `null` on invalid input.
+     * Returns the string representation of this XP value.
      */
-    companion object {
-        private const val ERROR = "XP value must be zero or greater."
-
-        /**
-         * Checks whether the given value is a valid XP amount.
-         *
-         * XP must be zero or a positive integer.
-         *
-         * @param input The XP value to validate.
-         * @return `true` if the value is valid, `false` otherwise.
-         */
-        fun isValid(input: Int): Boolean = input >= 0
-
-        /**
-         * Creates a [PlayerExpPoints] if the input is valid (non-negative).
-         *
-         * @param input The XP value to wrap.
-         * @return [Result.success] with [PlayerExpPoints], or [Result.failure] if invalid.
-         */
-        fun create(input: Int): Result<PlayerExpPoints> =
-            if (isValid(input)) Result.success(PlayerExpPoints(input))
-            else Result.failure(IllegalArgumentException(ERROR))
-
-        /**
-         * Creates a [PlayerExpPoints] or throws if input is invalid.
-         *
-         * @param input The XP value to wrap.
-         * @return A valid [PlayerExpPoints] instance.
-         * @throws IllegalArgumentException if [input] is negative.
-         */
-        fun createOrThrow(input: Int): PlayerExpPoints =
-            create(input).getOrThrow()
-
-        /**
-         * Creates a [PlayerExpPoints], or returns `null` if input is invalid.
-         *
-         * @param input The XP value to wrap.
-         * @return A valid [PlayerExpPoints], or `null` if [input] is negative.
-         */
-        fun createOrNull(input: Int): PlayerExpPoints? =
-            create(input).getOrNull()
-    }
+    override fun toString(): String = int.toString()
 }

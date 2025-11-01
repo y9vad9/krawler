@@ -1,6 +1,5 @@
 package krawler.server.player.application
 
-import krawler.server.player.application.PlayerName.Companion.LENGTH_RANGE
 import krawler.server.player.application.PlayerName.Companion.MAX_LENGTH
 import krawler.server.player.application.PlayerName.Companion.MIN_LENGTH
 import krawler.server.player.application.PlayerName.Companion.create
@@ -16,13 +15,16 @@ import krawler.server.player.application.PlayerName.Companion.createOrThrow
  * - Can contain any character (including emojis, symbols, etc.), as long as the length is valid.
  *
  * Use [create], [createOrNull], or [createOrThrow] to safely construct a [PlayerName] instance.
+ *
+ * This type enforces validity at creation and should be treated as a type-safe representation
+ * of a player name. Raw strings should not be passed around where [PlayerName] is expected.
+ *
+ * @property rawString The validated player name string.
  */
 @JvmInline
 value class PlayerName private constructor(
-    /** The validated player name string, as accepted by the Brawl Stars API. */
     val rawString: String,
 ) {
-    /** Constants with constraints and validation */
     companion object {
         /** The minimum allowed length of a player name. */
         const val MIN_LENGTH: Int = 1
@@ -34,37 +36,68 @@ value class PlayerName private constructor(
         val LENGTH_RANGE: IntRange = MIN_LENGTH..MAX_LENGTH
 
         /**
-         * Returns `true` if the given [input] string is a valid Brawl Stars player name,
-         * based on [LENGTH_RANGE].
-         */
-        fun isValid(input: String): Boolean =
-            input.length in LENGTH_RANGE
-
-        /**
          * Attempts to create a [PlayerName] from the given [input] string.
          *
-         * Returns a [Result.success] if valid, or a [Result.failure] containing an [IllegalArgumentException]
-         * if the input is invalid.
+         * Returns a [FactoryResult.Success] if valid, or [FactoryResult.TooShort] / [FactoryResult.TooLong] if invalid.
+         *
+         * @param input The raw player name string to validate.
+         * @return [FactoryResult] indicating success or type of failure.
          */
-        fun create(input: String): Result<PlayerName> =
-            if (isValid(input)) Result.success(PlayerName(input))
-            else Result.failure(IllegalArgumentException("Invalid player name length: $input"))
+        fun create(input: String): FactoryResult =
+            when {
+                input.length < MIN_LENGTH -> FactoryResult.TooShort
+                input.length > MAX_LENGTH -> FactoryResult.TooLong
+                else -> FactoryResult.Success(PlayerName(input))
+            }
 
         /**
-         * Creates a [PlayerName] from [input] or throws [IllegalArgumentException] if invalid.
+         * Creates a [PlayerName] from [input] or throws an [IllegalArgumentException] if invalid.
+         *
+         * @param input The raw player name string.
+         * @return A valid [PlayerName].
+         * @throws IllegalArgumentException If [input] is too short or too long.
          */
         fun createOrThrow(input: String): PlayerName =
-            create(input).getOrThrow()
+            when (val result = create(input)) {
+                is FactoryResult.Success ->
+                    result.value
+
+                FactoryResult.TooShort ->
+                    throw IllegalArgumentException("Player name must be at least $MIN_LENGTH characters: $input")
+
+                FactoryResult.TooLong ->
+                    throw IllegalArgumentException("Player name must be at most $MAX_LENGTH characters: $input")
+            }
 
         /**
-         * Creates a [PlayerName] from [input] or returns `null` if invalid.
+         * Creates a [PlayerName] from [input], or returns `null` if invalid.
+         *
+         * @param input The raw player name string.
+         * @return A valid [PlayerName] or `null` if invalid.
          */
         fun createOrNull(input: String): PlayerName? =
-            create(input).getOrNull()
+            when (val result = create(input)) {
+                is FactoryResult.Success -> result.value
+                FactoryResult.TooShort, FactoryResult.TooLong -> null
+            }
     }
 
     /**
      * Returns the raw string representation of this player name.
      */
     override fun toString(): String = rawString
+
+    /**
+     * Sealed interface representing the result of a [PlayerName] creation attempt.
+     */
+    sealed interface FactoryResult {
+        /** Indicates a successful creation of [PlayerName]. */
+        data class Success(val value: PlayerName) : FactoryResult
+
+        /** Indicates the input name was shorter than [MIN_LENGTH]. */
+        data object TooShort : FactoryResult
+
+        /** Indicates the input name was longer than [MAX_LENGTH]. */
+        data object TooLong : FactoryResult
+    }
 }

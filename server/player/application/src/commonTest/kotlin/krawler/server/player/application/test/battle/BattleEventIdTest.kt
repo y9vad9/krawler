@@ -2,112 +2,103 @@ package krawler.server.player.application.test.battle
 
 import krawler.server.player.application.battle.BattleEventId
 import kotlin.test.Test
+import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
-import kotlin.test.assertFalse
-import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class BattleEventIdTest {
 
-    private val validId = 15_000_100
-    private val minId = BattleEventId.MIN_VALUE
-    private val maxId = BattleEventId.MAX_VALUE
-    private val invalidIdLow = 14_999_999
-    private val invalidIdHigh = 15_100_001
-
     @Test
-    fun `create should return success for valid ID`() {
-        // GIVEN a valid event ID
-        // WHEN creating a BattleEventId
-        val result = BattleEventId.create(validId)
+    fun `valid event ID should be created successfully`() {
+        // Given a valid event ID within the known range
+        val validId = 15_050_000
 
-        // THEN the result is successful and contains the correct rawInt
-        assertTrue(result.isSuccess)
-        assertEquals(validId, result.getOrThrow().rawInt)
+        // When creating a BattleEventId
+        val eventId = BattleEventId.createOrThrow(int = validId)
+
+        // Then the rawInt should match the input
+        assertEquals(
+            expected = validId,
+            actual = eventId.rawInt,
+            message = "BattleEventId's rawInt should equal the input value"
+        )
     }
 
     @Test
-    fun `create should return failure for invalid ID`() {
-        // GIVEN invalid event IDs
-        // WHEN creating BattleEventId
-        val resultLow = BattleEventId.create(invalidIdLow)
-        val resultHigh = BattleEventId.create(invalidIdHigh)
+    fun `event ID below MIN_VALUE should throw exception`() {
+        // Given an event ID below the minimum allowed
+        val tooLow = BattleEventId.MIN_VALUE - 1
 
-        // THEN the result is failure for both
-        assertTrue(resultLow.isFailure)
-        assertTrue(resultHigh.isFailure)
-    }
-
-    @Test
-    fun `createOrThrow should return BattleEventId for valid ID`() {
-        // GIVEN a valid event ID
-        // WHEN creating with createOrThrow
-        val id = BattleEventId.createOrThrow(validId)
-
-        // THEN it returns a BattleEventId with correct value
-        assertEquals(validId, id.rawInt)
-    }
-
-    @Test
-    fun `createOrThrow should throw for invalid ID`() {
-        // GIVEN invalid event IDs
-        // WHEN creating with createOrThrow
-        // THEN it throws IllegalArgumentException
-        assertFailsWith<IllegalArgumentException> {
-            val _ = BattleEventId.createOrThrow(invalidIdLow)
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = BattleEventId.createOrThrow(int = tooLow)
         }
-        assertFailsWith<IllegalArgumentException> {
-            val _ = BattleEventId.createOrThrow(invalidIdHigh)
+
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "${BattleEventId.MIN_VALUE}..${BattleEventId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
+    }
+
+    @Test
+    fun `event ID above MAX_VALUE should throw exception`() {
+        // Given an event ID above the maximum allowed
+        val tooHigh = BattleEventId.MAX_VALUE + 1
+
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = BattleEventId.createOrThrow(int = tooHigh)
         }
+
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "${BattleEventId.MIN_VALUE}..${BattleEventId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
     }
 
     @Test
-    fun `createOrNull should return BattleEventId for valid ID`() {
-        // GIVEN a valid event ID
-        // WHEN creating with createOrNull
-        val id = BattleEventId.createOrNull(validId)
+    fun `createOrNull should return null for invalid IDs`() {
+        // Given invalid IDs
+        val tooLow = BattleEventId.MIN_VALUE - 10
+        val tooHigh = BattleEventId.MAX_VALUE + 10
 
-        // THEN it returns a non-null BattleEventId
-        assertNotNull(id)
-        assertEquals(validId, id.rawInt)
+        // When / Then
+        assertNull(
+            actual = BattleEventId.createOrNull(int = tooLow),
+            message = "createOrNull should return null for ID below minimum"
+        )
+
+        assertNull(
+            actual = BattleEventId.createOrNull(int = tooHigh),
+            message = "createOrNull should return null for ID above maximum"
+        )
     }
 
     @Test
-    fun `createOrNull should return null for invalid ID`() {
-        // GIVEN invalid event IDs
-        // WHEN creating with createOrNull
-        val idLow = BattleEventId.createOrNull(invalidIdLow)
-        val idHigh = BattleEventId.createOrNull(invalidIdHigh)
+    fun `comparison between IDs should work correctly`() {
+        // Given two valid IDs
+        val lower = BattleEventId.createOrThrow(int = 15_000_001)
+        val higher = BattleEventId.createOrThrow(int = 15_050_000)
 
-        // THEN it returns null for both
-        assertNull(idLow)
-        assertNull(idHigh)
-    }
+        // Then compareTo returns correct ordering
+        assertTrue(
+            actual = lower < higher,
+            message = "Lower ID should be less than higher ID"
+        )
 
-    @Test
-    fun `isValid should correctly identify valid and invalid IDs`() {
-        // GIVEN a mix of valid and invalid IDs
-        // WHEN checking isValid
-        // THEN it returns true for valid IDs and false for invalid IDs
-        assertTrue(BattleEventId.isValid(validId))
-        assertTrue(BattleEventId.isValid(minId))
-        assertTrue(BattleEventId.isValid(maxId))
-        assertFalse(BattleEventId.isValid(invalidIdLow))
-        assertFalse(BattleEventId.isValid(invalidIdHigh))
-    }
+        assertTrue(
+            actual = higher > lower,
+            message = "Higher ID should be greater than lower ID"
+        )
 
-    @Test
-    fun `compareTo should work as expected`() {
-        // GIVEN two BattleEventId instances
-        val id1 = BattleEventId.createOrThrow(15_000_100)
-        val id2 = BattleEventId.createOrThrow(15_000_200)
-
-        // WHEN comparing them
-        // THEN the ordering is correct
-        assertTrue(id1 < id2)
-        assertTrue(id2 > id1)
-        assertEquals(0, id1.compareTo(id1))
+        assertEquals(
+            expected = 0,
+            actual = lower.compareTo(BattleEventId.createOrThrow(int = 15_000_001)),
+            message = "Comparing equal IDs should return 0"
+        )
     }
 }

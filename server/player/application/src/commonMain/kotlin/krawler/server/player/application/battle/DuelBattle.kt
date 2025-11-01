@@ -1,8 +1,8 @@
 package krawler.server.player.application.battle
 
-import kotlin.time.Instant
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
+import kotlin.time.Instant
 
 /**
  * Marker interface for all **duel**-style battles in Brawl Stars.
@@ -35,6 +35,7 @@ sealed interface DuelBattle : SoloBattle {
      */
     val result: BattleResult
 }
+
 /**
  * Marker interface for **friendly duel battles** — unranked 1v1 matches typically played in friendly rooms.
  *

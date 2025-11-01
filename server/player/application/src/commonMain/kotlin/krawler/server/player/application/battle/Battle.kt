@@ -165,28 +165,6 @@ fun Battle.isSoloRankingBattle(): Boolean {
 }
 
 /**
- * Returns `true` if this [Battle] is a [SoloRankingBattle].
- */
-@OptIn(ExperimentalContracts::class)
-fun Battle.isFriendlySoloRankingBattle(): Boolean {
-    contract {
-        returns(true) implies (this@isFriendlySoloRankingBattle is FriendlySoloRankingBattle)
-    }
-    return this is FriendlySoloRankingBattle
-}
-
-/**
- * Returns `true` if this [Battle] is a [SoloRankingBattle].
- */
-@OptIn(ExperimentalContracts::class)
-fun Battle.isFriendlyTeamRankingBattle(): Boolean {
-    contract {
-        returns(true) implies (this@isFriendlyTeamRankingBattle is FriendlyTeamRankingBattle)
-    }
-    return this is FriendlyTeamRankingBattle
-}
-
-/**
  * Returns `true` if this [Battle] is a [TeamRankingBattle].
  */
 @OptIn(ExperimentalContracts::class)
@@ -300,7 +278,7 @@ val Battle.isDrawOrNeutral: Boolean
  * @return A [VictoryAmount] representing the total victories in the list.
  */
 val List<Battle>.victoriesAmount: VictoryAmount
-    get() = VictoryAmount.createOrThrow(count { it.isVictory })
+    get() = VictoryAmount(count { it.isVictory })
 
 /**
  * Counts the number of defeats in this list of [Battle]s.
@@ -313,7 +291,7 @@ val List<Battle>.victoriesAmount: VictoryAmount
  * @return A [DefeatAmount] representing the total defeats in the list.
  */
 val List<Battle>.defeatsAmount: DefeatAmount
-    get() = DefeatAmount.createOrThrow(count { it.isDefeat })
+    get() = DefeatAmount(count { it.isDefeat })
 
 /**
  * Counts the number of draws or neutral outcomes in this list of [Battle]s.
@@ -327,4 +305,4 @@ val List<Battle>.defeatsAmount: DefeatAmount
  * @return A [DrawAmount] representing the total draws or neutral battles in the list.
  */
 val List<Battle>.drawsOrNeutralsAmount: DrawAmount
-    get() = DrawAmount.createOrThrow(count { it.isDrawOrNeutral })
+    get() = DrawAmount(count { it.isDrawOrNeutral })

@@ -3,116 +3,171 @@ package krawler.server.player.application.test
 import krawler.server.player.application.PlayerClubTag
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
 import kotlin.test.assertFailsWith
+import kotlin.test.assertNotNull
 import kotlin.test.assertNull
+import kotlin.test.assertTrue
 
 class PlayerClubTagTest {
 
-    @Test
-    fun `isValid returns true for valid club tags`() {
-        // GIVEN a list of valid club tags
-        val validTags = listOf(
-            "ABC", "#DEF123", "GHI7890", "JKLMN", "#12345678901234"
-        )
-
-        // WHEN we check validity
-        validTags.forEach { tag ->
-            // THEN it should return true
-            assertTrue(actual = PlayerClubTag.isValid(input = tag), message = "Expected $tag to be valid")
-        }
-    }
+    // region — createOrThrow
 
     @Test
-    fun `isValid returns false for invalid club tags`() {
-        // GIVEN a list of invalid club tags
-        val invalidTags = listOf(
-            "AB",                 // too short
-            "A".repeat(15),       // too long
-            "#abc_def",           // invalid character
-            "!!@@##",             // invalid characters
-            "a b c",              // spaces
-        )
-
-        // WHEN we check validity
-        invalidTags.forEach { tag ->
-            // THEN it should return false
-            assertFalse(actual = PlayerClubTag.isValid(input = tag), message = "Expected $tag to be invalid")
-        }
-    }
-
-    @Test
-    fun `create returns success for valid tags`() {
-        // GIVEN a valid club tag
+    fun `given valid tag without hash when created then should succeed and normalize`() {
+        // Given
         val input = "abc123"
 
-        // WHEN we create a PlayerClubTag
-        val result = PlayerClubTag.create(input = input)
+        // When
+        val tag = PlayerClubTag.createOrThrow(input)
 
-        // THEN it should succeed and normalize the string to uppercase
-        assertTrue(actual = result.isSuccess)
-        assertEquals(expected = "#ABC123", actual = result.getOrThrow().stringWithTagPrefix)
+        // Then
+        assertEquals("#ABC123", tag.stringWithTagPrefix)
+        assertEquals("ABC123", tag.stringWithoutTagPrefix)
+        assertEquals("#ABC123", tag.toString())
     }
 
     @Test
-    fun `create returns failure for invalid tags`() {
-        // GIVEN an invalid club tag
-        val input = "ab"
+    fun `given valid tag with hash when created then should preserve prefix`() {
+        // Given
+        val input = "#XYZ987"
 
-        // WHEN we attempt to create a PlayerClubTag
-        val result = PlayerClubTag.create(input = input)
+        // When
+        val tag = PlayerClubTag.createOrThrow(input)
 
-        // THEN it should fail
-        assertTrue(actual = result.isFailure)
-        assertTrue(actual = result.exceptionOrNull() is IllegalArgumentException)
+        // Then
+        assertEquals("#XYZ987", tag.stringWithTagPrefix)
+        assertEquals("XYZ987", tag.stringWithoutTagPrefix)
+        assertEquals("#XYZ987", tag.toString())
     }
 
     @Test
-    fun `createOrThrow returns instance for valid tag`() {
-        // GIVEN a valid club tag
-        val input = "xyz789"
+    fun `given blank input when createdOrThrow then should throw with descriptive message`() {
+        // Given
+        val input = "   "
 
-        // WHEN we call createOrThrow
-        val tag = PlayerClubTag.createOrThrow(input = input)
-
-        // THEN it should return a PlayerClubTag with normalized uppercase and # prefix
-        assertEquals(expected = "#XYZ789", actual = tag.stringWithTagPrefix)
-        assertEquals(expected = "XYZ789", actual = tag.stringWithoutTagPrefix)
-    }
-
-    @Test
-    fun `createOrThrow throws for invalid tag`() {
-        // GIVEN an invalid club tag
-        val input = "!!"
-
-        // WHEN/THEN it should throw IllegalArgumentException
-        assertFailsWith<IllegalArgumentException> {
-            val _ = PlayerClubTag.createOrThrow(input = input)
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubTag.createOrThrow(input)
         }
+        assertEquals("Club tag cannot be empty or blank.", exception.message)
     }
 
     @Test
-    fun `createOrNull returns instance for valid tag`() {
-        // GIVEN a valid club tag
-        val input = "klm456"
+    fun `given tag shorter than minimum length when createdOrThrow then should throw`() {
+        // Given
+        val input = "#A"
 
-        // WHEN we call createOrNull
-        val tag = PlayerClubTag.createOrNull(input = input)
-
-        // THEN it should return a PlayerClubTag instance
-        assertEquals(expected = "#KLM456", actual = tag?.stringWithTagPrefix)
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubTag.createOrThrow(input)
+        }
+        assertTrue(exception.message!!.contains("length must be between"))
     }
 
     @Test
-    fun `createOrNull returns null for invalid tag`() {
-        // GIVEN an invalid club tag
-        val input = "12"
+    fun `given tag longer than maximum length when createdOrThrow then should throw`() {
+        // Given
+        val input = "#${"A".repeat(PlayerClubTag.MAX_LENGTH + 1)}"
 
-        // WHEN we call createOrNull
-        val tag = PlayerClubTag.createOrNull(input = input)
-
-        // THEN it should return null
-        assertNull(actual = tag)
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubTag.createOrThrow(input)
+        }
+        assertTrue(exception.message!!.contains("length must be between"))
     }
+
+    @Test
+    fun `given tag with invalid characters when createdOrThrow then should throw`() {
+        // Given
+        val input = "#ABC$123"
+
+        // When & Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = PlayerClubTag.createOrThrow(input)
+        }
+        assertTrue(exception.message!!.contains("may only contain A–Z and 0–9"))
+    }
+
+    // endregion
+
+    // region — createOrNull
+
+    @Test
+    fun `given valid tag when createdOrNull then should return tag`() {
+        // Given
+        val input = "#QWE123"
+
+        // When
+        val tag = PlayerClubTag.createOrNull(input)
+
+        // Then
+        assertNotNull(tag)
+        assertEquals("QWE123", tag.stringWithoutTagPrefix)
+    }
+
+    @Test
+    fun `given invalid tag when createdOrNull then should return null`() {
+        // Given
+        val input = "#123$"
+
+        // When
+        val tag = PlayerClubTag.createOrNull(input)
+
+        // Then
+        assertNull(tag)
+    }
+
+    // endregion
+
+    // region — create (FactoryResult)
+
+    @Test
+    fun `given blank input when create called then should return EmptyInput`() {
+        // Given
+        val input = ""
+
+        // When
+        val result = PlayerClubTag.create(input)
+
+        // Then
+        assertTrue(result is PlayerClubTag.FactoryResult.EmptyInput)
+    }
+
+    @Test
+    fun `given invalid format when create called then should return InvalidFormat`() {
+        // Given
+        val input = "#ABC#123"
+
+        // When
+        val result = PlayerClubTag.create(input)
+
+        // Then
+        assertTrue(result is PlayerClubTag.FactoryResult.InvalidFormat)
+    }
+
+    @Test
+    fun `given tag too short when create called then should return InvalidLength`() {
+        // Given
+        val input = "#A"
+
+        // When
+        val result = PlayerClubTag.create(input)
+
+        // Then
+        assertTrue(result is PlayerClubTag.FactoryResult.InvalidLength)
+    }
+
+    @Test
+    fun `given valid tag when create called then should return Success with valid value`() {
+        // Given
+        val input = "#abc123"
+
+        // When
+        val result = PlayerClubTag.create(input)
+
+        // Then
+        assertTrue(result is PlayerClubTag.FactoryResult.Success)
+        assertEquals("#ABC123", result.value.toString())
+    }
+    // endregion
 }

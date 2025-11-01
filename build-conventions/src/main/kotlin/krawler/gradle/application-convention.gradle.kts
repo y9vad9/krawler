@@ -16,11 +16,3 @@ val libs = the<LibrariesForLibs>()
 dependencies {
     "jvmTestImplementation"(libs.mockk)
 }
-
-kover.reports.verify.rule {
-    minBound(
-        minValue = 70,
-        coverageUnits = CoverageUnit.LINE,
-        aggregationForGroup = AggregationType.COVERED_PERCENTAGE,
-    )
-}

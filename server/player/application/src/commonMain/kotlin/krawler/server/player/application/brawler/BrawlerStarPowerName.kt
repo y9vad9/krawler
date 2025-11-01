@@ -1,7 +1,5 @@
 package krawler.server.player.application.brawler
 
-import kotlin.jvm.JvmInline
-
 /**
  * Represents the name of a Star Power in Brawl Stars.
  *
@@ -14,8 +12,8 @@ import kotlin.jvm.JvmInline
  * @property rawString The raw string value of the star power's name. Used for display and comparison.
  */
 @JvmInline
-public value class BrawlerStarPowerName(
-    public val rawString: String
+value class BrawlerStarPowerName(
+    val rawString: String
 ) : Comparable<BrawlerStarPowerName> {
 
     /**

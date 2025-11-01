@@ -1,8 +1,8 @@
 package krawler.server.player.application.battle
 
-import kotlin.time.Instant
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
+import kotlin.time.Instant
 
 /**
  * Marker interface for all **cooperative** battles in Brawl Stars.
@@ -17,6 +17,7 @@ sealed interface CooperativeBattle : TeamBattle {
      * Represents the result of the cooperative battle.
      */
     val result: BattleResult
+
     /**
      * The participants in this cooperative battle.
      */

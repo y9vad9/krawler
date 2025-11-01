@@ -65,9 +65,9 @@ complexity:
     ignoreOverloaded: false
   CyclomaticComplexMethod:
     active: true
-    threshold: 25
-    ignoreSingleWhenExpression: false
-    ignoreSimpleWhenEntries: false
+    threshold: 14
+    ignoreSingleWhenExpression: true
+    ignoreSimpleWhenEntries: true
     ignoreNestingFunctions: false
     nestingFunctions:
       - 'also'

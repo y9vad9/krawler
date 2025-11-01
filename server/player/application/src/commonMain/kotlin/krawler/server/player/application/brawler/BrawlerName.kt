@@ -1,7 +1,5 @@
 package krawler.server.player.application.brawler
 
-import kotlin.jvm.JvmInline
-
 /**
  * Represents a Brawler's name.
  *
@@ -11,9 +9,9 @@ import kotlin.jvm.JvmInline
  * Instances are compared based on the wrapped string value.
  */
 @JvmInline
-public value class BrawlerName(
+value class BrawlerName(
     /** The raw string value of the brawler's name. */
-    public val rawString: String
+    val rawString: String
 ) : Comparable<BrawlerName> {
 
     /**

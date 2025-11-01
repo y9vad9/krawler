@@ -2,106 +2,98 @@ package krawler.server.player.application.test.brawler
 
 import krawler.server.player.application.brawler.BrawlerGadgetId
 import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
+import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlin.test.assertTrue
 
 class BrawlerGadgetIdTest {
 
     @Test
-    fun `isValid returns true for values within range`() {
-        // GIVEN values inside the valid gadget ID range
-        val validValue = BrawlerGadgetId.MIN_VALUE
-        val validValue2 = BrawlerGadgetId.MAX_VALUE
+    fun `valid gadget ID should be created successfully`() {
+        // Given a valid gadget ID within the allowed range
+        val validId = 23_005_000
 
-        // THEN isValid should return true
-        assertTrue(BrawlerGadgetId.isValid(validValue))
-        assertTrue(BrawlerGadgetId.isValid(validValue2))
+        // When constructing a BrawlerGadgetId
+        val gadgetId = BrawlerGadgetId(rawInt = validId)
+
+        // Then the rawInt should match the input
+        assertEquals(
+            expected = validId,
+            actual = gadgetId.rawInt,
+            message = "Gadget ID's rawInt should equal the input value"
+        )
     }
 
     @Test
-    fun `isValid returns false for values outside range`() {
-        // GIVEN values outside the valid gadget ID range
-        val below = BrawlerGadgetId.MIN_VALUE - 1
-        val above = BrawlerGadgetId.MAX_VALUE + 1
+    fun `gadget ID below MIN_VALUE should throw exception`() {
+        // Given a gadget ID below the minimum allowed
+        val tooLowId = BrawlerGadgetId.MIN_VALUE - 1
 
-        // THEN isValid should return false
-        assertFalse(BrawlerGadgetId.isValid(below))
-        assertFalse(BrawlerGadgetId.isValid(above))
-    }
-
-    @Test
-    fun `create returns success for valid input`() {
-        // GIVEN a valid gadget ID
-        val input = BrawlerGadgetId.MIN_VALUE
-
-        // THEN create should succeed
-        val result = BrawlerGadgetId.create(input)
-        assertTrue(result.isSuccess)
-        assertEquals(input, result.getOrThrow().rawInt)
-    }
-
-    @Test
-    fun `create returns failure for invalid input`() {
-        // GIVEN an invalid gadget ID
-        val input = BrawlerGadgetId.MIN_VALUE - 1
-
-        // THEN create should fail
-        val result = BrawlerGadgetId.create(input)
-        assertTrue(result.isFailure)
-    }
-
-    @Test
-    fun `createOrThrow returns instance for valid input`() {
-        // GIVEN a valid gadget ID
-        val input = BrawlerGadgetId.MAX_VALUE
-
-        // THEN createOrThrow should return an instance
-        val id = BrawlerGadgetId.createOrThrow(input)
-        assertEquals(input, id.rawInt)
-    }
-
-    @Test
-    fun `createOrThrow throws exception for invalid input`() {
-        // GIVEN an invalid gadget ID
-        val input = BrawlerGadgetId.MAX_VALUE + 1
-
-        // THEN createOrThrow should throw IllegalArgumentException
-        assertFailsWith<IllegalArgumentException> {
-            val _ = BrawlerGadgetId.createOrThrow(input)
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = BrawlerGadgetId(rawInt = tooLowId)
         }
+
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "between ${BrawlerGadgetId.MIN_VALUE} and ${BrawlerGadgetId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
     }
 
     @Test
-    fun `createOrNull returns instance for valid input`() {
-        // GIVEN a valid gadget ID
-        val input = BrawlerGadgetId.MIN_VALUE
+    fun `gadget ID above MAX_VALUE should throw exception`() {
+        // Given a gadget ID above the maximum allowed
+        val tooHighId = BrawlerGadgetId.MAX_VALUE + 1
 
-        // THEN createOrNull should return an instance
-        val id = BrawlerGadgetId.createOrNull(input)
-        assertEquals(input, id?.rawInt)
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = BrawlerGadgetId(rawInt = tooHighId)
+        }
+
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "between ${BrawlerGadgetId.MIN_VALUE} and ${BrawlerGadgetId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
     }
 
     @Test
-    fun `createOrNull returns null for invalid input`() {
-        // GIVEN an invalid gadget ID
-        val input = BrawlerGadgetId.MIN_VALUE - 1
+    fun `comparison between gadget IDs should work correctly`() {
+        // Given two valid gadget IDs
+        val lower = BrawlerGadgetId(rawInt = BrawlerGadgetId.MIN_VALUE)
+        val higher = BrawlerGadgetId(rawInt = BrawlerGadgetId.MAX_VALUE)
 
-        // THEN createOrNull should return null
-        val id = BrawlerGadgetId.createOrNull(input)
-        assertEquals(null, id)
+        // Then compareTo returns correct ordering
+        assertTrue(
+            actual = lower < higher,
+            message = "Lower ID should be less than higher ID"
+        )
+
+        assertTrue(
+            actual = higher > lower,
+            message = "Higher ID should be greater than lower ID"
+        )
+
+        assertEquals(
+            expected = 0,
+            actual = lower.compareTo(BrawlerGadgetId(rawInt = BrawlerGadgetId.MIN_VALUE)),
+            message = "Comparing equal IDs should return 0"
+        )
     }
 
     @Test
-    fun `compareTo returns correct ordering`() {
-        // GIVEN two gadget IDs
-        val lower = BrawlerGadgetId.createOrThrow(BrawlerGadgetId.MIN_VALUE)
-        val higher = BrawlerGadgetId.createOrThrow(BrawlerGadgetId.MAX_VALUE)
+    fun `toString should return rawInt as string`() {
+        // Given a valid gadget ID
+        val id = 23_004_321
+        val gadgetId = BrawlerGadgetId(rawInt = id)
 
-        // THEN compareTo should reflect numeric ordering
-        assertTrue(lower < higher)
-        assertTrue(higher > lower)
-        assertEquals(0, lower.compareTo(BrawlerGadgetId.createOrThrow(BrawlerGadgetId.MIN_VALUE)))
+        // Then toString should return the string representation of rawInt
+        assertEquals(
+            expected = id.toString(),
+            actual = gadgetId.toString(),
+            message = "toString should return rawInt as string"
+        )
     }
 }

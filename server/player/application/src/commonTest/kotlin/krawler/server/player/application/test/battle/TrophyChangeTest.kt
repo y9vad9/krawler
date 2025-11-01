@@ -5,9 +5,9 @@ import krawler.server.player.application.battle.isGained
 import krawler.server.player.application.battle.isLost
 import krawler.server.player.application.battle.isUnchanged
 import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class TrophyChangeTest {
 

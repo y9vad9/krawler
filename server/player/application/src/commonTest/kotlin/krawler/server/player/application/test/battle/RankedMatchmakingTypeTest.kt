@@ -1,12 +1,12 @@
 package krawler.server.player.application.test.battle
 
-import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
 import krawler.server.player.application.battle.RankedMatchmakingType
 import krawler.server.player.application.battle.isDuo
 import krawler.server.player.application.battle.isSolo
 import krawler.server.player.application.battle.isTrio
+import kotlin.test.Test
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class RankedMatchmakingTypeTest {
 

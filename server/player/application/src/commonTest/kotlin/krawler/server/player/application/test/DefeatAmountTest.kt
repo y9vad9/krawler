@@ -4,11 +4,6 @@ import krawler.server.player.application.DefeatAmount
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
-import kotlin.test.assertFalse
-import kotlin.test.assertIs
-import kotlin.test.assertNotNull
-import kotlin.test.assertNull
-import kotlin.test.assertTrue
 
 /**
  * Unit tests for [DefeatAmount].
@@ -19,161 +14,90 @@ import kotlin.test.assertTrue
 class DefeatAmountTest {
 
     @Test
-    fun `given non-negative input when isValid is called then returns true`() {
+    fun `given valid non-negative value when created then should hold the value`() {
         // Given
-        val input = 5
+        val value = 8
 
         // When
-        val result = DefeatAmount.isValid(input)
+        val defeats = DefeatAmount(value)
 
         // Then
-        assertTrue(result)
+        assertEquals(value, defeats.int, "DefeatAmount should store the provided non-negative value")
     }
 
     @Test
-    fun `given negative input when isValid is called then returns false`() {
+    fun `given negative value when created then should throw IllegalArgumentException`() {
         // Given
-        val input = -1
-
-        // When
-        val result = DefeatAmount.isValid(input)
-
-        // Then
-        assertFalse(result)
-    }
-
-    @Test
-    fun `given valid input when create is called then returns success result`() {
-        // Given
-        val input = 10
-
-        // When
-        val result = DefeatAmount.create(input)
-
-        // Then
-        assertTrue(result.isSuccess)
-        assertEquals(10, result.getOrThrow().int)
-    }
-
-    @Test
-    fun `given invalid input when create is called then returns failure result`() {
-        // Given
-        val input = -10
-
-        // When
-        val result = DefeatAmount.create(input)
-
-        // Then
-        assertTrue(result.isFailure)
-        assertIs<IllegalArgumentException>(result.exceptionOrNull())
-    }
-
-    @Test
-    fun `given valid input when createOrThrow is called then returns instance`() {
-        // Given
-        val input = 3
-
-        // When
-        val result = DefeatAmount.createOrThrow(input)
-
-        // Then
-        assertEquals(3, result.int)
-    }
-
-    @Test
-    fun `given invalid input when createOrThrow is called then throws exception`() {
-        // Given
-        val input = -3
+        val invalidValue = -5
 
         // When & Then
-        assertFailsWith<IllegalArgumentException> {
-            val _ = DefeatAmount.createOrThrow(input)
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = DefeatAmount(invalidValue)
         }
+        assertEquals("Defeat amount must be zero or greater, got -5.", exception.message)
     }
 
     @Test
-    fun `given valid input when createOrNull is called then returns instance`() {
+    fun `given two valid amounts when compared then should reflect correct ordering`() {
         // Given
-        val input = 7
+        val smaller = DefeatAmount(2)
+        val larger = DefeatAmount(9)
 
         // When
-        val result = DefeatAmount.createOrNull(input)
+        val result = smaller < larger
 
         // Then
-        assertNotNull(result)
-        assertEquals(7, result.int)
+        assertEquals(true, result, "Smaller DefeatAmount should compare less than larger one")
     }
 
     @Test
-    fun `given invalid input when createOrNull is called then returns null`() {
+    fun `given two valid amounts when added then should produce correct sum`() {
         // Given
-        val input = -7
+        val first = DefeatAmount(4)
+        val second = DefeatAmount(6)
 
         // When
-        val result = DefeatAmount.createOrNull(input)
+        val result = first + second
 
         // Then
-        assertNull(result)
+        assertEquals(DefeatAmount(10), result, "Addition should yield the correct total")
     }
 
     @Test
-    fun `given two valid amounts when plus is called then returns sum`() {
+    fun `given two valid amounts when subtracted then should produce correct difference`() {
         // Given
-        val left = DefeatAmount.createOrThrow(4)
-        val right = DefeatAmount.createOrThrow(6)
+        val first = DefeatAmount(10)
+        val second = DefeatAmount(4)
 
         // When
-        val result = left + right
+        val result = first - second
 
         // Then
-        assertEquals(10, result.int)
+        assertEquals(DefeatAmount(6), result, "Subtraction should yield the correct non-negative result")
     }
 
     @Test
-    fun `given two valid amounts when minus results in non-negative value then returns difference`() {
+    fun `given subtraction resulting in negative value when performed then should throw`() {
         // Given
-        val left = DefeatAmount.createOrThrow(10)
-        val right = DefeatAmount.createOrThrow(4)
-
-        // When
-        val result = left - right
-
-        // Then
-        assertEquals(6, result.int)
-    }
-
-    @Test
-    fun `given two valid amounts when minus results in negative value then throws exception`() {
-        // Given
-        val left = DefeatAmount.createOrThrow(2)
-        val right = DefeatAmount.createOrThrow(5)
+        val first = DefeatAmount(3)
+        val second = DefeatAmount(9)
 
         // When & Then
-        assertFailsWith<IllegalArgumentException> {
-            val _ = left - right
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = first - second
         }
+        assertEquals("Defeat amount must be zero or greater, got -6.", exception.message)
     }
 
     @Test
-    fun `given two valid amounts when compareTo is called then returns correct ordering`() {
+    fun `given amount when converted to string then should return its integer representation`() {
         // Given
-        val smaller = DefeatAmount.createOrThrow(3)
-        val larger = DefeatAmount.createOrThrow(7)
-
-        // When & Then
-        assertTrue(smaller < larger)
-        assertTrue(larger > smaller)
-    }
-
-    @Test
-    fun `given valid instance when toString is called then returns numeric string`() {
-        // Given
-        val defeatAmount = DefeatAmount.createOrThrow(42)
+        val defeats = DefeatAmount(11)
 
         // When
-        val result = defeatAmount.toString()
+        val stringValue = defeats.toString()
 
         // Then
-        assertEquals("42", result)
+        assertEquals("11", stringValue, "toString should return the numeric string representation")
     }
 }

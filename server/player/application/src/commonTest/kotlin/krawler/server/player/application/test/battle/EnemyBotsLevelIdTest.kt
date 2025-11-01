@@ -1,107 +1,85 @@
 package krawler.server.player.application.test.battle
 
 import krawler.server.player.application.battle.EnemyBotsLevelId
-import krawler.server.player.application.battle.isAtLeastInsane
-import krawler.server.player.application.battle.isAtLeastMaster
-import krawler.server.player.application.battle.isAtMostExpert
-import krawler.server.player.application.battle.isHard
-import krawler.server.player.application.battle.isInsane3
-import krawler.server.player.application.battle.isInsaneTier
 import kotlin.test.Test
-import kotlin.test.assertTrue
-import kotlin.test.assertFalse
+import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlin.test.assertTrue
 
 class EnemyBotsLevelIdTest {
 
     @Test
-    fun `GIVEN valid raw values WHEN create THEN returns correct EnemyBotsLevelId`() {
-        // GIVEN
-        val raw = 3
+    fun `valid level should be created successfully`() {
+        // Given a valid difficulty level within range
+        val validLevel = 3
 
-        // WHEN
-        val level = EnemyBotsLevelId.create(raw).getOrThrow()
+        // When constructing an EnemyBotsLevelId
+        val levelId = EnemyBotsLevelId(rawInt = validLevel)
 
-        // THEN
-        assertEquals(EnemyBotsLevelId.MASTER.rawInt, level.rawInt)
+        // Then the rawInt should match the input
+        assertEquals(
+            expected = validLevel,
+            actual = levelId.rawInt,
+            message = "EnemyBotsLevelId's rawInt should equal the input value"
+        )
     }
 
     @Test
-    fun `GIVEN invalid raw value WHEN create THEN returns failure`() {
-        // GIVEN
-        val raw = 0
+    fun `level below MIN_VALUE should throw exception`() {
+        // Given a level below the minimum allowed
+        val tooLow = EnemyBotsLevelId.MIN_VALUE - 1
 
-        // WHEN / THEN
-        val result = EnemyBotsLevelId.create(raw)
-        assertTrue(result.isFailure)
-    }
-
-    @Test
-    fun `GIVEN invalid raw value WHEN createOrNull THEN returns null`() {
-        // GIVEN
-        val raw = -1
-
-        // WHEN
-        val level = EnemyBotsLevelId.createOrNull(raw)
-
-        // THEN
-        assertEquals(null, level)
-    }
-
-    @Test
-    fun `GIVEN invalid raw value WHEN createOrThrow THEN throws exception`() {
-        // GIVEN
-        val raw = -10
-
-        // WHEN / THEN
-        assertFailsWith<IllegalArgumentException> {
-            val _ = EnemyBotsLevelId.createOrThrow(raw)
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = EnemyBotsLevelId(rawInt = tooLow)
         }
+
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "${EnemyBotsLevelId.MIN_VALUE}..${EnemyBotsLevelId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
     }
 
     @Test
-    fun `specific level checks work correctly`() {
-        // GIVEN
-        val hard = EnemyBotsLevelId.HARD
-        val insane3 = EnemyBotsLevelId.INSANE_3
+    fun `level above MAX_VALUE should throw exception`() {
+        // Given a level above the maximum allowed
+        val tooHigh = EnemyBotsLevelId.MAX_VALUE + 1
 
-        // THEN
-        assertTrue(hard.isHard())
-        assertFalse(hard.isInsane3())
+        // When / Then
+        val exception = assertFailsWith<IllegalArgumentException> {
+            val _ = EnemyBotsLevelId(rawInt = tooHigh)
+        }
 
-        assertTrue(insane3.isInsane3())
-        assertFalse(insane3.isHard())
+        assertContains(
+            charSequence = exception.message ?: "",
+            other = "${EnemyBotsLevelId.MIN_VALUE}..${EnemyBotsLevelId.MAX_VALUE}",
+            message = "Exception message should indicate valid range"
+        )
     }
 
     @Test
-    fun `tier and range checks work correctly`() {
-        // GIVEN
-        val expert = EnemyBotsLevelId.EXPERT
-        val master = EnemyBotsLevelId.MASTER
-        val insane2 = EnemyBotsLevelId.INSANE_2
+    fun `comparison between levels should work correctly`() {
+        // Given two valid levels
+        val lower = EnemyBotsLevelId(1)
+        val higher = EnemyBotsLevelId(7)
 
-        // THEN
-        assertTrue(expert.isAtMostExpert())
-        assertFalse(master.isAtMostExpert())
+        // Then compareTo returns correct ordering
+        assertTrue(
+            actual = lower < higher,
+            message = "Lower level should be less than higher level"
+        )
 
-        assertTrue(master.isAtLeastMaster())
-        assertFalse(expert.isAtLeastMaster())
+        assertTrue(
+            actual = higher > lower,
+            message = "Higher level should be greater than lower level"
+        )
 
-        assertTrue(insane2.isAtLeastInsane())
-        assertTrue(insane2.isInsaneTier())
-        assertFalse(master.isInsaneTier()) // master is below INSANE
-    }
-
-    @Test
-    fun `comparison works correctly`() {
-        // GIVEN
-        val hard = EnemyBotsLevelId.HARD
-        val insane = EnemyBotsLevelId.INSANE
-
-        // THEN
-        assertTrue(hard < insane)
-        assertTrue(insane > hard)
-        assertEquals(0, hard.compareTo(EnemyBotsLevelId.HARD))
+        assertEquals(
+            expected = 0,
+            actual = lower.compareTo(EnemyBotsLevelId(1)),
+            message = "Comparing equal levels should return 0"
+        )
     }
 }

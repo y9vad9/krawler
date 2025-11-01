@@ -86,9 +86,9 @@ class BattleExtensionsTest {
         val battles = listOf(victoryBattle, defeatBattle, drawBattle)
 
         // THEN the aggregated counts are correct
-        assertEquals(VictoryAmount.createOrThrow(1), battles.victoriesAmount)
-        assertEquals(DefeatAmount.createOrThrow(1), battles.defeatsAmount)
-        assertEquals(DrawAmount.createOrThrow(1), battles.drawsOrNeutralsAmount)
+        assertEquals(VictoryAmount(1), battles.victoriesAmount)
+        assertEquals(DefeatAmount(1), battles.defeatsAmount)
+        assertEquals(DrawAmount(1), battles.drawsOrNeutralsAmount)
     }
 
     @Test

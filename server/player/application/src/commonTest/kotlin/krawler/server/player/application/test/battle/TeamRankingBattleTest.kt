@@ -7,8 +7,8 @@ import krawler.server.player.application.battle.TrophyLeagueTeamRankingBattle
 import krawler.server.player.application.battle.isFriendly
 import krawler.server.player.application.battle.isTrophyLeague
 import kotlin.test.Test
-import kotlin.test.assertTrue
 import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 import kotlin.time.Instant
 
 @Suppress("KotlinConstantConditions")

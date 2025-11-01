@@ -1,7 +1,5 @@
 package krawler.server.player.application.battle
 
-import kotlin.jvm.JvmInline
-
 /**
  * Represents a change in trophies resulting from a Brawl Stars battle.
  *
