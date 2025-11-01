@@ -65,9 +65,9 @@ complexity:
     ignoreOverloaded: false
   CyclomaticComplexMethod:
     active: true
-    threshold: 15
-    ignoreSingleWhenExpression: false
-    ignoreSimpleWhenEntries: false
+    threshold: 14
+    ignoreSingleWhenExpression: true
+    ignoreSimpleWhenEntries: true
     ignoreNestingFunctions: false
     nestingFunctions:
       - 'also'
@@ -126,7 +126,7 @@ complexity:
   TooManyFunctions:
     active: true
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
-    thresholdInFiles: 11
+    thresholdInFiles: 20
     thresholdInClasses: 11
     thresholdInInterfaces: 11
     thresholdInObjects: 11

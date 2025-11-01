@@ -32,7 +32,6 @@ include(
     ":server",
     ":server:auth:domain",
     ":server:auth:application",
-    ":server:player:domain",
     "server:player:application",
 )
 
