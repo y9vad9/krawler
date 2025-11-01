@@ -231,7 +231,7 @@ val Battle.isDefeat: Boolean
             is RankedBattle -> result?.isDefeat == true
             is DuelBattle -> result.isDefeat
             is TeamVsTeamBattle -> result?.isDefeat == true
-            is TrophyLeagueBattle -> return trophyChange.isUnchanged
+            is TrophyLeagueBattle -> return trophyChange.isLost
         }
     }
 

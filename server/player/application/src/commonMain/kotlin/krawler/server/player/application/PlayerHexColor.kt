@@ -31,7 +31,7 @@ value class PlayerHexColor(
         /**
          * Max length of the string containing player's hex color.
          */
-        const val MAX_LENGTH: Int = 9
+        const val MAX_LENGTH: Int = 7
     }
 
     /**
