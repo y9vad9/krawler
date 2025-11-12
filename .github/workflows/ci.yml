@@ -105,9 +105,6 @@ jobs:
           languages: java-kotlin
           dependency-caching: true
 
-      - name: Build with Gradle for CodeQL
-        run: ./gradlew build --rerun-tasks
-
       - name: Run Unit Tests
         run: ./gradlew jvmTest
 
