@@ -88,21 +88,13 @@ jobs:
         run: npm ci
         working-directory: site
 
-  kotlin-build-and-test:
-    name: Kotlin Build and Test
-    needs: setup-gradle
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
       - name: Restore Gradle cache
         uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ needs.setup-gradle.outputs.gradle-cache-key }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle.lockfile') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
 
@@ -137,21 +129,13 @@ jobs:
       - name: Verify the coverage
         run: ./gradlew koverVerify
 
-  codeql-analysis:
-    name: CodeQL Analysis
-    needs: setup-gradle
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
       - name: Restore Gradle cache
         uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ needs.setup-gradle.outputs.gradle-cache-key }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle.lockfile') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
 
