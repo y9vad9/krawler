@@ -75,93 +75,217 @@ jobs:
         run: npm ci
         working-directory: site
 
-  kotlin-build-and-test:
-    name: Kotlin Build and Test
-    needs: setup-gradle
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    kotlin-build-and-test:
 
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle.lockfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+      name: Kotlin Build and Test
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+      needs: setup-gradle
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: java-kotlin
-          dependency-caching: true
+      runs-on: ubuntu-latest
 
-      - name: Run Unit Tests
-        run: ./gradlew jvmTest
+      steps:
 
-      - name: Run Detekt Static Analysis
-        run: ./gradlew detekt detektJvmMain
+        - name: Checkout repository
 
-      - name: Run Integration Tests
-        run: ./gradlew integrationTest
+          uses: actions/checkout@v3
 
-      - name: Run Functional Tests
-        run: ./gradlew functionalTest
+  
 
-      - name: Run tests and generate Kover report
-        run: ./gradlew koverXmlReport
+        - name: Cache Gradle packages
 
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: build/reports/kover/report.xml
-          fail_ci_if_error: true
+          uses: actions/cache@v3
 
-      - name: Verify the coverage
-        run: ./gradlew koverVerify
+          with:
 
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+            path: |
 
-  detect-site-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      site_changed: ${{ steps.check_changes.outputs.site_changed }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Required for git diff to work correctly
+              ~/.gradle/caches
 
-      - name: Check for site changes
-        id: check_changes
-        run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            if git diff --quiet ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- site/; then
-              echo "site_changed=false" >> $GITHUB_OUTPUT
+              ~/.gradle/wrapper
+
+            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle.lockfile') }}
+
+            restore-keys: |
+
+              ${{ runner.os }}-gradle-
+
+  
+
+        - name: Set up JDK 17
+
+          uses: actions/setup-java@v3
+
+          with:
+
+            distribution: 'temurin'
+
+            java-version: '17'
+
+  
+
+        - name: Run Unit Tests
+
+          run: ./gradlew jvmTest
+
+  
+
+        - name: Run Detekt Static Analysis
+
+          run: ./gradlew detekt detektJvmMain
+
+  
+
+        - name: Run Integration Tests
+
+          run: ./gradlew integrationTest
+
+  
+
+        - name: Run Functional Tests
+
+          run: ./gradlew functionalTest
+
+  
+
+        - name: Run tests and generate Kover report
+
+          run: ./gradlew koverXmlReport
+
+  
+
+        - name: Upload coverage report to Codecov
+
+          uses: codecov/codecov-action@v5
+
+          with:
+
+            token: ${{ secrets.CODECOV_TOKEN }}
+
+            files: build/reports/kover/report.xml
+
+            fail_ci_if_error: true
+
+  
+
+        - name: Verify the coverage
+
+          run: ./gradlew koverVerify
+
+  
+
+    codeql-analysis:
+
+      name: CodeQL Analysis
+
+      runs-on: ubuntu-latest
+
+      permissions:
+
+        contents: read
+
+        security-events: write
+
+      steps:
+
+        - name: Checkout repository
+
+          uses: actions/checkout@v3
+
+  
+
+        - name: Set up JDK 17
+
+          uses: actions/setup-java@v3
+
+          with:
+
+            distribution: 'corretto'
+
+            java-version: '17'
+
+  
+
+        - name: Initialize CodeQL
+
+          uses: github/codeql-action/init@v3
+
+          with:
+
+            languages: java-kotlin
+
+            dependency-caching: true
+
+  
+
+        - name: Build with Gradle
+
+          run: ./gradlew clean build --rerun-tasks
+
+  
+
+        - name: Perform CodeQL Analysis
+
+          uses: github/codeql-action/analyze@v3
+
+  
+
+    detect-site-changes:
+
+      runs-on: ubuntu-latest
+
+      outputs:
+
+        site_changed: ${{ steps.check_changes.outputs.site_changed }}
+
+      steps:
+
+        - name: Checkout code
+
+          uses: actions/checkout@v3
+
+          with:
+
+            fetch-depth: 0 # Required for git diff to work correctly
+
+  
+
+        - name: Check for site changes
+
+          id: check_changes
+
+          run: |
+
+            if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+
+              if git diff --quiet ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- site/; then
+
+                echo "site_changed=false" >> $GITHUB_OUTPUT
+
+              else
+
+                echo "site_changed=true" >> $GITHUB_OUTPUT
+
+              fi
+
+            elif [[ "${{ github.event_name }}" == "push" ]]; then
+
+              if git diff --quiet HEAD^ HEAD -- site/; then
+
+                echo "site_changed=false" >> $GITHUB_OUTPUT
+
+              else
+
+                echo "site_changed=true" >> $GITHUB_OUTPUT
+
+              fi
+
             else
-              echo "site_changed=true" >> $GITHUB_OUTPUT
+
+              echo "site_changed=false" >> $GITHUB_OUTPUT # Default to false for other events
+
             fi
-          elif [[ "${{ github.event_name }}" == "push" ]]; then
-            if git diff --quiet HEAD^ HEAD -- site/; then
-              echo "site_changed=false" >> $GITHUB_OUTPUT
-            else
-              echo "site_changed=true" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "site_changed=false" >> $GITHUB_OUTPUT # Default to false for other events
-          fi
-        shell: bash
+
+          shell: bash
 
   docusaurus-build:
     name: Build Docusaurus Site
