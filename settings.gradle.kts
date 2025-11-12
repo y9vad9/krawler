@@ -26,6 +26,7 @@ include(
     ":foundation:jvm-environment",
     ":foundation:cli-args",
     ":foundation:logger",
+    ":foundation:exposed-r2dbc-ext"
 )
 
 include(

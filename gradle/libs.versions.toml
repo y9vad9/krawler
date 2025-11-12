@@ -15,6 +15,10 @@ detekt-compose = "0.4.27"
 kover = "0.9.3"
 shadowJar = "9.2.2"
 inmo-tgbotapi = "30.0.0"
+exposed = "1.0.0-rc-3"
+testcontainers = "1.21.3"
+postgresql-r2dbc = "1.1.1.RELEASE"
+r2dbc = "1.0.0.RELEASE"
 
 [libraries]
 # ───────────────────────────────────────────────────────────────────────────────
@@ -29,6 +33,9 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 # ───────────────────────────────────────────────────────────────────────────────
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 # ───────────────────────────────────────────────────────────────────────────────
@@ -47,8 +54,16 @@ inmo-tgbotapi-utils = { module = "dev.inmo:tgbotapi.utils", version.ref = "inmo-
 inmo-tgbotapi = { module = "dev.inmo:tgbotapi", version.ref = "inmo-tgbotapi" }
 
 # ───────────────────────────────────────────────────────────────────────────────
-# SQLDelight / Database
+# Database
 # ───────────────────────────────────────────────────────────────────────────────
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-json = { module = "org.jetbrains.exposed:exposed-json", version.ref = "exposed" }
+exposed-time = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed" }
+exposed-r2dbc = { module = "org.jetbrains.exposed:exposed-r2dbc", version.ref = "exposed" }
+
+r2dbc-postgresql = { module = "org.postgresql:r2dbc-postgresql", version.ref = "postgresql-r2dbc" }
+r2dbc-spi = { module = "io.r2dbc:r2dbc-spi", version.ref = "r2dbc" }
+
 sqldelight-jvm-driver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
@@ -86,6 +101,12 @@ pluginClasspath-shadowJar = { module = "com.gradleup.shadow:com.gradleup.shadow.
 # Detekt
 # ───────────────────────────────────────────────────────────────────────────────
 detekt-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "detekt-compose" }
+
+# ───────────────────────────────────────────────────────────────────────────────
+# Test containers (Docker)
+# ───────────────────────────────────────────────────────────────────────────────
+testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers"}
 
 [plugins]
 # ───────────────────────────────────────────────────────────────────────────────
