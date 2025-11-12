@@ -148,7 +148,7 @@ jobs:
           dependency-caching: true
 
       - name: Build with Gradle for CodeQL
-        run: ./gradlew build --rerun-tasks
+        run: ./gradlew clean build --rerun-tasks
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
