@@ -46,8 +46,6 @@ jobs:
   # Reusable setup for Kotlin/Gradle projects
   setup-gradle:
     runs-on: ubuntu-latest
-    outputs:
-      gradle-cache-key: ${{ steps.cache-gradle.outputs.cache-primary-key }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
