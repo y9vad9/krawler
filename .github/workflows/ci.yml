@@ -113,19 +113,19 @@ jobs:
           java-version: '17'
 
       - name: Run Unit Tests
-        run: ./gradlew jvmTest --no-daemon
+        run: ./gradlew jvmTest
 
       - name: Run Detekt Static Analysis
-        run: ./gradlew detekt detektJvmMain --no-daemon
+        run: ./gradlew detekt detektJvmMain
 
       - name: Run Integration Tests
-        run: ./gradlew integrationTest --no-daemon
+        run: ./gradlew integrationTest
 
       - name: Run Functional Tests
-        run: ./gradlew functionalTest --no-daemon
+        run: ./gradlew functionalTest
 
       - name: Run tests and generate Kover report
-        run: ./gradlew koverXmlReport --no-daemon
+        run: ./gradlew koverXmlReport
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v5
@@ -135,7 +135,7 @@ jobs:
           fail_ci_if_error: true
 
       - name: Verify the coverage
-        run: ./gradlew koverVerify --no-daemon
+        run: ./gradlew koverVerify
 
   codeql-analysis:
     name: CodeQL Analysis
