@@ -110,6 +110,18 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: java-kotlin
+          dependency-caching: true
+
+      - name: Build with Gradle for CodeQL
+        run: ./gradlew build --rerun-tasks
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
       - name: Run Unit Tests
         run: ./gradlew jvmTest
 
@@ -134,24 +146,6 @@ jobs:
 
       - name: Verify the coverage
         run: ./gradlew koverVerify
-
-      - name: Set up JDK 17 for CodeQL
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'corretto'
-          java-version: '17'
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: java-kotlin
-          dependency-caching: true
-
-      - name: Build with Gradle for CodeQL
-        run: ./gradlew clean build --rerun-tasks
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
 
   detect-site-changes:
     runs-on: ubuntu-latest
